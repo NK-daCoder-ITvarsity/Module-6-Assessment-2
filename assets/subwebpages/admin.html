@@ -1,0 +1,2118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroller-firefox">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="../../dist/styles.css"/>
+    <link rel="stylesheet" href="../stylesheets/minor-modifications.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="">
+    <header>
+        <!-- Mobile Navigation -->
+        <ul class="text-gray-400 flex justify-between items-center px-3 py-2 border fixed top-0 left-0 w-full sm:flex md:hidden">
+          <li>
+            <button class="flex justify-center items-center py-1 px-2 border-r">
+              <span class="material-symbols-rounded">
+                list
+              </span>
+            </button>
+          </li>
+          <li>
+            <ul class="flex gap-2 items-center justify-center">
+              <li class="flex items-center justify-center gap-1 border rounded-full w-full">
+                <input type="search" placeholder="Search........" class="ml-2 w-full sm:w-48" />
+                <button class="flex rounded-tr-full rounded-br-full bg-gradient-to-bl from-blue-500 to-blue-700 text-white p-1">
+                  <span class="material-symbols-rounded">
+                    search
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <ul class="flex gap-2 items-center justify-center">
+              <li class="flex justify-center items-center">
+                <button class="flex">
+                  <span class="material-symbols-rounded">
+                    notifications
+                  </span>
+                </button>
+              </li>
+              <li class="flex justify-center items-center">
+                <button class="flex">
+                  <span class="material-symbols-rounded">
+                    account_circle
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Desktop/Tablet Navigation -->
+        <!-- Mobile Navigation -->
+        <ul class="text-gray-400 flex justify-between items-center px-3 py-2 border fixed top-0 left-0 w-full sm:flex md:hidden">
+        <li>
+        <button class="flex justify-center items-center py-1 px-2 border-r">
+        <span class="material-symbols-rounded">
+          list
+        </span>
+        </button>
+        </li>
+        <li>
+        <ul class="flex gap-2 items-center justify-center">
+        <li class="flex items-center justify-center gap-1 border rounded-full w-full">
+          <input type="search" placeholder="Search........" class="ml-2 w-full sm:w-48" />
+          <button class="flex rounded-tr-full rounded-br-full bg-gradient-to-bl from-blue-500 to-blue-700 text-white p-1">
+            <span class="material-symbols-rounded">
+              search
+            </span>
+          </button>
+        </li>
+        </ul>
+        </li>
+        <li>
+        <ul class="flex gap-2 items-center justify-center">
+        <li class="flex justify-center items-center">
+          <button class="flex">
+            <span class="material-symbols-rounded">
+              notifications
+            </span>
+          </button>
+        </li>
+        <li class="flex justify-center items-center">
+          <button class="flex">
+            <span class="material-symbols-rounded">
+              account_circle
+            </span>
+          </button>
+        </li>
+        </ul>
+        </li>
+        </ul>
+
+        <!-- Desktop/Tablet Navigation -->
+        <nav class="hidden top-0 left-0 lg:flex pb-3 px-2 py-2 overflow-y-auto scroller-firefox scroll-modification flex-col justify-between gap-8 h-screen fixed lg:w-56 bg-white shadow-lg border-r border-gray-200 z-50">
+          <section>
+            <!-- Logo Section -->
+            <div aria-label="auto for sale logo" class="w-full mb-8 bg-gradient-to-br from-blue-500 to-blue-800 p-4 rounded-2xl">
+              <img src="../images/logos/main-logo-white.svg" alt="Auto for Sale Logo" class="w-full h-auto filter drop-shadow-md" />
+            </div>
+
+            <!-- Main Navigation Section -->
+            <section class="flex flex-col gap-2 lg:gap-4 mt-5 lg:mt-0">
+              <div class="text-gray-400 font-semibold uppercase tracking-wide text-sm px-3">
+                Dashboard
+              </div>
+              <ul class="flex flex-col gap-1">
+                <li>
+                  <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:border-l-2 hover:bg-gray-100 rounded-md transition w-full">
+                    <span class="material-symbols-rounded text-lg">overview</span>
+                    <span class="font-semibold">Overview</span>
+                  </button>
+                </li>
+              </ul>
+
+              <!-- Management Apps Section -->
+              <section class="flex flex-col gap-2 lg:gap-4 mt-5 lg:mt-0">
+                <div class="text-gray-400 font-semibold uppercase tracking-wide text-sm px-3">
+                  Management Apps
+                </div>
+                <ul class="flex flex-col gap-1">
+                  <li>
+                    <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                      <span class="material-symbols-rounded text-lg">inventory</span>
+                      <span class="font-semibold">Inventory</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                      <span class="material-symbols-rounded text-lg">groups</span>
+                      <span class="font-semibold">Customer</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                      <span class="material-symbols-rounded text-lg">sell</span>
+                      <span class="font-semibold">Sales</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                      <span class="material-symbols-rounded text-lg">savings</span>
+                      <span class="font-semibold">Finance</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                      <span class="material-symbols-rounded text-lg">star</span>
+                      <span class="font-semibold">Marketing</span>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+            </section>
+          </section>
+
+          <!-- Customizations Section -->
+          <section class="flex flex-col gap-2 lg:gap-4 mt-5 lg:mt-0">
+            <div class="text-gray-400 font-semibold uppercase tracking-wide text-sm px-3">
+              Customizations
+            </div>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                  <span class="material-symbols-rounded text-lg">settings</span>
+                  <span class="font-semibold">Settings</span>
+                </button>
+              </li>
+              <li>
+                <a href="./auto4sale-webbuilder.html" target="_blank" class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                  <span class="material-symbols-rounded text-lg">travel_explore</span>
+                  <span class="font-semibold">Website</span>
+                </a>
+              </li>
+              <li>
+                <button class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-800 hover:text-blue-600 hover:bg-gray-100 rounded-md transition w-full">
+                  <span class="material-symbols-rounded text-lg">help</span>
+                  <span class="font-semibold">Help</span>
+                </button>
+              </li>
+              <li>
+                <a href="/index.html" class="flex items-center gap-3 p-2 bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-red-800 hover:text-red-600 hover:bg-gray-100 rounded-md transition w-full">
+                  <span class="material-symbols-rounded text-lg">logout</span>
+                  <span class="font-semibold">Logout</span>
+                </a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+    </header>
+
+    <main class="text-gray-700 sm:absolute md:right-15 md:mx-3 md:mt-20 lg:mt-2 lg:right-14 lg:w-3/4 antialiased bg-gray-9 font-sans flex flex-col gap-2 mt-5">
+        <!-- Desktop top search -->
+        <section class="hidden border rounded-2xl sm:flex gap-3 justify-between px-3 py-2">
+            <div class="flex justify-center items-center gap-1 w-full">
+                <button class="flex text-gray-700">
+                    <span class="material-symbols-rounded">
+                        search
+                    </span>
+                </button>
+                <input type="search" placeholder="Search" class="w-full p-2">
+            </div>
+            
+            <ul class="flex gap-2">
+                <li>
+                    <button class="flex border p-2 rounded-full text-gray-700">
+                        <span class="material-symbols-rounded">
+                            notifications
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex border p-2 rounded-full text-gray-700">
+                        <span class="material-symbols-rounded">
+                            person
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Dashboard Overview -->
+        <article class="border rounded-3xl hidden">
+            <!-- Dashboard Container -->
+            <div class="p-8 max-w-7xl mx-auto flex flex-col gap-2 sm:gap-4 ">
+                <!-- Header -->
+                <header class="mb-8">
+                    <h1 class="text-3xl font-bold ">Dashboard Overview</h1>
+                    <p class="">A glance at the current state of the dealership.</p>
+                </header>
+
+                <!-- Quick Stats -->
+                <section class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-6 mb-8">
+                    <!-- Card Template -->
+                    <div class="bg-gradient-to-br p-6 rounded-xl border">
+                        <h2 class="text-lg font-semibold ">Total Cars in Inventory</h2>
+                        <p class="text-4xl font-bold text-yellow-400 mt-2">248</p>
+                    </div>
+                    <div class="p-6 rounded-xl border bg-gradient-to-tr">
+                        <h2 class="text-lg font-semibold ">Cars Sold This Month</h2>
+                        <p class="text-4xl font-bold text-green-400 mt-2">56</p>
+                    </div>
+                    <div class="bg-gradient-to-br p-6 rounded-xl border">
+                        <h2 class="text-lg font-semibold ">Pending Sales</h2>
+                        <p class="text-4xl font-bold text-blue-400 mt-2">12</p>
+                    </div>
+                    <div class="bg-gradient-to-br p-6 rounded-xl border">
+                        <h2 class="text-lg font-semibold ">Customer Inquiries</h2>
+                        <p class="text-4xl font-bold text-red-400 mt-2">34</p>
+                    </div>
+                </section>
+
+                <!-- Recent Activities -->
+                <section class="bg-gradient-to-br p-6 rounded-xl border mb-8">
+                    <h2 class="text-2xl font-semibold  mb-4">Recent Activities</h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-center space-x-4">
+                            <span class="w-2 h-2 bg-blue-400 rounded-full"></span>
+                            <p class="">Added new car: BMW X5 - 2023 Model</p>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <span class="w-2 h-2 bg-green-400 rounded-full"></span>
+                            <p class="">Sale completed: Audi Q7</p>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <span class="w-2 h-2 bg-yellow-400 rounded-full"></span>
+                            <p class="">Inquiry received: Mercedes-Benz C-Class</p>
+                        </li>
+                        <li class="flex items-center space-x-4">
+                            <span class="w-2 h-2 bg-red-400 rounded-full"></span>
+                            <p class="">Pending sale: Tesla Model S</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Sales Trends -->
+                <section class="bg-gradient-to-br p-6 rounded-xl border">
+                    <h2 class="text-2xl font-semibold  mb-4">Sales Trends</h2>
+                    <p class="text-gray-400 mb-4">Monthly sales data and top-performing models.</p>
+                    <!-- Placeholder for Graph (you can replace this with a real graph from a library like Chart.js) -->
+                    <div class="bg-gray-700 rounded-lg h-48 flex items-center justify-center text-gray-500">
+                        <span>Graph Placeholder</span>
+                    </div>
+                </section>
+            </div>
+        </article>
+        
+        <!-- Inventory Management -->
+        <article class="border rounded-3xl hidden">
+            
+            <div class="container mx-auto p-6 grid gap-4">
+                <!-- Inventory Management Header -->
+                <section class="mb-6">
+                  <h1 class="text-3xl font-bold text-gray-800 border-b-2 pb-2 border-gray-200">Inventory Management</h1>
+                </section>
+                <!-- Summary -->
+                <ul class="grid grid-cols-2 md:grid-cols-3 gap-2 lg:gap-4 lg:p-6 mb-2">
+                  <li class="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-3xl p-3 shadow-lg  px-6 py-8 transform hover:scale-105 transition-transform">
+                    <article class="text-center">
+                      <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold mb-2">In Stock</h3>
+                      <p class="text-4xl sm:text-3xl md:text-5xl font-bold">0</p>
+                    </article>
+                  </li>
+                  
+                  <li class="bg-gradient-to-br from-red-500 to-red-700 text-white rounded-3xl p-3 shadow-lg  px-6 py-8 transform hover:scale-105 transition-transform">
+                    <article class="text-center">
+                      <h3 class="text-3xl sm:text-4xl font-semibold mb-2">Shortages</h3>
+                      <p class="text-3xl sm:text-5xl font-bold">0</p>
+                    </article>
+                  </li>
+                  
+                  <li class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-3xl px-6 py-8 shadow-lg transform hover:scale-105 transition-transform col-span-2 sm:col-span-1">
+                    <article class="text-center">
+                      <h3 class="text-3xl sm:text-4xl font-semibold mb-2">Available</h3>
+                      <p class="text-3xl sm:text-5xl font-bold">0</p>
+                    </article>
+                  </li>
+                </ul>                
+
+                <!-- Add New Car Form -->
+                <section class="mb-8 p-6 border rounded-lg shadow-sm bg-white">
+                  <h2 class="text-xl font-semibold text-gray-700 mb-4">Add New Car</h2>
+                  <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label class="block text-sm font-medium text-gray-600">Make</label>
+                      <input type="text" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., Toyota">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-600">Model</label>
+                      <input type="text" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., Corolla">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-600">Year</label>
+                      <input type="number" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., 2023">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-600">Price</label>
+                      <input type="number" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., 20000">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-600">Mileage</label>
+                      <input type="number" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., 5000">
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium text-gray-600">Color</label>
+                      <input type="text" class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., Blue">
+                    </div>
+                    <div class="col-span-1 md:col-span-2">
+                      <label class="block text-sm font-medium text-gray-600">Features</label>
+                      <textarea class="mt-1 p-2 border border-gray-300 rounded-md w-full" placeholder="e.g., Sunroof, Bluetooth, Backup Camera"></textarea>
+                    </div>
+                    <div class="col-span-1 md:col-span-2 text-right">
+                        <button type="submit" class="relative px-6 py-2 bg-gradient-to-tr from-blue-500 to-blue-600 border border-blue-400 shadow-lg transition-all text-white rounded-md font-semibold hover:from-blue-600 hover:to-blue-700 active:scale-95 text-shadow">
+                          <span class="absolute inset-0 blur-lg opacity-50 rounded-md bg-gradient-to-tr from-blue-500 to-blue-600"></span>
+                          <span class="relative">Add Car</span>
+                        </button>
+                      </div>
+                      
+                  </form>
+                </section>
+            
+                <!-- Car Listings Table -->
+                <section class="mb-8 grid gap-2">
+                  <article class="flex justify-between items-center">
+                    <h2 class="text-xl font-semibold text-gray-700">Car Listings</h2>
+                    <button class="px-4 py-2 rounded-md shadow-md hover:shadow-lg border flex gap-2">
+                        <span class="material-symbols-rounded">
+                            filter_list
+                        </span>
+                        Filter
+                    </button>
+                  </article>
+                  
+                  <div class="overflow-x-auto bg-white border rounded-lg shadow-sm">
+                    <table class="min-w-full border">
+                      <thead>
+                        <tr class="bg-gray-100 text-gray-700 text-left text-sm font-semibold">
+                          <th class="py-3 px-4 border-b text-center">Make</th>
+                          <th class="py-3 px-4 border-b text-center">Model</th>
+                          <th class="py-3 px-4 border-b text-center">Year</th>
+                          <th class="py-3 px-4 border-b text-center">Price</th>
+                          <th class="py-3 px-4 border-b text-center">Mileage</th>
+                          <th class="py-3 px-4 border-b text-center">Color</th>
+                          <th class="py-3 px-4 border-b text-center">Status</th>
+                          <th class="py-3 px-4 border-b text-center">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody class="text-gray-700">
+                        <!-- Sample Car Entry -->
+                        <tr class="hover:bg-gray-50">
+                          <td class="py-3 px-4 border-b">Toyota</td>
+                          <td class="py-3 px-4 border-b">Corolla</td>
+                          <td class="py-3 px-4 border-b">2023</td>
+                          <td class="py-3 px-4 border-b">$20,000</td>
+                          <td class="py-3 px-4 border-b">5,000 miles</td>
+                          <td class="py-3 px-4 border-b">Blue</td>
+                          <td class="py-3 px-4 border-b text-green-500 font-semibold">Available</td>
+                          <td class="py-3 px-4 border-b">
+                            <button class="px-4 py-1 text-blue-500 hover:text-blue-700">Edit</button>
+                            <button class="px-4 py-1 text-red-500 hover:text-red-700">Delete</button>
+                          </td>
+                        </tr>
+                        <!-- Add more car entries as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              </div>
+        </article>
+
+        <!-- Customer Relationship Management -->
+        <article class="hidden min-h-screen md:h-auto lg:max-h-screen md:border md:p-6 lg:border rounded-3xl lg:p-6 px-3 mt-9 lg:mt-0">
+          <!-- CRM Section -->
+          <section class="bg-white rounded-lg lg:p-6">
+            <h2 class="text-2xl font-semibold text-gray-700 mb-4">Customer Relationship Management</h2>
+            
+            <!-- Stats -->
+            <section class="grid grid-cols-2 sm:grid-cols-3 gap-2 lg:gap-6 mb-8">
+              <!-- Active Customers -->
+              <div class="transition-all transform hover:scale-110 bg-gradient-to-r from-blue-500 to-blue-700 text-white p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold text-shadow text-sm">Active Customers</h3>
+                <p class="text-3xl font-bold text-shadow">1,245</p>
+              </div>
+        
+              <!-- Leads -->
+              <div class="transition-all transform hover:scale-110 bg-gradient-to-r from-blue-500 to-blue-700 text-white p-4 rounded-lg shadow-md">
+                <h3 class="font-semibold text-shadow text-sm">New Leads</h3>
+                <p class="text-3xl font-bold text-shadow">342</p>
+              </div>
+        
+              <!-- Completed Sales -->
+              <div class="transition-all transform hover:scale-110 bg-gradient-to-r from-blue-500 to-blue-700 text-white p-4 rounded-lg shadow-md ">
+                <h3 class="font-semibold text-shadow text-sm">Completed Sales</h3>
+                <p class="text-3xl font-bold text-shadow">89</p>
+              </div>
+            </section>
+
+            <!-- Add Customer Button -->
+            <section class="mt-8 text-right gap-2 flex justify-between mb-3">
+              <ul class="flex gap-2 justify-center items-center">
+                <li>
+                  <button class="hidden lg:block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-3 rounded-lg shadow-lg hover:opacity-90 transform transition-all hover:scale-110">
+                    + Add New Customer
+                  </button>
+                </li>
+                <li>
+                  <button class="px-4 py-2 rounded-md shadow-md hover:shadow-lg border flex gap-2">
+                    <span class="material-symbols-rounded">
+                        filter_list
+                    </span>
+                    Filter
+                  </button>
+                </li>
+                <li>
+                  <button class="px-4 py-2 rounded-md shadow-md hover:shadow-lg border flex gap-2 " title="Table mode">
+                      <span class="material-symbols-rounded">
+                        table
+                      </span>
+                  </button>
+                </li>
+                <li>
+                  <button class="px-4 py-2 rounded-md shadow-md hover:shadow-lg border flex gap-2 " title="Grid mode">
+                    <span class="material-symbols-rounded">
+                      grid_view
+                    </span>
+                  </button>
+                </li>
+              </ul>
+              <ul class="flex gap-2 justify-center items-center">
+                <li>
+                  <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow">Edit</button>
+                </li>
+                <li>
+                  <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow">View</button>
+                </li>
+                <li>
+                  <button class="flex justify-center items-center bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow">
+                    <span class="material-symbols-rounded mobile-active-click transition-all">
+                      delete
+                    </span>
+                  </button>
+                </li>
+              </ul>
+              
+              
+              
+              
+              
+              <!-- Mobile -->
+              <button class="lg:hidden fixed bottom-20 right-5 z-50 flex p-4 rounded-full mobile-focus-click-blue bg-gradient-to-br from-blue-600 to-blue-800 text-white text-shadow shadow-lg mobile-active-click transform transition-all">
+                <span class="material-symbols-rounded">
+                  person_add
+                </span>
+              </button>
+            </section>
+          
+        
+            <!-- Customer Table desktop and tab -->
+            <section class="overflow-x-auto bg-gray-50 rounded-lg lg:border ">
+              <table class="w-full table-auto hidden md:table">
+                <thead>
+                  <tr class="bg-gray-200 text-gray-700">
+                    <th class="py-3 px-4 text-left">Customer Name</th>
+                    <th class="py-3 px-4 text-left">Email</th>
+                    <th class="py-3 px-4 text-left">Phone</th>
+                    <th class="py-3 px-4 text-left">Last Purchase</th>
+                    <th class="py-3 px-4 text-center">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b">
+                    <td class="py-3 px-4">John Doe</td>
+                    <td class="py-3 px-4">john.doe@example.com</td>
+                    <td class="py-3 px-4">(123) 456-7890</td>
+                    <td class="py-3 px-4">2024-11-10</td>
+                    <td class="py-3 px-14"><input type="checkbox"/></td>
+                  </tr>
+                  <tr class="border-b">
+                    <td class="py-3 px-4">Jane Smith</td>
+                    <td class="py-3 px-4">jane.smith@example.com</td>
+                    <td class="py-3 px-4">(987) 654-3210</td>
+                    <td class="py-3 px-4">2024-11-05</td>
+                    <td class="py-3 px-14"><input type="checkbox"/></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Customer Cards -->
+              <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-6 md:hidden pb-32 md:pb-0">
+                <!-- Customer Card 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg border relative">
+                  <div class="flex items-center gap-2 mb-2">
+                    <img src="" alt="" class="border-2 border-blue-400 rounded-full w-10 h-10"/>
+                    <h3 class="text-lg font-semibold text-gray-800">John Doe</h3>
+                  </div>
+                  <p class="text-sm text-gray-500">Email: <span class="text-gray-700">john.doe@example.com</span></p>
+                  <p class="text-sm text-gray-500">Phone: <span class="text-gray-700">(123) 456-7890</span></p>
+                  <p class="text-sm text-gray-500">Last Purchase: <span class="text-gray-700">2024-11-10</span></p>
+                  <div class="mt-4 flex justify-between">
+                    <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow mobile-active-click transition-all">Edit</button>
+                    <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow mobile-active-click transition-all">View</button>
+                    <button class="absolute top-7 right-5 mobile-active-click transition-all">
+                      <span class="material-symbols-rounded">
+                        delete
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Customer Card 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg border relative">
+                  <div class="flex items-center gap-2 mb-2">
+                    <img src="" alt="" class="border-2 border-blue-400 rounded-full w-10 h-10"/>
+                    <h3 class="text-lg font-semibold text-gray-800">Jane Smith</h3>
+                  </div>
+                  
+                  <p class="text-sm text-gray-500">Email: <span class="text-gray-700">jane.smith@example.com</span></p>
+                  <p class="text-sm text-gray-500">Phone: <span class="text-gray-700">(987) 654-3210</span></p>
+                  <p class="text-sm text-gray-500">Last Purchase: <span class="text-gray-700">2024-11-05</span></p>
+                  <div class="mt-4 flex justify-between">
+                    <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow mobile-active-click transition-all">Edit</button>
+                    <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow mobile-active-click transition-all">View</button>
+                    <button class="absolute top-7 right-5">
+                      <span class="material-symbols-rounded mobile-active-click transition-all">
+                        delete
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- More Customer Cards (Example) -->
+                <div class="bg-gray-50 p-6 rounded-lg border relative">
+                  <div class="flex items-center gap-2 mb-2">
+                    <img src="" alt="" class="border-2 border-blue-400 rounded-full w-10 h-10"/>
+                    <h3 class="text-lg font-semibold text-gray-800">Michael Brown</h3>
+                  </div>
+
+                  <p class="text-sm text-gray-500">Email: <span class="text-gray-700">michael.brown@example.com</span></p>
+                  <p class="text-sm text-gray-500">Phone: <span class="text-gray-700">(555) 123-4567</span></p>
+                  <p class="text-sm text-gray-500">Last Purchase: <span class="text-gray-700">2024-10-28</span></p>
+                  <div class="mt-4 flex justify-between">
+                    <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow mobile-active-click transition-all">Edit</button>
+                    <button class="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 text-shadow mobile-active-click transition-all">View</button>
+                    <button class="absolute top-7 right-5 mobile-active-click transition-all">
+                      <span class="material-symbols-rounded">
+                        delete
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+            
+            </section>
+          </section>
+            
+        </article>
+        
+        <!-- Sales Management -->
+        <article class="hidden rounded-3xl p-3 md:border lg:p-6 mt-8 lg:mt-0">
+          <!-- Header -->
+          <header class="flex items-center justify-between pb-4 border-b border-gray-300">
+            <h1 class="text-2xl font-semibold text-gray-800">Sales Management</h1>
+          </header>
+        
+          <!-- Sales Overview Section -->
+          <section class="mt-6 lg:px-3">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Sales Overview</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6">
+              <div class="bg-gradient-to-br from-blue-200 to-blue-400 hover:from-blue-300 hover:to-blue-500 p-4 transition-all hover:shadow-lg rounded-xl text-white text-shadow-on-hover">
+                <h3 class="text-lg font-semibold">Total Sales</h3>
+                <p class="text-2xl font-bold">0</p>
+              </div>
+              <div class="bg-gradient-to-br from-green-200 to-green-400 hover:from-green-300 hover:to-green-500 p-4 transition-all hover:shadow-lg rounded-xl text-white text-shadow-on-hover">
+                <h3 class="text-lg font-semibold">Revenue</h3>
+                <p class="text-2xl font-bold">$0</p>
+              </div>
+              <div class="bg-gradient-to-br from-yellow-200 to-yellow-400 hover:from-yellow-300 hover:to-yellow-500 p-4 transition-all hover:shadow-lg rounded-xl text-white text-shadow-on-hover">
+                <h3 class="text-lg font-semibold">Pending Sales</h3>
+                <p class="text-2xl font-bold">0</p>
+              </div>
+            </div>
+          </section>
+        
+          <!-- Create New Sale Form Modal -->
+          <section class="hidden mt-8 mx-3 px-4 transition-all hover:shadow-md rounded-2xl border border-gray-200">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800">Create New Sale</h2>
+            <form class="bg-white p-6 rounded-xl space-y-4">
+              <div>
+                <label for="carModel" class="block font-medium text-gray-700">Car Model</label>
+                <input type="text" id="carModel" class="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400" placeholder="Enter car model">
+              </div>
+              <div>
+                <label for="buyerName" class="block font-medium text-gray-700">Buyer Name</label>
+                <input type="text" id="buyerName" class="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400" placeholder="Enter buyer name">
+              </div>
+              <div>
+                <label for="salePrice" class="block font-medium text-gray-700">Sale Price</label>
+                <input type="number" id="salePrice" class="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400" placeholder="Enter sale price">
+              </div>
+              <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-all">
+                Create Sale
+              </button>
+            </form>
+          </section>
+        
+          <!-- Sales Records Section -->
+          <section class="mt-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-800 lg:px-3">Sales Records</h2>
+            <!-- Tabs for Mobile -->
+            <article class="block md:hidden">
+              <button class="fixed bottom-20 right-5 z-50 flex p-4 rounded-full mobile-focus-click-blue bg-gradient-to-br from-blue-600 to-blue-800 text-white text-shadow shadow-lg mobile-active-click transform transition-all">
+                <span class="material-symbols-rounded">
+                  person_add
+                </span>
+              </button>
+              <ul class="space-y-4">
+                <li class="bg-white p-4 rounded-lg border grid gap-2 relative">
+                  <section class="flex justify-start items-center gap-2">
+                    <img src="" alt="" class="rounded-full border-2 border-blue-500 w-10 h-10"/>
+                    <h2 class="text-gray-500">John Doe</h2>
+                  </section>
+                  <section>
+                    <p class="text-gray-800 font-medium">Sale ID: 001</p>
+                    <p class="text-gray-500">Car Model: Ford Mustang</p>
+                    <p class="text-gray-500">Price: $25,000</p>
+                  </section>
+                  <button class="absolute top-2 right-3 mobile-active-click transition-all">
+                    <span class="material-symbols-rounded">
+                      delete
+                    </span>
+                  </button>
+                </li>
+                
+                <!-- Additional cards here -->
+              </ul>
+              
+            </article>
+        
+            <!-- Table for Desktop -->
+            <div class="hidden md:block">
+              <section class="flex justify-between items-center">
+                <ul class="flex gap-3 mb-3 justify-center items-center">
+                  <li>
+                    <button class="px-3 py-2 bg-gradient-to-bl rounded-md websitebuilder-scale from-blue-500 to-blue-700 hover:shadow-xl text-white text-shadow transition-all transform hover:scale-105">Add Sale +</button>
+                  </li>
+                  <li>
+                    <button class="px-4 py-2 rounded-md shadow-md hover:shadow-lg border flex gap-2">
+                      <span class="material-symbols-rounded">
+                          filter_list
+                      </span>
+                      Filter
+                    </button>
+                  </li>
+                  
+                </ul>
+                <ul class="flex gap-3 mb-3 justify-center items-center">
+                  <li>
+                    <button class="px-3 py-2 bg-gradient-to-bl rounded-md websitebuilder-scale from-blue-500 to-blue-700 hover:shadow-xl text-white text-shadow transition-all transform hover:scale-105">View</button>
+                  </li>
+                  <li>
+                    <button class="px-3 py-2 bg-gradient-to-bl rounded-md websitebuilder-scale from-blue-500 to-blue-700 hover:shadow-xl text-white text-shadow transition-all transform hover:scale-105">Edit</button>
+                  </li>
+                  <li>
+                    <button class="px-3 py-2 bg-gradient-to-bl rounded-md websitebuilder-scale from-blue-500 to-blue-700 hover:shadow-xl text-white text-shadow transition-all transform hover:scale-105">Delete</button>
+                  </li>
+                </ul>
+              </section>
+              
+              <table class="w-full bg-white rounded-lg overflow-hidden text-left">
+                <thead>
+                  <tr class="bg-gray-100 text-gray-600 text-sm font-semibold uppercase">
+                    <th class="py-3 px-6">Sale ID</th>
+                    <th class="py-3 px-6">Car Model</th>
+                    <th class="py-3 px-6">Buyer Name</th>
+                    <th class="py-3 px-6">Price</th>
+                    <th class="py-3 px-6">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-gray-200 hover:bg-gray-50">
+                    <td class="py-3 px-6">001</td>
+                    <td class="py-3 px-6">Ford Mustang</td>
+                    <td class="py-3 px-6">John Doe</td>
+                    <td class="py-3 px-6">$25,000</td>
+                    <td class="py-3 px-6">
+                      <div class="flex gap-2 justfiy-center items-center w-full">
+                        <input type="checkbox" name="select" id="">
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Additional rows here -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </article>
+        
+        <!-- Finance -->
+        <!-- from hidden to grid -->
+        <article class=" lg:border rounded-3xl sm:p-3 gap-2 md:gap-3 lg:gap-4 max-w-full mt-8 md:mt-0">
+            <!-- Summary Cards -->
+            <div class="p-3 grid grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-6">
+              <!-- Company Income Card -->
+              <div class="transform hover:scale-105 transition-all hover:shadow-2xl bg-gradient-to-tr from-green-400 to-green-700 font-semibold text-white p-5 rounded-xl w-full h-full inline-block">
+                  <h2 class="text-lg lg:text-xl font-semibold mb-2 tracking-wide">Income</h2>
+                  <p class="text-3xl lg:text-4xl font-extrabold">$0</p>
+              </div>
+              
+              <!-- Monthly Payroll Card -->
+              <div class="transform hover:scale-105 transition-all hover:shadow-2xl bg-white p-5 border w-full h-full rounded-xl">
+                  <h2 class="text-lg lg:text-xl font-semibold text-gray-600 mb-2 tracking-wide">Monthly Payroll</h2>
+                  <p class="text-3xl lg:text-4xl font-extrabold text-gray-800">$0</p>
+              </div>
+              
+              <!-- Company Expenses Card -->
+              <div class="transform hover:scale-105 transition-all hover:shadow-2xl bg-gradient-to-tr from-red-400 to-red-700 text-white p-5 rounded-xl">
+                  <h2 class="text-lg lg:text-xl font-semibold mb-2 tracking-wide">Expenses</h2>
+                  <p class="text-3xl lg:text-4xl font-extrabold">$500</p>
+              </div>
+              
+              <!-- Pending Payments Card -->
+              <div class="transform hover:scale-105 transition-all hover:shadow-2xl bg-white p-5 rounded-xl border">
+                  <h2 class="text-lg lg:text-xl font-semibold text-yellow-600 mb-2 tracking-wide">Payments</h2>
+                  <p class="text-3xl lg:text-4xl font-extrabold text-yellow-600">1</p>
+              </div>
+            </div>
+          
+
+            <!-- Employee management -->
+            <section class="hidden mx-3 p-3 lg:mx-0 lg:p-6 border lg:border-none rounded-3xl">
+                <!-- Actions Section -->
+                <h1 class="text-3xl font-semibold text-gray-900 mb-8 px-4 py-4 border-b border-gray-200">Employee Management</h1> 
+                
+                <section class="flex justify-between w-full mb-4">
+                  <ul class="gap-4 hidden md:flex">  
+                      <li>
+                          <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                              + Add Employee
+                          </button>
+                      </li>
+                      <li>
+                        <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
+                            <span class="material-symbols-rounded text-lg text-gray-600">
+                                filter_list
+                            </span>
+                            Filter
+                        </button>
+                    </li>
+                  </ul>
+                  <ul class="hidden md:flex gap-3">
+                    <li><button class="text-white hover:from-green-600 hover:to-green-800 bg-gradient-to-tr from-green-500 to-green-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">Pay Now</button></li>
+                    <li><button class="text-white hover:from-blue-700 hover:to-blue-900 bg-gradient-to-tr from-blue-500 to-blue-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">Edit</button></li>
+                    <li><button class="text-white hover:from-red-600 hover:to-red-800 bg-gradient-to-tr from-red-500 to-red-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">Delete</button></li>
+                    <li><button class="text-white hover:from-gray-600 hover:to-gray-800 bg-gradient-to-tr from-gray-500 to-gray-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">View</button></li>
+                  </ul>
+                </section>
+              
+                <!-- Payment Table Desktop -->
+                <div class="bg-white rounded-md border overflow-x-auto hidden md:grid">
+                    <table class="min-w-full table-auto">
+                        <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Employee</th>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Payday</th>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Amount</th>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Category</th>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Work</th>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Status</th>
+                            <th class="py-3 px-6 text-gray-600 font-semibold border text-center">Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- Row Template -->
+                        <tr class="border-b border-gray-200 text-sm">
+                            <td class="py-3 px-6 whitespace-nowrap border">Darlene Robertson</td>
+                            <td class="py-3 px-6 border">19 December 2023</td>
+                            <td class="py-3 px-6 border">$500</td>
+                            <td class="py-3 px-6 border">Freelance</td>
+                            <td class="py-3 px-6 border">Automotive Mechanic</td>
+                            <td class="py-3 border px-4">
+                                <button class="bg-green-100 text-green-600 text-center rounded-full text-xs p-2 hidden">Paid</button>
+                                <button class="bg-yellow-100 text-yellow-600 text-center rounded-full text-xs p-2">Pending</button>
+                                <button class="bg-red-100 text-red-600 text-center rounded-full text-xs p-2 hidden">Cancled</button>
+                            </td>
+                            <td class="py-6 px-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <input type="checkbox">
+                            </td>
+                        </tr>
+                        <!-- Additional rows can be added in the same pattern -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Payment Mobile -->
+                <section class="md:hidden pb-10">
+                  <button class="fixed bottom-20 right-5 z-50 flex p-4 rounded-full mobile-focus-click-blue bg-gradient-to-br from-blue-600 to-blue-800 text-white text-shadow shadow-lg mobile-active-click transform transition-all">
+                    <span class="material-symbols-rounded">
+                      person_add
+                    </span>
+                  </button>
+                  <!-- Employee table -->
+                  <ul class="grid gap-2">
+                    <li>
+                      <article class="bg-white rounded-2xl shadow-md max-w-md mx-auto mb-6 overflow-x-hidden relative">
+                        <button type="button" class="mobile-focus-click-white absolute right-3 top-4 text-white mobile-active-click transform transition-all text-shadow rounded-full flex p-1">
+                          <span class="material-symbols-rounded">
+                            more_vert
+                          </span>
+                        </button>
+                        <div class="flex flex-col gap-2 p-5 items-center justify-between bg-gradient-to-br from-blue-500 to-blue-700">
+                            <img src="../images/profile-test.jpg" alt="" class="rounded-full w-20 h-20 object-cover"/>
+                            <h3 class="text-xl font-semibold text-white">Darlene Robertson</h3>
+                            <span class="text-xs bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full">Pending</span>
+                        </div>
+                    
+                        <div class="text-sm text-gray-600 p-4 flex flex-col gap-2">
+                            <p><strong>Payday:</strong> 19 December 2023</p>
+                            <p><strong>Amount:</strong> $500</p>
+                            <p><strong>Category:</strong> Freelance</p>
+                            <p><strong>Work:</strong> Automotive Mechanic</p>
+                        </div>
+                    </article>
+                    </li>
+                  </ul>
+                </section>
+
+                <!-- Modals for CRUD Operations -->
+                <!-- Add Payment Modal -->
+                <div id="addPaymentModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                <div class="bg-white p-6 rounded-md shadow-md max-w-md w-full">
+                    <h2 class="text-lg font-semibold mb-4">Add Employee</h2>
+                    <form>
+                    <label class="block mb-2">Employee Name</label>
+                    <input type="text" class="w-full border-gray-300 p-2 rounded-md mb-4" placeholder="Enter employee name">
+                    <label class="block mb-2">Payment Amount</label>
+                    <input type="number" class="w-full border-gray-300 p-2 rounded-md mb-4" placeholder="Enter payment amount">
+                    <label class="block mb-2">Category</label>
+                    <input type="text" class="w-full border-gray-300 p-2 rounded-md mb-4" placeholder="Enter category">
+                    <label class="block mb-2">Status</label>
+                    <select class="w-full border-gray-300 p-2 rounded-md mb-4">
+                        <option>Payment Success</option>
+                        <option>Pending Payment</option>
+                    </select>
+                    <div class="flex justify-end space-x-2">
+                        <button type="button" onclick="closeModal('addPaymentModal')" class="bg-gray-500 text-white px-4 py-2 rounded-md">Cancel</button>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Add Payment</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+
+                <!-- Edit Payment Modal -->
+                <div id="editPaymentModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                <div class="bg-white p-6 rounded-md shadow-md max-w-md w-full">
+                    <h2 class="text-lg font-semibold mb-4">Edit Payment</h2>
+                    <form>
+                    <label class="block mb-2">Employee Name</label>
+                    <input type="text" class="w-full border-gray-300 p-2 rounded-md mb-4" value="Darlene Robertson">
+                    <label class="block mb-2">Payment Amount</label>
+                    <input type="number" class="w-full border-gray-300 p-2 rounded-md mb-4" value="157912.77">
+                    <label class="block mb-2">Category</label>
+                    <input type="text" class="w-full border-gray-300 p-2 rounded-md mb-4" value="Freelance Payday">
+                    <label class="block mb-2">Status</label>
+                    <select class="w-full border-gray-300 p-2 rounded-md mb-4">
+                        <option>Payment Success</option>
+                        <option>Pending Payment</option>
+                    </select>
+                    <div class="flex justify-end space-x-2">
+                        <button type="button" onclick="closeModal('editPaymentModal')" class="bg-gray-500 text-white px-4 py-2 rounded-md">Cancel</button>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Update Payment</button>
+                    </div>
+                    </form>
+                </div>
+                </div>
+
+                <!-- Delete Payment Modal -->
+                <div id="deletePaymentModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                <div class="bg-white p-6 rounded-md shadow-md max-w-md w-full">
+                    <h2 class="text-lg font-semibold mb-4">Delete Payment</h2>
+                    <p>Are you sure you want to delete this payment record?</p>
+                    <div class="flex justify-end space-x-2 mt-4">
+                    <button onclick="closeModal('deletePaymentModal')" class="bg-gray-500 text-white px-4 py-2 rounded-md">Cancel</button>
+                    <button class="bg-red-500 text-white px-4 py-2 rounded-md">Delete</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- View Payment Modal -->
+                <div id="viewPaymentModal" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+                <div class="bg-white p-6 rounded-md shadow-md max-w-md w-full">
+                    <h2 class="text-lg font-semibold mb-4">Payment Details</h2>
+                    <p><strong>Employee:</strong> Darlene Robertson</p>
+                    <p><strong>Payday:</strong> 19 December 2023</p>
+                    <p><strong>Amount:</strong> $157,912.77</p>
+                    <p><strong>Category:</strong> Freelance Payday</p>
+                    <p><strong>Status:</strong> Payment Success</p>
+                    <div class="flex justify-end mt-4">
+                    <button onclick="closeModal('viewPaymentModal')" class="bg-gray-500 text-white px-4 py-2 rounded-md">Close</button>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+            <!-- Car Manufacture Management-->
+            <section class="max-w-full p-3 hidden">
+                <h2 class="text-3xl font-semibold mb-4 border-b pb-2">Manage Car Manufacturers</h2>
+              
+                <!-- Add Manufacturer Button -->
+                <div class="mb-6 hidden md:flex justify-between">
+                    <ul class="hidden md:flex gap-2">
+                        <li>
+                            <button class="bg-gradient-to-tr from-blue-500 to-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded-lg text-shadow transform hover:scale-105 transition-all">
+                                Add Manufacturer
+                            </button>
+                        </li>
+                        <li>
+                            <button class="px-4 py-2 rounded-md shadow-md hover:shadow-lg border flex gap-2">
+                                <span class="material-symbols-rounded">
+                                    filter_list
+                                </span>
+                                Filter
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="flex gap-3">
+                        <li><button class="text-white hover:from-green-600 hover:to-green-800 bg-gradient-to-tr from-green-500 to-green-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">Pay Now</button></li>
+                        <li><button class="text-white hover:from-blue-700 hover:to-blue-900 bg-gradient-to-tr from-blue-500 to-blue-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">Edit</button></li>
+                        <li><button class="text-white hover:from-red-600 hover:to-red-800 bg-gradient-to-tr from-red-500 to-red-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">Delete</button></li>
+                        <li><button class="text-white hover:from-gray-600 hover:to-gray-800 bg-gradient-to-tr from-gray-500 to-gray-700 text-center px-4 py-2 rounded-md shadow-md hover:scale-110 transition-all text-shadow  transform">View</button></li>
+                    </ul>
+                </div>
+              
+                <!-- Manufacturer Table Desktop -->
+                <section class="bg-white rounded-lg overflow-x-auto ">
+                  <table class="text-sm text-left border text-gray-500 min-w-full hidden md:inline-block">
+                    <thead class="bg-gray-200">
+                      <tr class="text-center">
+                        <th class="py-3 px-6 border border-gray-300">Name</th>
+                        <th class="py-3 px-6 border border-gray-300">Email</th>
+                        <th class="py-3 px-6 border border-gray-300">Location</th>
+                        <th class="py-3 px-6 border border-gray-300">Date Due</th>
+                        <th class="py-3 px-6 border border-gray-300">Amount Due</th>
+                        <th class="py-3 px-6 border border-gray-300">Payment Status</th>
+                        <th class="py-3 px-6 border border-gray-300">Selection</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Example of Manufacturer Row -->
+                      <tr class="border hover:bg-gray-50 text-center">
+                        <td class="py-3 px-6 border">Toyota</td>
+                        <td class="py-3 px-6 border">toyota@example.com</td>
+                        <td class="py-3 px-6 border">Japan</td>
+                        <td class="py-3 px-6 border">22 December 2023</td>
+                        <td class="py-3 px-6 border">$120,500.50</td>
+                        <td class="py-3 border">
+                            <button class="bg-green-100 text-green-600 text-center rounded-full text-xs p-2 hidden w-1/2">Paid</button>
+                            <button class="bg-yellow-100 text-yellow-600 text-center rounded-full text-xs p-2 w-1/2">Pending</button>
+                            <button class="bg-red-100 text-red-600 text-center rounded-full text-xs p-2 hidden w-1/2">Cancled</button>
+                        </td>
+                        <td class="py-5 px-6">
+                          <input type="checkbox">
+                        </td>
+                      </tr>
+                      <!-- More rows can be added dynamically -->
+                    </tbody>
+                  </table>
+
+                  <article class="pb-16 md:hidden relative">
+                    <button class="z-50 fixed bottom-20 text-shadow shadow-xl mobile-active-click transition-all mobile-focus-click-blue right-4 text-white rounded-full flex bg-gradient-to-br p-3 from-blue-600 to-blue-800">
+                      <span class="material-symbols-rounded">
+                        add
+                      </span>
+                    </button>
+                    <ul class="flex justify-between">
+                      <li>
+                        <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all lg:duration-300 lg:ease-in-out mobile-focus-click-gray lg:transform hover:scale-105 mobile-active-click">
+                          <span class="material-symbols-rounded text-lg text-gray-600">
+                              filter_list
+                          </span>
+                          Filter
+                        </button>
+                      </li>
+                      <li>
+                        <ul class="flex gap-1 items-center justify-center border-l pl-2">
+                          <li class="flex justify-center items-center">
+                            <button class="flex px-1 py-2">
+                              <span class="material-symbols-rounded">
+                                grid_view
+                              </span>
+                            </button>
+                          </li>
+                          <li class="flex justify-center items-center">
+                            <button class="flex px-1 py-2">
+                              <span class="material-symbols-rounded">
+                                table
+                              </span>
+                            </button>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                    <ul>
+                      <!-- copy paste list -->
+                      <li>
+                        <!-- Template -->
+                        <div class="bg-white rounded-lg border mt-5 mb-6 overflow-hidden relative">
+                          <!-- Header Section: Manufacturer Name and Status -->
+                          <div class="flex flex-col items-center justify-between bg-gradient-to-bl from-blue-600 to-blue-800 py-5 px-2 gap-3">
+                              <h3 class="text-xl font-semibold text-white">Toyota</h3>
+                              <span class="absolute right-4 top-20 text-xs bg-yellow-100 text-yellow-600 px-3 py-1 rounded-full shadow-md">Pending</span>
+                          </div>
+                      
+                          <!-- Details Section -->
+                          <div class="text-sm text-gray-600 px-3 py-3 grid gap-1">
+                              <p><strong>Email:</strong> toyota@example.com</p>
+                              <p><strong>Location:</strong> Japan</p>
+                              <p><strong>Date Due:</strong> 22 December 2023</p>
+                              <p><strong>Amount Due:</strong> $120,500.50</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </article>
+                </section>
+
+            </section>
+            
+            <!-- Tracking and Invoice -->
+            <section class="hidden gap-3">
+                <section class="text-center">
+                    <h1 class="text-2xl font-semibold text-gray-700">Finance Management</h1>
+                    <p class="text-gray-500">Manage payments, invoices, and expenses efficiently</p>
+                </section>
+            
+                <!-- Finance Management Section Grid -->
+                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Payment Tracking -->
+                    <div class="bg-white rounded-lg p-6 border border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">Payment Tracking</h2>
+    
+                        <!-- Placeholder for Payment Chart -->
+                        <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 mb-4">
+                            Chart Placeholder
+                        </div>
+    
+                        <!-- Payment Table -->
+                        <table class="w-full text-left text-sm text-gray-600">
+                            <thead class="text-gray-500 font-semibold border-b">
+                                <tr>
+                                    <th class="py-2">Vehicle</th>
+                                    <th class="py-2">Status</th>
+                                    <th class="py-2">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2">Honda Civic</td>
+                                    <td class="py-2">Paid</td>
+                                    <td class="py-2">$22,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Toyota Camry</td>
+                                    <td class="py-2">Pending</td>
+                                    <td class="py-2">$18,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Ford Escape</td>
+                                    <td class="py-2">Paid</td>
+                                    <td class="py-2">$25,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <!-- Expense Tracker -->
+                    <div class="bg-white rounded-lg p-6 border border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">Expense Tracker</h2>
+    
+                        <!-- Placeholder for Expense Chart -->
+                        <div class="h-32 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 mb-4">
+                            Chart Placeholder
+                        </div>
+    
+                        <!-- Expense Table -->
+                        <table class="w-full text-left text-sm text-gray-600">
+                            <thead class="text-gray-500 font-semibold border-b">
+                                <tr>
+                                    <th class="py-2">Category</th>
+                                    <th class="py-2">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2">Car Acquisition</td>
+                                    <td class="py-2">$50,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Marketing</td>
+                                    <td class="py-2">$8,500</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Maintenance</td>
+                                    <td class="py-2">$3,200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+    
+                    <!-- Invoicing -->
+                    <div class="bg-white rounded-lg p-6 border border-gray-200">
+                        <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">Invoicing</h2>
+    
+                        <!-- Invoicing Actions Table -->
+                        <table class="w-full text-left text-sm text-gray-600">
+                            <thead class="text-gray-500 font-semibold border-b">
+                                <tr>
+                                    <th class="py-2">Action</th>
+                                    <th class="py-2">Description</th>
+                                    <th class="py-2">Action Button</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2">Generate Invoice</td>
+                                    <td class="py-2">Create a new invoice for a customer purchase.</td>
+                                    <td class="py-2">
+                                        <button class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-600">
+                                            Generate Invoice
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">View Invoices</td>
+                                    <td class="py-2">View a list of all invoices for past transactions.</td>
+                                    <td class="py-2">
+                                        <button class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-600">
+                                            View Invoices
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2">Send Invoice</td>
+                                    <td class="py-2">Send a generated invoice to the customer.</td>
+                                    <td class="py-2">
+                                        <button class="w-full bg-blue-500 text-white py-2 px-4 rounded-lg font-semibold hover:bg-blue-600">
+                                            Send Invoice
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+    
+                <!-- Invoice Management Table -->
+                <section class="bg-white rounded-lg p-6 border border-gray-200">
+                    <h2 class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">Invoice Management</h2>
+                    
+                    <!-- Invoice Data Table -->
+                    <table class="w-full text-left text-sm text-gray-600">
+                        <thead class="text-gray-500 font-semibold border-b">
+                            <tr>
+                                <th class="py-2 text-center bg-gray-200">Invoice ID</th>
+                                <th class="py-2 text-center bg-gray-200">Customer Name</th>
+                                <th class="py-2 text-center bg-gray-200">Amount</th>
+                                <th class="py-2 text-center bg-gray-200">Generated</th>
+                                <th class="py-2 text-center bg-gray-200">Sent</th>
+                                <th class="py-2 text-center bg-gray-200">Viewed</th>
+                                <th class="py-2 text-center bg-gray-200">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-2 border text-center">INV-00123</td>
+                                <td class="py-2 border text-center">John Doe</td>
+                                <td class="py-2 border text-center">$1,200</td>
+                                <td class="py-2 border text-center">Yes</td>
+                                <td class="py-2 border text-center">Yes</td>
+                                <td class="py-2 border text-center">No</td>
+                                <td class="py-2 border text-center">
+                                    <div class="space-x-2 flex justify-center items-center gap-2">
+                                        <button class=" text-green-500 py-2 px-4 rounded-lg font-semibold hover:text-green-600">
+                                            View
+                                        </button>
+                                        <button class="text-blue-500 py-2 px-4 rounded-lg font-semibold hover:text-blue-600">
+                                            Send
+                                        </button>
+                                        <button class="text-red-500 py-2 px-4 rounded-lg font-semibold hover:text-red-600">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 border text-center">INV-00124</td>
+                                <td class="py-2 border text-center">Jane Smith</td>
+                                <td class="py-2 border text-center">$850</td>
+                                <td class="py-2 border text-center">Yes</td>
+                                <td class="py-2 border text-center">No</td>
+                                <td class="py-2 border text-center">Yes</td>
+                                <td class="py-2 border text-center">
+                                    <div class="space-x-2 flex justify-center items-center gap-2">
+                                        <button class=" text-green-500 py-2 px-4 rounded-lg font-semibold hover:text-green-600">
+                                            View
+                                        </button>
+                                        <button class="text-blue-500 py-2 px-4 rounded-lg font-semibold hover:text-blue-600">
+                                            Send
+                                        </button>
+                                        <button class="text-red-500 py-2 px-4 rounded-lg font-semibold hover:text-red-600">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 border text-center">INV-00125</td>
+                                <td class="py-2 border text-center">Mike Johnson</td>
+                                <td class="py-2 border text-center">$3,500</td>
+                                <td class="py-2 border text-center">No</td>
+                                <td class="py-2 border text-center">No</td>
+                                <td class="py-2 border text-center">No</td>
+                                <td class="py-2 border text-center">
+                                    <div class="space-x-2 flex justify-center items-center gap-2">
+                                        <button class=" text-green-500 py-2 px-4 rounded-lg font-semibold hover:text-green-600">
+                                            View
+                                        </button>
+                                        <button class="text-blue-500 py-2 px-4 rounded-lg font-semibold hover:text-blue-600">
+                                            Send
+                                        </button>
+                                        <button class="text-red-500 py-2 px-4 rounded-lg font-semibold hover:text-red-600">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+            
+            <!-- Payments due reminders -->
+            <section class="p-6 rounded-lg border-gray-200 hidden">
+                <section class="mb-6">
+                  <h2 class="text-xl font-semibold text-gray-700">Payment Due Reminders</h2>
+                  <p class="text-gray-600 text-sm">Track upcoming and overdue payments to ensure timely collections.</p>
+                </section>
+              
+                <!-- Upcoming Payments Section -->
+                <section aria-labelledby="upcoming-payments" class="mb-8">
+                  <h3 id="upcoming-payments" class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">Upcoming Payments</h3>
+                  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- 7 Days Due -->
+                    <div class="border p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-800">Due in 7 Days</h4>
+                      <ul class="text-sm text-gray-600 mt-2">
+                        <li>Customer: John Doe</li>
+                        <li>Amount: $1,200</li>
+                        <li>Due Date: Nov 20, 2024</li>
+                      </ul>
+                      <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Set Reminder</button>
+                    </div>
+                    
+                    <!-- 15 Days Due -->
+                    <div class="border p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-800">Due in 15 Days</h4>
+                      <ul class="text-sm text-gray-600 mt-2">
+                        <li>Customer: Jane Smith</li>
+                        <li>Amount: $850</li>
+                        <li>Due Date: Nov 28, 2024</li>
+                      </ul>
+                      <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Set Reminder</button>
+                    </div>
+              
+                    <!-- 30 Days Due -->
+                    <div class="border p-4 rounded-lg">
+                      <h4 class="font-semibold text-gray-800">Due in 30 Days</h4>
+                      <ul class="text-sm text-gray-600 mt-2">
+                        <li>Customer: Michael Johnson</li>
+                        <li>Amount: $3,000</li>
+                        <li>Due Date: Dec 3, 2024</li>
+                      </ul>
+                      <button class="mt-4 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Set Reminder</button>
+                    </div>
+                  </div>
+                </section>
+              
+                <!-- Overdue Payments Section -->
+                <section aria-labelledby="overdue-payments">
+                  <h3 id="overdue-payments" class="text-lg font-semibold text-gray-700 border-b pb-2 mb-4">Overdue Payments</h3>
+                  <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white text-sm">
+                      <thead class="bg-gray-100">
+                        <tr>
+                          <th class="py-2 px-4 text-left text-gray-600">Customer</th>
+                          <th class="py-2 px-4 text-left text-gray-600">Amount</th>
+                          <th class="py-2 px-4 text-left text-gray-600">Due Date</th>
+                          <th class="py-2 px-4 text-left text-gray-600">Days Overdue</th>
+                          <th class="py-2 px-4 text-left text-gray-600">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- Overdue Payment Row 1 -->
+                        <tr class="border-b">
+                          <td class="py-3 px-4">Sarah Lee</td>
+                          <td class="py-3 px-4">$1,500</td>
+                          <td class="py-3 px-4">Oct 30, 2024</td>
+                          <td class="py-3 px-4">14 days</td>
+                          <td class="py-3 px-4">
+                            <button class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600">Mark as Paid</button>
+                          </td>
+                        </tr>
+                        <!-- Overdue Payment Row 2 -->
+                        <tr class="border-b">
+                          <td class="py-3 px-4">David Wilson</td>
+                          <td class="py-3 px-4">$2,300</td>
+                          <td class="py-3 px-4">Oct 25, 2024</td>
+                          <td class="py-3 px-4">19 days</td>
+                          <td class="py-3 px-4">
+                            <button class="bg-red-500 text-white py-1 px-3 rounded-md hover:bg-red-600">Mark as Paid</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+            </section>
+
+            <!-- Customer Finance Details -->
+            <section class="py-8 px-4 md:px-8 hidden">
+                <div class="container mx-auto">
+                  <h2 class="text-2xl font-semibold text-gray-800 mb-6">Customer Finance Details</h2>
+              
+                  <!-- Financing Details -->
+                  <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Financing Details</h3>
+                    <div class="overflow-x-auto">
+                      <table class="min-w-full text-sm text-left text-gray-600">
+                        <thead class="text-gray-500 bg-gray-100">
+                          <tr>
+                            <th class="py-2 px-4 border-b">Customer Name</th>
+                            <th class="py-2 px-4 border-b">Loan Amount</th>
+                            <th class="py-2 px-4 border-b">Interest Rate</th>
+                            <th class="py-2 px-4 border-b">Monthly Payment</th>
+                            <th class="py-2 px-4 border-b">Payment Schedule</th>
+                            <th class="py-2 px-4 border-b">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Example Row -->
+                          <tr>
+                            <td class="py-2 px-4 border-b">John Doe</td>
+                            <td class="py-2 px-4 border-b">$25,000</td>
+                            <td class="py-2 px-4 border-b">5.5%</td>
+                            <td class="py-2 px-4 border-b">$500/month</td>
+                            <td class="py-2 px-4 border-b">Monthly</td>
+                            <td class="py-2 px-4 border-b">
+                              <a href="#" class="text-blue-500 hover:text-blue-700">View Details</a>
+                            </td>
+                          </tr>
+                          <!-- Add more rows as necessary -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              
+                  <!-- Payment History -->
+                  <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Payment History</h3>
+                    <div class="overflow-x-auto">
+                      <table class="min-w-full text-sm text-left text-gray-600">
+                        <thead class="text-gray-500 bg-gray-100">
+                          <tr>
+                            <th class="py-2 px-4 border-b">Payment Date</th>
+                            <th class="py-2 px-4 border-b">Amount Paid</th>
+                            <th class="py-2 px-4 border-b">Late Fees</th>
+                            <th class="py-2 px-4 border-b">Status</th>
+                            <th class="py-2 px-4 border-b">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Example Row -->
+                          <tr>
+                            <td class="py-2 px-4 border-b">2024-11-01</td>
+                            <td class="py-2 px-4 border-b">$500</td>
+                            <td class="py-2 px-4 border-b">$0</td>
+                            <td class="py-2 px-4 border-b text-green-600">Paid</td>
+                            <td class="py-2 px-4 border-b">
+                              <a href="#" class="text-blue-500 hover:text-blue-700">View Payment</a>
+                            </td>
+                          </tr>
+                          <!-- Add more rows as necessary -->
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+              
+                  <!-- Credit Status -->
+                  <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-gray-700 mb-4">Credit Status</h3>
+                    <div class="bg-gray-100 p-4 rounded-lg">
+                      <p class="text-gray-600 mb-2">Customer Name: <span class="font-semibold">John Doe</span></p>
+                      <p class="text-gray-600 mb-2">Credit Score: <span class="font-semibold text-green-600">750</span></p>
+                      <p class="text-gray-600 mb-2">Credit Status: <span class="font-semibold text-yellow-600">Good</span></p>
+                      <p class="text-gray-600">Payment Behavior: <span class="font-semibold text-green-600">On-Time</span></p>
+                      <a href="#" class="mt-4 inline-block px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg">View Full Report</a>
+                    </div>
+                  </div>
+              
+                  <!-- CTA Button to Add New Customer Finance Details -->
+                  <div class="text-center mt-8">
+                    <a href="#addCustomer" class="inline-block px-6 py-3 text-white bg-green-500 hover:bg-green-600 rounded-lg text-lg">Add New Customer Finance</a>
+                  </div>
+                </div>
+            </section>
+
+            <!-- Commission Manager -->
+            <section class="py-8 px-4 md:px-6 lg:px-8 hidden">
+                <!-- Section Title -->
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">Commission Management</h2>
+            
+                <!-- Salesperson Commissions Table -->
+                <div class="overflow-x-auto bg-white border rounded-lg mb-8">
+                <table class="w-full text-sm text-gray-600">
+                    <thead class="bg-gray-100 text-gray-700 border-b">
+                    <tr>
+                        <th class="px-4 py-3 text-left">Salesperson</th>
+                        <th class="px-4 py-3 text-left">Total Sales ($)</th>
+                        <th class="px-4 py-3 text-left">Commission Earned ($)</th>
+                        <th class="px-4 py-3 text-left">Commission Percentage (%)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="border-b">
+                        <td class="px-4 py-3">John Doe</td>
+                        <td class="px-4 py-3">25,000</td>
+                        <td class="px-4 py-3">1,500</td>
+                        <td class="px-4 py-3">6%</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="px-4 py-3">Jane Smith</td>
+                        <td class="px-4 py-3">30,000</td>
+                        <td class="px-4 py-3">1,800</td>
+                        <td class="px-4 py-3">6%</td>
+                    </tr>
+                    <tr>
+                        <td class="px-4 py-3">Mike Johnson</td>
+                        <td class="px-4 py-3">40,000</td>
+                        <td class="px-4 py-3">2,400</td>
+                        <td class="px-4 py-3">6%</td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            
+                <!-- Commission Payout Schedule Section -->
+                <div class="bg-gray-50 p-6 rounded-lg border">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Commission Payout Schedule</h3>
+                    
+                    <!-- Payout Table -->
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-gray-600">
+                        <thead class="bg-gray-100 text-gray-700 border-b">
+                            <tr>
+                            <th class="px-4 py-3 text-left">Salesperson</th>
+                            <th class="px-4 py-3 text-left">Payout Date</th>
+                            <th class="px-4 py-3 text-left">Amount Due ($)</th>
+                            <th class="px-4 py-3 text-left">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                            <td class="px-4 py-3">John Doe</td>
+                            <td class="px-4 py-3">2024-11-15</td>
+                            <td class="px-4 py-3">1,500</td>
+                            <td class="px-4 py-3 text-green-500">Paid</td>
+                            </tr>
+                            <tr class="border-b">
+                            <td class="px-4 py-3">Jane Smith</td>
+                            <td class="px-4 py-3">2024-11-20</td>
+                            <td class="px-4 py-3">1,800</td>
+                            <td class="px-4 py-3 text-yellow-500">Pending</td>
+                            </tr>
+                            <tr>
+                            <td class="px-4 py-3">Mike Johnson</td>
+                            <td class="px-4 py-3">2024-11-25</td>
+                            <td class="px-4 py-3">2,400</td>
+                            <td class="px-4 py-3 text-yellow-500">Pending</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                    </div>
+                </div>
+            
+                <!-- Manage Commission -->
+                <section class="bg-white py-8 px-4 md:px-6 lg:px-8 w-full hidden">
+                
+                    <!-- Section Title -->
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Manage Commissions</h2>
+                
+                    <!-- Commission Form (Create and Update) -->
+                    <div class="bg-gray-50 p-6 rounded-lg border mb-8 w-full">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Add/Update Commission</h3>
+                        
+                        <form id="commissionForm" class="space-y-4 w-full">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Salesperson Name -->
+                            <div class="flex flex-col">
+                                <label for="salespersonName" class="text-sm font-medium text-gray-600">Salesperson Name</label>
+                                <input type="text" id="salespersonName" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter salesperson's name" required>
+                            </div>
+                            
+                            <!-- Total Sales -->
+                            <div class="flex flex-col">
+                                <label for="totalSales" class="text-sm font-medium text-gray-600">Total Sales ($)</label>
+                                <input type="number" id="totalSales" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter total sales amount" required>
+                            </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <!-- Commission Earned -->
+                            <div class="flex flex-col">
+                                <label for="commissionEarned" class="text-sm font-medium text-gray-600">Commission Earned ($)</label>
+                                <input type="number" id="commissionEarned" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter commission earned" required>
+                            </div>
+                            
+                            <!-- Commission Percentage -->
+                            <div class="flex flex-col">
+                                <label for="commissionPercentage" class="text-sm font-medium text-gray-600">Commission Percentage (%)</label>
+                                <input type="number" id="commissionPercentage" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter commission percentage" required>
+                            </div>
+                            </div>
+                    
+                            <div class="text-right">
+                            <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                                Save Commission
+                            </button>
+                            </div>
+                        </form>
+                    </div>
+                
+                    <!-- Commission List (Display with CRUD options) -->
+                    <div class="overflow-x-auto bg-white rounded-t-xl ">
+                        <table class="w-full text-sm text-gray-600">
+                            <thead class="bg-gray-100 text-gray-700 border-b">
+                            <tr>
+                                <th class="px-4 py-3 text-left">Salesperson</th>
+                                <th class="px-4 py-3 text-left">Total Sales ($)</th>
+                                <th class="px-4 py-3 text-left">Commission Earned ($)</th>
+                                <th class="px-4 py-3 text-left">Commission Percentage (%)</th>
+                                <th class="px-4 py-3 text-left">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody id="commissionTableBody">
+                            <!-- Dynamic rows will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                
+                </section>
+                
+                <!-- Modal for Editing Commission -->
+                <!-- hidden by default should have flex -->
+                <div id="editCommissionModal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 justify-center items-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Edit Commission</h3>
+                    <form id="editCommissionForm">
+                    <div class="space-y-4">
+                        <div class="flex flex-col">
+                        <label for="editSalespersonName" class="text-sm font-medium text-gray-600">Salesperson Name</label>
+                        <input type="text" id="editSalespersonName" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                
+                        <div class="flex flex-col">
+                        <label for="editTotalSales" class="text-sm font-medium text-gray-600">Total Sales ($)</label>
+                        <input type="number" id="editTotalSales" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                
+                        <div class="flex flex-col">
+                        <label for="editCommissionEarned" class="text-sm font-medium text-gray-600">Commission Earned ($)</label>
+                        <input type="number" id="editCommissionEarned" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                
+                        <div class="flex flex-col">
+                        <label for="editCommissionPercentage" class="text-sm font-medium text-gray-600">Commission Percentage (%)</label>
+                        <input type="number" id="editCommissionPercentage" class="mt-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                
+                        <div class="text-right">
+                        <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
+                            Update Commission
+                        </button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                </div>
+            </section>
+
+            <!-- Revenue Reports -->
+            <!-- set to grid to display -->
+            <section class="gap-3 hidden">
+                <div class="bg-white p-6 rounded-lg border border-gray-200">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-6">Revenue by Source</h2>
+              
+                    <!-- Chart Placeholder (replace with actual chart later) -->
+                    <div class="h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400">
+                      Revenue Chart Placeholder
+                    </div>
+                </div>
+                <!-- Revenue Reports Section -->
+                <section class="space-y-8">
+                    <!-- Revenue by Vehicle Model -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Revenue by Vehicle Model</h2>
+                
+                        <!-- Table for Revenue by Vehicle Model -->
+                        <div class="overflow-x-auto">
+                        <table id="vehicleRevenueTable" class="min-w-full text-sm text-left text-gray-600">
+                            <thead class="bg-gray-100 text-gray-700">
+                            <tr>
+                                <th class="py-3 px-4 border-b">Vehicle Model</th>
+                                <th class="py-3 px-4 border-b">Units Sold</th>
+                                <th class="py-3 px-4 border-b">Total Revenue</th>
+                                <th class="py-3 px-4 border-b">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody id="vehicleRevenueBody">
+                            <!-- Table rows will be dynamically inserted -->
+                            </tbody>
+                        </table>
+                        </div>
+                        <button class="mt-4 p-2 bg-blue-500 text-white rounded">Add Vehicle Revenue</button>
+                    </div>
+    
+                
+                    <!-- Refunds and Adjustments -->
+                    <div class="bg-white p-6 rounded-lg border border-gray-200">
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-6">Refunds and Adjustments</h2>
+                
+                        <!-- Table for Refunds and Adjustments -->
+                        <div class="overflow-x-auto">
+                        <table id="refundsAdjustmentsTable" class="w-full text-sm text-left text-gray-600">
+                            <thead class="bg-gray-100 text-gray-700 ">
+                            <tr class="">
+                                <th class="py-3 px-4 border-b">Transaction ID</th>
+                                <th class="py-3 px-4 border-b">Refund/Adjustment Type</th>
+                                <th class="py-3 px-4 border-b">Amount</th>
+                                <th class="py-3 px-4 border-b">Date</th>
+                                <th class="py-3 px-4 border-b">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody id="refundsAdjustmentsBody">
+                            <!-- Table rows will be dynamically inserted -->
+                            </tbody>
+                        </table>
+                        </div>
+                        <button class="mt-4 p-2 bg-blue-500 text-white rounded">Add Refund/Adjustment</button>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Tax and Compliance Management -->
+            <section class="p-6 rounded-lg hidden">
+                <header class="mb-6 text-center">
+                  <h2 class="text-2xl font-semibold text-gray-800">Tax and Compliance Management</h2>
+                  <p class="text-gray-600 text-sm">Manage taxes, generate summaries, and keep track of compliance deadlines.</p>
+                </header>
+              
+                <!-- Tax Calculator -->
+                <section class="mb-8 border rounded-3xl p-3">
+                  <h3 class="text-xl font-semibold text-gray-700 mb-3">Tax Calculator</h3>
+                  <form action="#" method="POST" class="space-y-4">
+                    <div class="flex items-center justify-between space-x-4">
+                      <label for="vehicle-price" class="text-gray-600">Vehicle Price</label>
+                      <input type="number" id="vehicle-price" name="vehicle-price" placeholder="Enter price" class="w-3/4 p-2 border rounded-md">
+                    </div>
+              
+                    <div class="flex items-center justify-between space-x-4">
+                      <label for="tax-rate" class="text-gray-600">Tax Rate (%)</label>
+                      <input type="number" id="tax-rate" name="tax-rate" placeholder="Enter tax rate" class="w-3/4 p-2 border rounded-md">
+                    </div>
+              
+                    <div class="flex items-center justify-between space-x-4">
+                      <label for="calculated-tax" class="text-gray-600">Calculated Tax</label>
+                      <input type="text" id="calculated-tax" name="calculated-tax" disabled class="w-3/4 p-2 border rounded-md bg-gray-100">
+                    </div>
+              
+                    <button type="button"  class="w-full p-3 bg-blue-500 text-white rounded-md">Calculate Tax</button>
+                  </form>
+                </section>
+              
+                <!-- Tax Summary -->
+                <section class="mb-8 border rounded-3xl p-3">
+                  <h3 class="text-xl font-semibold text-gray-700 mb-3">Tax Summary</h3>
+                    
+                  <!-- Tax Summary Table -->
+                  <div class="overflow-x-auto mb-3">
+                    <table class="w-full text-sm text-gray-600">
+                      <thead class="text-gray-500 font-semibold bg-gray-100 rounded-t-3xl">
+                        <tr>
+                          <th class="py-2 px-4 text-left">Date</th>
+                          <th class="py-2 px-4 text-left">Total Sales</th>
+                          <th class="py-2 px-4 text-left">Total Tax</th>
+                          <th class="py-2 px-4 text-left">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tax-summary-table-body">
+                        <!-- Dynamically added rows will appear here -->
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Add Tax Summary Form -->
+                  <form id="tax-summary-form" class="hidden mb-4 space-y-4">
+                    <div class="flex items-center justify-between space-x-4">
+                      <label for="tax-summary-date" class="text-gray-600">Date</label>
+                      <input type="date" id="tax-summary-date" name="tax-summary-date" class="w-3/4 p-2 border rounded-md">
+                    </div>
+              
+                    <div class="flex items-center justify-between space-x-4">
+                      <label for="tax-summary-sales" class="text-gray-600">Total Sales</label>
+                      <input type="number" id="tax-summary-sales" name="tax-summary-sales" placeholder="Enter total sales" class="w-3/4 p-2 border rounded-md">
+                    </div>
+              
+                    <div class="flex items-center justify-between space-x-4">
+                      <label for="tax-summary-tax" class="text-gray-600">Total Tax</label>
+                      <input type="number" id="tax-summary-tax" name="tax-summary-tax" placeholder="Enter total tax" class="w-3/4 p-2 border rounded-md">
+                    </div>
+              
+                    <button type="button" class="w-full p-3 bg-green-500 text-white rounded-md">Add Tax Summary</button>
+                  </form>
+              
+                  
+                </section>
+              
+                <!-- Compliance Reminders -->
+                <section class="border rounded-3xl p-3">
+                  <h3 class="text-xl font-semibold text-gray-700 mb-3">Compliance Reminders</h3>
+                  <ul class="space-y-4">
+                    <li class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                      <span>Tax Filing Due</span>
+                      <button class="bg-green-500 text-white py-2 px-4 rounded-md">Add Reminder</button>
+                    </li>
+                    <li class="flex justify-between items-center bg-gray-100 p-4 rounded-lg">
+                      <span>Audit Scheduled</span>
+                      <button class="bg-green-500 text-white py-2 px-4 rounded-md">Add Reminder</button>
+                    </li>
+                  </ul>
+                </section>
+            </section>
+
+            <!-- Accounts Payable & Receivable -->
+            <section class="p-6 hidden">
+                <!-- Accounts Payable -->
+                <section aria-labelledby="accounts-payable" class="mb-10">
+                  <h2 id="accounts-payable" class="text-2xl font-semibold text-gray-800 mb-4">Accounts Payable</h2>
+              
+                  <div class="overflow-x-auto rounded-lg border">
+                    <table class="min-w-full table-auto text-sm text-gray-600">
+                      <thead class="bg-gray-100 text-gray-700">
+                        <tr>
+                          <th class="py-3 px-4 text-left">Vendor</th>
+                          <th class="py-3 px-4 text-left">Invoice Number</th>
+                          <th class="py-3 px-4 text-left">Amount</th>
+                          <th class="py-3 px-4 text-left">Due Date</th>
+                          <th class="py-3 px-4 text-left">Status</th>
+                          <th class="py-3 px-4 text-center">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-3 px-4">ABC Car Manufacturers</td>
+                          <td class="py-3 px-4">INV-12345</td>
+                          <td class="py-3 px-4">$50,000</td>
+                          <td class="py-3 px-4">12/15/2024</td>
+                          <td class="py-3 px-4 text-yellow-500">Pending</td>
+                          <td class="py-3 px-4 text-center">
+                            <button class="bg-blue-500 text-white py-1 px-3 rounded">Pay</button>
+                            <button class="bg-red-500 text-white py-1 px-3 rounded">Delete</button>
+                          </td>
+                        </tr>
+                        <!-- More rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+              
+                  <!-- Add Vendor Payment Form (for Create operation) -->
+                  <div class="mt-6">
+                    <button class="bg-green-500 text-white py-2 px-6 rounded-md">Add Vendor Payment</button>
+              
+                    <div id="addVendorPaymentForm" class="hidden mt-4 bg-white p-6 rounded-lg shadow-lg">
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Add Vendor Payment</h3>
+                      <form action="#" method="POST">
+                        <label class="block text-sm text-gray-700">Vendor Name</label>
+                        <input type="text" name="vendorName" class="w-full p-2 mt-2 border border-gray-300 rounded-md" placeholder="Vendor Name">
+                        
+                        <label class="block text-sm text-gray-700 mt-4">Invoice Number</label>
+                        <input type="text" name="invoiceNumber" class="w-full p-2 mt-2 border border-gray-300 rounded-md" placeholder="Invoice Number">
+                        
+                        <label class="block text-sm text-gray-700 mt-4">Amount</label>
+                        <input type="number" name="amount" class="w-full p-2 mt-2 border border-gray-300 rounded-md" placeholder="Amount">
+              
+                        <label class="block text-sm text-gray-700 mt-4">Due Date</label>
+                        <input type="date" name="dueDate" class="w-full p-2 mt-2 border border-gray-300 rounded-md">
+              
+                        <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-6 rounded-md">Save Payment</button>
+                      </form>
+                    </div>
+                  </div>
+                </section>
+              
+                <!-- Accounts Receivable -->
+                <section aria-labelledby="accounts-receivable" class="mb-10">
+                  <h2 id="accounts-receivable" class="text-2xl font-semibold text-gray-800 mb-4">Accounts Receivable</h2>
+              
+                  <div class="overflow-x-auto bg-white rounded-lg border">
+                    <table class="min-w-full table-auto text-sm text-gray-600">
+                      <thead class="bg-gray-100 text-gray-700">
+                        <tr>
+                          <th class="py-3 px-4 text-left">Customer</th>
+                          <th class="py-3 px-4 text-left">Invoice Number</th>
+                          <th class="py-3 px-4 text-left">Amount</th>
+                          <th class="py-3 px-4 text-left">Due Date</th>
+                          <th class="py-3 px-4 text-left">Status</th>
+                          <th class="py-3 px-4 text-center">Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-3 px-4">John Doe</td>
+                          <td class="py-3 px-4">REC-12345</td>
+                          <td class="py-3 px-4">$25,000</td>
+                          <td class="py-3 px-4">12/10/2024</td>
+                          <td class="py-3 px-4 text-red-500">Overdue</td>
+                          <td class="py-3 px-4 text-center">
+                            <button class="bg-green-500 text-white py-1 px-3 rounded">Receive</button>
+                            <button class="bg-yellow-500 text-white py-1 px-3 rounded">Update</button>
+                            <button class="bg-red-500 text-white py-1 px-3 rounded">Delete</button>
+                          </td>
+                        </tr>
+                        <!-- More rows as needed -->
+                      </tbody>
+                    </table>
+                  </div>
+              
+                  <!-- Add Accounts Receivable Form (for Create operation) -->
+                  <div class="mt-6">
+                    <button class="bg-green-500 text-white py-2 px-6 rounded-md" onclick="toggleForm('addReceivableForm')">Add Receivable</button>
+              
+                    <div id="addReceivableForm" class="hidden mt-4 bg-white p-6 rounded-lg shadow-lg">
+                      <h3 class="text-xl font-semibold text-gray-800 mb-4">Add Receivable</h3>
+                      <form action="#" method="POST">
+                        <label class="block text-sm text-gray-700">Customer Name</label>
+                        <input type="text" name="customerName" class="w-full p-2 mt-2 border border-gray-300 rounded-md" placeholder="Customer Name">
+              
+                        <label class="block text-sm text-gray-700 mt-4">Invoice Number</label>
+                        <input type="text" name="invoiceNumber" class="w-full p-2 mt-2 border border-gray-300 rounded-md" placeholder="Invoice Number">
+              
+                        <label class="block text-sm text-gray-700 mt-4">Amount</label>
+                        <input type="number" name="amount" class="w-full p-2 mt-2 border border-gray-300 rounded-md" placeholder="Amount">
+              
+                        <label class="block text-sm text-gray-700 mt-4">Due Date</label>
+                        <input type="date" name="dueDate" class="w-full p-2 mt-2 border border-gray-300 rounded-md">
+              
+                        <button type="submit" class="mt-4 bg-blue-500 text-white py-2 px-6 rounded-md">Save Receivable</button>
+                      </form>
+                    </div>
+                  </div>
+                </section>
+              
+              </div>
+            </section>
+            
+            <!-- Financial Reports -->
+            <section class="p-6 space-y-6 hidden">
+                <!-- Income Statement Card -->
+                <section class="bg-white rounded-lg p-6 border border-gray-200 max-w-5xl mx-auto">
+                  <header class="flex justify-between items-center border-b pb-3 mb-4">
+                    <h2 class="text-lg font-semibold text-gray-700">Income Statement</h2>
+                    <div class="flex space-x-2">
+                      <button class="bg-blue-500 text-white px-3 py-1 rounded text-sm">Add</button>
+                      <button class="bg-yellow-500 text-white px-3 py-1 rounded text-sm">Edit</button>
+                      <button class="bg-red-500 text-white px-3 py-1 rounded text-sm">Delete</button>
+                    </div>
+                  </header>
+                  
+                  <!-- Income Statement Content -->
+                  <div class="text-gray-600">
+                    <p class="mb-4">A summary of revenue, expenses, and net profit over a selected period.</p>
+                    <table class="w-full text-sm">
+                      <thead class="border-b">
+                        <tr>
+                          <th class="py-2 text-left">Item</th>
+                          <th class="py-2 text-right">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-2">Total Revenue</td>
+                          <td class="py-2 text-right">$500,000</td>
+                        </tr>
+                        <tr>
+                          <td class="py-2">Total Expenses</td>
+                          <td class="py-2 text-right">$300,000</td>
+                        </tr>
+                        <tr class="font-semibold">
+                          <td class="py-2">Net Profit</td>
+                          <td class="py-2 text-right">$200,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+              
+                <!-- Balance Sheet Card -->
+                <section class="bg-white rounded-lg p-6 border border-gray-200 max-w-5xl mx-auto">
+                  <header class="flex justify-between items-center border-b pb-3 mb-4">
+                    <h2 class="text-lg font-semibold text-gray-700">Balance Sheet</h2>
+                    <div class="flex space-x-2">
+                      <button class="bg-blue-500 text-white px-3 py-1 rounded text-sm">Add</button>
+                      <button class="bg-yellow-500 text-white px-3 py-1 rounded text-sm">Edit</button>
+                      <button class="bg-red-500 text-white px-3 py-1 rounded text-sm">Delete</button>
+                    </div>
+                  </header>
+              
+                  <!-- Balance Sheet Content -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-600">
+                    <div>
+                      <h3 class="text-gray-700 font-medium mb-2">Assets</h3>
+                      <ul class="space-y-1">
+                        <li>Cash: $150,000</li>
+                        <li>Inventory: $250,000</li>
+                        <li>Property & Equipment: $100,000</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 class="text-gray-700 font-medium mb-2">Liabilities</h3>
+                      <ul class="space-y-1">
+                        <li>Accounts Payable: $50,000</li>
+                        <li>Loans: $100,000</li>
+                        <li>Accrued Expenses: $20,000</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 class="text-gray-700 font-medium mt-6 md:mt-0">Equity</h3>
+                      <ul class="space-y-1">
+                        <li>Owner's Equity: $330,000</li>
+                      </ul>
+                    </div>
+                  </div>
+                </section>
+              
+                <!-- Cash Flow Statement Card -->
+                <section class="bg-white rounded-lg p-6 border border-gray-200 max-w-5xl mx-auto">
+                  <header class="flex justify-between items-center border-b pb-3 mb-4">
+                    <h2 class="text-lg font-semibold text-gray-700">Cash Flow Statement</h2>
+                    <div class="flex space-x-2">
+                      <button class="bg-blue-500 text-white px-3 py-1 rounded text-sm">Add</button>
+                      <button class="bg-yellow-500 text-white px-3 py-1 rounded text-sm">Edit</button>
+                      <button class="bg-red-500 text-white px-3 py-1 rounded text-sm">Delete</button>
+                    </div>
+                  </header>
+              
+                  <!-- Cash Flow Statement Content -->
+                  <div class="text-gray-600">
+                    <p class="mb-4">Track cash flow from operations, investments, and financing activities.</p>
+                    <table class="w-full text-sm">
+                      <thead class="border-b">
+                        <tr>
+                          <th class="py-2 text-left">Activity</th>
+                          <th class="py-2 text-right">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="py-2">Operating Cash Flow</td>
+                          <td class="py-2 text-right">$150,000</td>
+                        </tr>
+                        <tr>
+                          <td class="py-2">Investing Cash Flow</td>
+                          <td class="py-2 text-right">-$50,000</td>
+                        </tr>
+                        <tr>
+                          <td class="py-2">Financing Cash Flow</td>
+                          <td class="py-2 text-right">$30,000</td>
+                        </tr>
+                        <tr class="font-semibold">
+                          <td class="py-2">Net Cash Flow</td>
+                          <td class="py-2 text-right">$130,000</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </section>
+            </section>
+        </article>
+
+        <!-- Marketing and Promotion -->
+        <article class="hidden border border-gray-200 rounded-3xl shadow-lg p-6 gap-6 max-w-full transition-all duration-300 ease-in-out hover:shadow-xl">
+          <h2 class="text-3xl font-semibold text-gray-900 mb-6">Marketing and Promotions</h2>
+      
+          <!-- Active Promotions Section -->
+          <section aria-labelledby="active-promotions" class="space-y-5">
+              <h3 id="active-promotions" class="text-xl font-semibold text-blue-700">Active Promotions</h3>
+              <div class="space-y-4">
+                  <!-- Promotion Card Example -->
+                  <div class="flex justify-between items-center p-5 bg-gray-50 border border-gray-200 rounded-2xl shadow-md transform transition duration-300 hover:scale-105">
+                      <div>
+                          <h4 class="font-semibold text-gray-900">10% Off on All SUVs</h4>
+                          <p class="text-sm text-gray-500">Promotion active until 31 Dec 2023</p>
+                      </div>
+                      <button class="text-sm text-blue-700 hover:underline">Edit</button>
+                  </div>
+                  <div class="flex justify-between items-center p-5 bg-gray-50 border border-gray-200 rounded-2xl shadow-md transform transition duration-300 hover:scale-105">
+                      <div>
+                          <h4 class="font-semibold text-gray-900">Holiday Discount on Sedans</h4>
+                          <p class="text-sm text-gray-500">Promotion active until 15 Jan 2024</p>
+                      </div>
+                      <button class="text-sm text-blue-700 hover:underline">Edit</button>
+                  </div>
+                  <!-- Add New Promotion Button -->
+                  <button class="w-full py-3 mt-4 text-blue-700 border border-blue-400 rounded-xl hover:bg-blue-100 transition duration-300">+ Add New Promotion</button>
+              </div>
+          </section>
+      
+          <!-- Campaign Performance Section -->
+          <section aria-labelledby="campaign-performance" class="space-y-5 mt-8">
+              <h3 id="campaign-performance" class="text-xl font-semibold text-blue-700">Campaign Performance</h3>
+              <div class="grid gap-6 md:grid-cols-2">
+                  <!-- Email Campaign Chart Placeholder -->
+                  <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md transform transition duration-300 hover:scale-105">
+                      <h4 class="text-gray-700 font-medium mb-3">Email Campaigns</h4>
+                      <div class="h-32 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-lg">
+                          <p>Chart Placeholder</p>
+                      </div>
+                  </div>
+                  <!-- Social Media Campaign Chart Placeholder -->
+                  <div class="p-6 bg-gray-50 border border-gray-200 rounded-2xl shadow-md transform transition duration-300 hover:scale-105">
+                      <h4 class="text-gray-700 font-medium mb-3">Social Media Ads</h4>
+                      <div class="h-32 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 text-lg">
+                          <p>Chart Placeholder</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+      
+          <!-- Content Management Section -->
+          <section aria-labelledby="content-management" class="space-y-5 mt-8">
+              <h3 id="content-management" class="text-xl font-semibold text-blue-700">Content Management</h3>
+              <div class="space-y-4">
+                  <!-- Content Upload Card -->
+                  <div class="flex flex-col sm:flex-row items-center p-5 bg-gray-50 border border-gray-200 rounded-2xl shadow-md transform transition duration-300 hover:scale-105">
+                      <div class="flex-1">
+                          <h4 class="text-gray-900 font-semibold">Add New Content</h4>
+                          <p class="text-sm text-gray-500">Upload images, videos, or articles for upcoming promotions.</p>
+                      </div>
+                      <button class="mt-4 sm:mt-0 bg-blue-600 text-white px-5 py-2 rounded-xl text-sm font-medium hover:bg-blue-700 transition duration-300">Upload Content</button>
+                  </div>
+                  <!-- Example Content Card -->
+                  <div class="p-5 bg-gray-50 border border-gray-200 rounded-2xl shadow-md flex items-center justify-between transform transition duration-300 hover:scale-105">
+                      <div class="flex items-center">
+                          <img src="https://via.placeholder.com/50" alt="Car image" class="w-12 h-12 rounded-lg mr-4">
+                          <div>
+                              <h4 class="font-semibold text-gray-900">2023 Sedan Promo Image</h4>
+                              <p class="text-sm text-gray-500">Uploaded on 01 Dec 2023</p>
+                          </div>
+                      </div>
+                      <button class="text-sm text-red-600 hover:underline">Delete</button>
+                  </div>
+              </div>
+          </section>
+        </article>
+      
+    </main>
+</body>
+</html>

@@ -9,3 +9,128 @@
 .scroll-modification::-webkit-scrollbar-thumb {
     background-color: rgb(205, 205, 205);
 }
+
+
+.scroller-firefox {
+    scrollbar-width: thin;
+}
+  
+
+.text-shadow {
+    text-shadow: 0 0 5px #4b4b4b;
+}
+
+.text-shadow-on-hover:hover {
+    text-shadow: 0 0 10px #b4b4b4;
+}
+
+.text-shadow--ver-2 {
+    text-shadow: 1px 1px 2px #272727;
+}
+
+.text-effect-glow--white {
+    text-shadow: 1px 1px 0px #ffffff;
+}
+
+.text-effect-glow--white:hover {
+    text-shadow: 1px 1px 5px #ffffff, 
+                 1px 1px 10px #ffffff,
+                 1px 1px 15px #ffffff,
+                 1px 1px 20px #ffffff;
+}
+
+.text-effect-glow--green {
+    text-shadow: 0px 0px 5px #ccffba,
+                 0px 0px 5px #82ff54,
+                 0px 0px 5px #44ff00, 
+                 0px 0px 10px #03ab00,
+                 0px 0px 15px #006807,
+                 0px 0px 15px #004105;
+                 
+}
+
+@media (max-width:900px) {
+    .mobile-active-click {
+        transform: scale(1);
+    }
+
+    .mobile-active-click:active {
+        transform: scale(.7);
+    }
+
+    .mobile-focus-click-white:focus {
+        border: 1px solid white;
+    }
+
+    .mobile-focus-click-blue:focus {
+        border: 2px solid #0400ff;
+    }
+
+    .mobile-focus-click-gray:focus {
+        border: 2px solid #434343;
+    }
+}
+
+.background-dark {
+    background-color: #212121 !important;
+}
+
+.background-dark--ver2 {
+    background-color: #303030;
+}
+
+.websitebuilder-border {
+    border: 1px solid #454545;
+}
+
+.websitebuilder-border-r {
+    border-right: 1px solid #454545;
+}
+
+.websitebuilder-border-b {
+    border-bottom: 1px solid #454545;
+}
+
+.websitebuilder-symbol--size {
+    font-size: 1rem !important;
+}
+
+.websitebuilder-symbol--size-2 {
+    font-size: 1.2rem !important;
+}
+
+.websitebuilder-design-button--gradient-blue {
+    background: linear-gradient(to bottom left, #3b82f6 ,#1e40af) !important;
+}
+
+.websitebuilder-scale {
+    transform: scale(1);
+    transition: all .1s ease-in-out;
+}
+
+.websitebuilder-scale:hover {
+    transform: scale(1.12);
+    /* box-shadow: 0 2px 5px #008cff, 0 4px 10px #0062ff, 0 6px 15px #0022ff; */
+}
+
+.websitebuilder-scale:active {
+    transform: scale(.5);
+}
+
+.image-effect-glow {
+    filter: drop-shadow(0 0 0px #ffffff00);
+    -webkit-filter: drop-shadow(0 0 0px #ffffff00);
+    transition: all .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.image-effect-glow:hover {
+    filter: drop-shadow(0 0 2px white);
+}
+
+.custom-width {
+    width: 2.85em;
+}
+
+.z-index-10000 {
+    z-index: 1000000 !important;
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto4Sale | Admin | WebBuilder</title>
+    <link rel="stylesheet" href="../../dist/styles.css"/>
+    <link rel="stylesheet" href="../stylesheets/minor-modifications.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="background-dark flex flex-col justify-center items-center">
+    <header class="">
+        <!-- Desktop Nav Top-->
+        <nav class="websitebuilder-border background-dark z-50 fixed top-0 left-0 w-screen">
+            <ul class="flex">
+                <li class="grid items-center websitebuilder-border-r background-dark ">
+                    <a href="./admin.html" title="Back To Admin Panel" class="z-50 background-dark w-full h-full flex justify-center items-center">
+                        <div class="p-1 w-11 ">
+                            <img src="../images/logos/main-logo-white-car.svg" alt="" class="object-cover image-effect-glow">
+                        </div>
+                    </a>
+                </li>
+                <li class="flex justify-between items-center my-2 mx-2 w-full">
+                    <ul class="flex gap-3 items-center">
+                        <li>
+                            <button class="text-white websitebuilder-design-button--gradient-blue flex justify-center items-center gap-1 rounded-md px-2 py-1 text-sm text-shadow websitebuilder-scale">
+                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                    brush
+                                </span>
+                                Design
+                                <span class="material-symbols-rounded">
+                                    arrow_drop_down
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="flex items-center justify-center websitebuilder-scale">
+                                <span class="material-symbols-rounded text-gray-400 hover:text-white transition-all ">
+                                    database
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="flex items-center justify-center websitebuilder-scale">
+                                <span class="material-symbols-rounded text-gray-400 hover:text-white transition-all ">
+                                    bubble_chart
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="flex items-center justify-center websitebuilder-scale transition-all text-white text-effect-glow--green">
+                                <span class="material-symbols-rounded ">
+                                    play_arrow
+                                </span>
+                              </button>
+                        </li>
+                        
+                        
+                    </ul>
+
+                    <ul class="flex gap-3 items-center text-sm text-white">
+                        <li class="border-r pr-2">
+                            <button class="flex gap-1 items-center justify-center websitebuilder-scale ">
+                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                    language
+                                </span>
+                                English
+                            </button>
+                        </li>
+                        <li class="border-r pr-2">
+                            <button class="flex gap-2 items-center justify-center websitebuilder-scale">
+                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                    draft
+                                </span>
+                                Home
+                                <span class="material-symbols-rounded websitebuilder-scale">
+                                    arrow_drop_down
+                                </span>
+                            </button>
+                        </li>
+                        <li class="border-r pr-2">
+                            <button class="flex gap-2 items-center justify-center websitebuilder-scale">
+                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                    computer
+                                </span>
+                                Desktop Mode
+                                <span class="material-symbols-rounded websitebuilder-scale">
+                                    arrow_drop_down
+                                </span>
+                            </button>
+                            <!-- dropdown to sow various views -->
+                            <ul class="hidden shadow-lg fixed top-14 websitebuilder-border rounded-2xl p-3 h-48 grid gap-3 background-dark ">
+                                <li>
+                                    <button class="flex gap-2 justify-start items-center w-full h-full rounded-lg background-dark--ver2 px-2 py-1 websitebuilder-scale hover:shadow-md">
+                                        <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                            computer
+                                        </span>
+                                        Desktop Mode
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="flex gap-2 justify-start items-center w-full h-full text-shadow--ver-2 rounded-lg background-dark--ver2 px-2 py-1 websitebuilder-scale hover:shadow-md">
+                                        <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                            smartphone
+                                        </span>
+                                        Mobile Mode
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="flex gap-2 justify-start items-center w-full h-full text-shadow--ver-2 rounded-lg background-dark--ver2 px-2 py-1 websitebuilder-scale hover:shadow-md">
+                                        <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                            tablet_mac
+                                        </span>
+                                        Tab Mode
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="flex gap-2 justify-start items-center w-full h-full text-shadow--ver-2 rounded-lg background-dark--ver2 px-2 py-1 websitebuilder-scale hover:shadow-md">
+                                        <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                            tv
+                                        </span>
+                                        TV Mode
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button class="flex items-center justify-center websitebuilder-scale">
+                                
+                            </button>
+                        </li>
+                    </ul>
+
+                    <ul class="flex gap-3 items-center justify-center text-white">
+                        <li>
+                            <button class="flex items-center gap-1 justify-center websitebuilder-scale rounded-2xl px-2 py-1 ">
+                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                    ios_share
+                                </span>
+                                Share
+                            </button>
+                        </li>
+                        <li>
+                            <button class="flex items-center gap-1 justify-center websitebuilder-scale rounded-2xl px-2 py-1">
+                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                    published_with_changes
+                                </span>
+                                Publish
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- Desktop Nav side-->
+        <nav class="websitebuilder-border flex flex-col justify-between custom-width fixed top-0 left-0 h-screen overflow-y-auto overflow-x-hidden scroller-firefox scroll-modification pt-12 background-dark">
+            <ul class="flex flex-col justfiy-center items-center">
+                <!-- First Section -->
+                <li class="websitebuilder-border-b w-full">
+                    <ul class="grid gap-4 py-3">
+                        <li>
+                            <!-- Folder Structure -->
+                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="File Structure And Directories">
+                                <span class="material-symbols-rounded">
+                                    draft
+                                </span>
+                            </button>
+                            <!-- File Structure -->
+                            <ul class="hidden shadow-md background-dark--ver2 fixed left-14 top-14 websitebuilder-border rounded-md p-2 text-white flex flex-col gap-3" >
+                                <!-- Folder Structure -->
+                                <li>
+                                    <!-- Action btns Folder Structure -->
+                                    <section class="flex gap-5 justify-between items-center">
+                                        <button class="flex gap-1 justify-center items-center text-shadow z-50 transition-all text-gray-400 hover:text-white">
+                                            <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                folder_open
+                                            </span>
+                                            Folder Structure
+                                            <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                arrow_drop_down
+                                            </span>
+                                        </button>
+                                        <!-- more buttons -->
+                                        <ul class="flex gap-2 justify-center items-center">
+                                            <li>
+                                                <button class="flex gap-1  text-shadow z-50 transition-all transform text-gray-400 hover:text-white hover:scale-105 websitebuilder-scale ">
+                                                    <span class="material-symbols-rounded websitebuilder-symbol--size-2">
+                                                        note_add
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="flex gap-1  text-shadow z-50 transition-all transform text-gray-400 hover:text-white hover:scale-105 websitebuilder-scale ">
+                                                    <span class="material-symbols-rounded websitebuilder-symbol--size-2">
+                                                        create_new_folder
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <!-- file Structure Dropdown-->
+                                    <section class="websitebuilder-border-b mt-1 transition-all">
+
+                                    </section>
+                                </li>
+
+                                <!-- Website Structure -->
+                                <li>
+                                    <!-- Action btns Folder Structure -->
+                                    <section class="flex gap-5 justify-between items-center">
+                                        <button class="flex gap-1 justify-center items-center text-shadow z-50 transition-all text-gray-400 hover:text-white">
+                                            <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                folder_open
+                                            </span>
+                                            Web Structure
+                                            <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                arrow_drop_down
+                                            </span>
+                                        </button>
+                                        <ul class="flex gap-2 justify-center items-center">
+                                            <li>
+                                                <button class="flex gap-1  text-shadow z-50 transition-all transform text-gray-400 hover:text-white hover:scale-105 websitebuilder-scale ">
+                                                    <span class="material-symbols-rounded websitebuilder-symbol--size-2">
+                                                        note_add
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button class="flex gap-1  text-shadow z-50 transition-all transform text-gray-400 hover:text-white hover:scale-105 websitebuilder-scale ">
+                                                    <span class="material-symbols-rounded websitebuilder-symbol--size-2">
+                                                        create_new_folder
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                    <!-- Web Structure -->
+                                    <section class="transition-all websitebuilder-border-b mt-1">
+
+                                    </section>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Element -->
+                        <li>
+                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="Add Elements To The Page eg:text elements">
+                                <span class="material-symbols-rounded">
+                                    add
+                                </span>
+                            </button>
+                            <ul class="hidden "></ul>
+                        </li>
+
+                        <!-- Code Editor -->
+                        <li>
+                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Code Editor">
+                                <span class="material-symbols-rounded">
+                                    edit_note
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                </li>
+
+                <!-- Second Sections -->
+                <li class="websitebuilder-border-b w-full"> 
+                    <ul class="flex justfiy-center items-center py-3">
+                        <li class="w-full">
+                            <ul class="grid gap-4 items-center">
+                                <li class="relative">
+                                    <!-- Components -->
+                                    <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Components">
+                                        <span class="material-symbols-rounded">
+                                            deployed_code
+                                        </span>
+                                    </button>
+                                    <ul class="hidden fixed left-14 border top-48 background-dark--ver2  p-2 flex flex-col gap-2 websitebuilder-border rounded-md">
+                                        <!-- Header Components -->
+                                        <li>
+                                            <button class="text-gray-400 hover:text-white transition-all">
+                                                Header Components
+                                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                    arrow_drop_down
+                                                </span>
+                                            </button>
+                                            <ul class="websitebuilder-border-b mt-2">
+                                                <!-- Auto Responsive Header Components (Nav) -->
+                                            </ul>
+                                        </li>
+
+                                        <!-- Main Content Components-->
+                                        <li>
+                                            <button class="text-gray-400 hover:text-white transition-all">
+                                                Body Components
+                                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                    arrow_drop_down
+                                                </span>
+                                            </button>
+                                            <!-- Section Components -->
+                                            <ul class="websitebuilder-border-b mt-2">
+                                                <!-- Hero Section -->
+                                                <!-- Trust Section -->
+                                                <!-- Testamonial Section -->
+                                                <!-- Statistics Section -->
+                                            </ul>
+                                        </li>
+                                        <!-- Footer Components -->
+                                        <li>
+                                            <button class="text-gray-400 hover:text-white transition-all">
+                                                Footer Components
+                                                <span class="material-symbols-rounded websitebuilder-symbol--size">
+                                                    arrow_drop_down
+                                                </span>
+                                            </button>
+                                            <ul class="websitebuilder-border-b mt-2"></ul>
+                                        </li>
+                                        
+                                    </ul>
+                                </li>
+                                <li>
+                                    <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="library">
+                                        <span class="material-symbols-rounded">
+                                            local_library
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150">
+                                        <span class="material-symbols-rounded">
+                                            water_drop
+                                        </span>
+                                    </button>
+                                </li>
+                                <li>
+                                    <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Media">
+                                        <span class="material-symbols-rounded">
+                                            imagesmode
+                                        </span>
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                
+            </ul>
+
+            <ul class="flex flex-col justfiy-center items-center">
+                <li class="websitebuilder-border-b w-full">
+                    <ul class="grid gap-4 py-3">
+                        <li>
+                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150">
+                                <span class="material-symbols-rounded">
+                                    settings
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150">
+                                <span class="material-symbols-rounded">
+                                    analytics
+                                </span>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="./admin.html" class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150">
+                                <span class="material-symbols-rounded">
+                                    logout
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+             
+            </ul>
+        </nav>
+    </header>
+
+    <main class="lg:overflow-y-auto border h-screen w-3/4 bg-white">
+        
+    </main>
+</body>
+</html>
