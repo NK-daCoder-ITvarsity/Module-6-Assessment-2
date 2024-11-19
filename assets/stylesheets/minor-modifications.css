@@ -134,3 +134,30 @@
 .z-index-10000 {
     z-index: 1000000 !important;
 }
+
+.inventory-more-button {
+    transform: scale(.8);
+}
+
+.car-image--size {
+    transform: scale(1.5);
+}
+
+.tesla-scale {
+    transform: scale(1.5);
+}
+
+@media (min-width: 750px) {
+    .car-image--size {
+        transform: scale(2.3);
+    }
+    .tesla-scale {
+        transform: scale(3);
+    }
+}
+
+.flip-image {
+    transform: scaleX(-1);
+}
+
+
