@@ -139,15 +139,12 @@
     transform: scale(.8);
 }
 
-.car-image--size {
+.car-image--size, .tesla-scale  {
     transform: scale(1.5);
 }
 
-.tesla-scale {
-    transform: scale(1.5);
-}
 
-@media (min-width: 750px) {
+@media (min-width: 927px) {
     .car-image--size {
         transform: scale(2.3);
     }
@@ -160,4 +157,13 @@
     transform: scaleX(-1);
 }
 
+.left-position {
+    left: 13.5rem;
+}
+
+@media (max-width: 875px) {
+    .left-mobile-transition {
+        left: -100%;
+    }
+}
 
