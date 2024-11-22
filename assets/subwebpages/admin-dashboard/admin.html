@@ -423,7 +423,7 @@
                       <img src="../../images/profile-test.jpg" alt="Jonson Hussain's Profile" class="rounded-full border border-gray-300 w-10 h-10 object-cover"/>
                       <h2 class="font-medium text-gray-800 text-base">Jonson Hussain</h2>
                     </div>
-                    <button class="p-2 text-gray-400 hover:text-gray-700">
+                    <button class="p-2 text-gray-400 hover:text-gray-700 lg:hidden">
                       <span class="material-symbols-rounded inventory-more-button">more_vert</span>
                     </button>
                   </div>
@@ -469,7 +469,7 @@
                       <img src="../../images/profile-test.jpg" alt="Samantha Doe's Profile" class="rounded-full border border-gray-300 w-10 h-10 object-cover"/>
                       <h2 class="font-medium text-gray-800 text-base">Samantha Doe</h2>
                     </div>
-                    <button class="p-2 text-gray-400 hover:text-gray-700">
+                    <button class="p-2 text-gray-400 hover:text-gray-700 lg:hidden">
                       <span class="material-symbols-rounded inventory-more-button">more_vert</span>
                     </button>
                   </div>
@@ -515,7 +515,7 @@
                       <img src="../../images/profile-test.jpg" alt="Emily Johnson's Profile" class="rounded-full border border-gray-300 w-10 h-10 object-cover"/>
                       <h2 class="font-medium text-gray-800 text-base">Emily Johnson</h2>
                     </div>
-                    <button class="p-2 text-gray-400 hover:text-gray-700">
+                    <button class="p-2 text-gray-400 hover:text-gray-700 lg:hidden">
                       <span class="material-symbols-rounded inventory-more-button">more_vert</span>
                     </button>
                   </div>
@@ -946,132 +946,77 @@
         </article>
 
         <!-- Employee Management Section -->
-        <article class="page-article hidden rounded-3xl p-3 md:border lg:p-6 mt-8 lg:mt-0 bg-gradient-to-br from-gray-100 to-white shadow-xl" id="employee">
+        <article class="page-article hidden rounded-3xl p-3 md:border lg:p-6 mt-8 lg:mt-0" id="employee">
           <!-- Dashboard Overview -->
           <section class="mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-6">Employee Management Dashboard</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-3">
               <!-- Total Employees -->
-              <div class="rounded-xl bg-gradient-to-r from-purple-400 to-purple-600 p-6 text-white shadow-lg">
-                <h3 class="text-lg font-bold">Total Staff</h3>
-                <p class="text-3xl mt-2">35</p>
-                <div class="mt-4">
-                  <button class="w-full px-6 py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-800 transition-all">
+              <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-purple-400 to-purple-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
+                <h3 class="text-lg font-bold text-center md:text-left">Total Staff</h3>
+                <p class="text-3xl mt-2 text-center md:text-left pb-12">35</p>
+                <div class="mt-4 absolute bottom-3">
+                  <button class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-800 transition-all websitebuilder-scale">
                     View Employees
                   </button>
                 </div>
               </div>
           
               <!-- Employees to Hire -->
-              <div class="rounded-xl bg-gradient-to-r from-blue-400 to-blue-600 p-6 text-white shadow-lg">
-                <h3 class="text-lg font-bold">Employees to Hire</h3>
-                <p class="text-3xl mt-2">5</p>
-                <div class="mt-4">
-                  <button class="w-full px-6 py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all">
+              <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-blue-400 to-blue-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
+                <h3 class="text-lg font-bold text-center md:text-left">Need to Hire</h3>
+                <p class="text-3xl mt-2 text-center md:text-left pb-12">5</p>
+                <div class="mt-4 absolute bottom-4">
+                  <button class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all websitebuilder-scale">
                     Hire Employees
                   </button>
                 </div>
               </div>
           
-              
-          
               <!-- Employees to Pay -->
-              <div class="rounded-xl bg-gradient-to-r from-red-400 to-red-600 p-6 text-white shadow-lg">
-                <h3 class="text-lg font-bold">Employees to Pay</h3>
-                <p class="text-3xl mt-2">10</p>
-                <div class="mt-4">
-                  <button class="w-full px-6 py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-red-600 hover:to-red-800 transition-all">
+              <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-red-400 to-red-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
+                <h3 class="text-lg font-bold text-center md:text-left">Need To Pay</h3>
+                <p class="text-3xl mt-2 text-center md:text-left pb-12">10</p>
+                <div class="mt-4 absolute bottom-4">
+                  <button class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-red-600 hover:to-red-800 transition-all websitebuilder-scale">
                     Pay Employees
                   </button>
                 </div>
               </div>
           
               <!-- Employees with Queries -->
-              <div class="rounded-xl bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 text-white shadow-lg">
-                <h3 class="text-lg font-bold">Employees with Queries</h3>
-                <p class="text-3xl mt-2">3</p>
-                <div class="mt-4">
-                  <button class="w-full px-6 py-2 bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-yellow-600 hover:to-yellow-800 transition-all">
+              <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
+                <h3 class="text-lg font-bold text-center md:text-left">Employee Queries</h3>
+                <p class="text-3xl mt-2 text-center md:text-left pb-12">3</p>
+                <div class="mt-4 absolute bottom-4">
+                  <button class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-yellow-600 hover:to-yellow-800 transition-all websitebuilder-scale">
                     View Queries
                   </button>
                 </div>
               </div>
             </div>
           </section>
-        
-          <!-- Employee Table -->
-          <section>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Manage Employees</h2>
-            <!-- table -->
-            <section class="hidden rounded-xl overflow-auto">
-              <table class="w-full bg-white">
-                <thead class="bg-gradient-to-r from-gray-200 to-gray-300 text-gray-700">
-                  <tr>
-                    <th class="py-4 px-6 text-left">ID</th>
-                    <th class="py-4 px-6 text-left">Profile</th>
-                    <th class="py-4 px-6 text-left">Name</th>
-                    <th class="py-4 px-6 text-left">Position</th>
-                    <th class="py-4 px-6 text-left">Salary</th>
-                    <th class="py-4 px-6 text-left">Status</th>
-                    <th class="py-4 px-6 text-left">Paid</th>
-                    <th class="py-4 px-6 text-left">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <!-- Example Employee Row -->
-                  <tr class="border-b hover:bg-gray-100 transition-all">
-                    <td class="py-4 px-6">001</td>
-                    <td class="py-4 px-6">
-                      <img src="https://via.placeholder.com/50" alt="Profile Image" class="rounded-full w-12 h-12">
-                    </td>
-                    <td class="py-4 px-6 text-lg font-semibold text-gray-800">John Doe</td>
-                    <td class="py-4 px-6 text-md text-gray-600">Software Engineer</td>
-                    <td class="py-4 px-6 text-md text-gray-600">$5,000</td>
-                    <td class="py-4 px-6">
-                      <span class="inline-block px-3 py-1 text-sm rounded-full bg-green-500 text-white">Active</span>
-                    </td>
-                    <td class="py-4 px-6">
-                      <span class="inline-block px-3 py-1 text-sm rounded-full bg-red-500 text-white">No</span>
-                    </td>
-                    <td class="py-4 px-6 flex gap-2">
-                      <button class="px-4 py-2 text-white bg-gradient-to-r from-green-500 to-green-600 hover:bg-gradient-to-r hover:from-green-600 hover:to-green-700 rounded-md shadow-lg transition-all">Pay</button>
-                      <button class="px-4 py-2 text-white bg-gradient-to-r from-blue-500 to-blue-600 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 rounded-md shadow-lg transition-all">Edit</button>
-                      <button class="px-4 py-2 text-white bg-gradient-to-r from-red-500 to-red-600 hover:bg-gradient-to-r hover:from-red-600 hover:to-red-700 rounded-md shadow-lg transition-all">Remove</button>
-                    </td>
-                  </tr>
-                  <!-- Add more rows dynamically -->
-                </tbody>
-              </table>
-            </section>
+          <!-- actions -->
+          <ul class="gap-4 hidden md:flex">  
+            <li>
+                <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                    + Add Employee
+                </button>
+            </li>
             
-            <!-- card -->
-            <section class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-              <!-- Example Employee Card -->
-              <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all">
-                <div class="px-3 py-4 flex gap-5 items-center">
-                  <!-- Profile Image -->
-                  <img src="https://via.placeholder.com/100" alt="Profile Image" class="rounded-full w-24 h-24 border-4 border-gradient-to-r from-green-400 to-green-600 mb-4">
-                  
-                  <!-- Employee Name -->
-                  <section class="w-full h-full">
-                    <h3 class="text-xl font-semibold text-gray-800">John Doe</h3>
-                    <p class="text-md text-gray-600 mb-2">Software Engineer</p>
-                    <!-- Salary -->
-                    <p class="text-2xl text-gray-600 mb-2 ">$5,000</p>
-                    <!-- Status -->
-                    <span class="inline-block px-3 py-1 text-sm rounded-full bg-green-500 text-white mb-2">Active</span>
-                    
-                    <!-- Payment Status -->
-                    <span class="inline-block px-3 py-1 text-sm rounded-full bg-red-500 text-white ">Not Paid</span>
-                  </section>
-                  
-                  <!-- Actions -->
-                </div>
-              </div>
-              <!-- Add More Employee Cards as Needed -->
-            </section>
-            
-          </section>
+            <li>
+              <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
+                  <span class="material-symbols-rounded text-lg text-gray-600">
+                      filter_list
+                  </span>
+                  Filter
+              </button>
+            </li>
+          </ul>
+          <!-- Cards -->
+          <section id="employee-cards" class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+            <!-- cards automatically generated using javascript -->
+          </section> 
         </article>
 
         <!-- Manufacture Management Section -->
@@ -1525,7 +1470,7 @@
         </article>
         
         <!-- Finance -->
-        <!-- from hidden to grid -->
+        <!-- Budget-->
         <article class="hidden grid page-article lg:border rounded-3xl sm:p-3 gap-2 md:gap-3 lg:gap-4 mt-8 lg:mt-0 " id="budget">
           <!-- Header Section -->
           <section class="text-center mb-12">
@@ -1541,22 +1486,22 @@
               <form class="space-y-6">
 
                   <!-- Income Section -->
-                  <div class="flex items-center justify-between">
+                  <div class="flex flex-col sm:flex-row gap-4 lg:items-center justify-between">
                       <label for="income" class="text-lg text-gray-700">Monthly Income</label>
-                      <input type="number" id="income" name="income" placeholder="0" class="w-1/2 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                      <input type="number" id="income" name="income" placeholder="0" class="w-full lg:w-1/2 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
                   </div>
 
                   <!-- Expense Section -->
-                  <div class="flex items-center justify-between">
+                  <div class="flex flex-col sm:flex-row gap-4 lg:items-center justify-between">
                       <label for="expenses" class="text-lg text-gray-700">Monthly Expenses</label>
-                      <input type="number" id="expenses" name="expenses" placeholder="0" class="w-1/2 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                      <input type="number" id="expenses" name="expenses" placeholder="0" class="w-full lg:w-1/2 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
                   </div>
 
                   <!-- Add Expense Form -->
-                  <div class="flex items-center justify-between">
+                  <div class="flex lg:items-center gap-4 flex-col lg:flex-row justify-between">
                       <label for="new-expense" class="text-lg text-gray-700">Add Expense</label>
-                      <input type="text" id="new-expense" placeholder="Expense Name" class="w-1/3 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
-                      <input type="number" id="expense-amount" placeholder="Amount" class="w-1/3 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      <input type="text" id="new-expense" placeholder="Expense Name" class="w-full lg:w-1/3 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
+                      <input type="number" id="expense-amount" placeholder="Amount" class="w-full lg:w-1/3 p-3 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" />
                       <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded-md shadow-md hover:bg-blue-600 focus:outline-none">Add</button>
                   </div>
 
@@ -1580,7 +1525,8 @@
               </form>
           </section>
         </article>
-        
+
+        <!-- invoice -->
         <article id="invoice" class="page-article hidden border rounded-3xl p-6 gap-6 max-w-full transition-all duration-300 ease-in-out ">
           <div class="rounded-lg">
               <h1 class="text-2xl font-semibold text-gray-800 mb-6">Automated Invoice Tool</h1>
@@ -1601,19 +1547,26 @@
               <div class="mb-6">
                   <h2 class="text-xl font-semibold text-gray-800 mb-4">Invoice Items</h2>
                   <div class="">
-                      <div class="flex items-center ">
+                      <div class="flex lg:flex-row flex-col gap-2 items-center mb-10">
                           <input type="text" class="w-full border border-gray-300 rounded-md p-2" placeholder="Item Description">
-                          <input type="number" class="w-1/4 border border-gray-300 rounded-md p-2" placeholder="Quantity">
-                          <input type="number" class="w-1/4 border border-gray-300 rounded-md p-2" placeholder="Price">
-                          <button class="p-2 bg-red-500 text-white rounded-md hover:bg-red-600">
-                              <span class="material-symbols-rounded">delete</span>
-                          </button>
+                          <input type="number" class="w-full lg:w-1/4 border border-gray-300 rounded-md p-2" placeholder="Quantity">
+                          <input type="number" class="w-full lg:w-1/4 border border-gray-300 rounded-md p-2" placeholder="Price">
                       </div>
+                      <!-- more invoices -->
                       
                   </div>
-                  <button class="flex gap-2 mt-4 p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-                      <span class="material-symbols-rounded">add_circle</span> Add Item
-                  </button>
+                  <ul class="flex gap-2 items-center mt-4">
+                    <li class="flex justify-center items-center">
+                      <button class="flex items-center gap-2  p-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
+                        <span class="material-symbols-rounded">add_circle</span> Add Item
+                      </button>
+                    </li>
+                    <li class="flex justify-center items-center">
+                      <button class="flex p-2 bg-red-500 text-white rounded-md hover:bg-red-600">
+                        <span class="material-symbols-rounded">delete</span>
+                      </button>
+                    </li>
+                  </ul>
               </div>
   
               <!-- Total Section -->
@@ -1646,7 +1599,8 @@
           </div>
         </article>
 
-        <article id="billing-system" class="page-article hidden border rounded-3xl p-6 gap-6 max-w-full transition-all duration-300 ease-in-out ">
+        <!-- Billing -->
+        <article id="billing-system" class="mt-6 lg:mt-0 page-article hidden border rounded-3xl p-6 gap-6 max-w-full transition-all duration-300 ease-in-out ">
           <!-- Header Section -->
           <section class="text-center mb-6">
             <h1 class="text-3xl font-semibold text-gray-900">Automated Billing System</h1>
@@ -1654,16 +1608,17 @@
           </section>
 
           <!-- Billing Table Section -->
-          <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-              <div class="p-4 flex items-center justify-between border-b">
+          <div class="bg-white">
+              <div class="flex items-center justify-between border-b pb-3">
                   <h2 class="text-xl font-medium text-gray-900">Invoices Overview</h2>
                   <button class="flex items-center px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition">
-                      <span class="material-symbols-rounded mr-2">add</span> New Invoice
+                      <span class="material-symbols-rounded mr-2">add</span> Invoice
                   </button>
               </div>
               
               <!-- Invoices Table -->
-              <table class="min-w-full">
+              <section class="mt-5 rounded-3xl overflow-auto">
+                <table class="min-w-full">
                   <thead class="bg-gray-100 text-gray-600">
                       <tr>
                           <th class="py-3 px-4 text-left">Invoice #</th>
@@ -1708,10 +1663,13 @@
                           </td>
                       </tr>
                   </tbody>
-              </table>
+                </table>
+              </section>
+              
           </div>
         </article>
 
+        <!-- Reports -->
         <article id="reports" class="page-article hidden border rounded-3xl p-6 gap-6 max-w-full transition-all duration-300 ease-in-out ">
           <section class="">
             <h2 class="text-xl font-semibold text-gray-700 mb-4">Create/Manage Report</h2>
@@ -1778,11 +1736,53 @@
           </section>
         </article>
 
+        <!-- tax-calculator-->
         <article id="tax-calculator" class="page-article hidden border rounded-3xl p-6 gap-6 max-w-full transition-all duration-300 ease-in-out ">
+          <!-- Tax Calculator Container -->
+          <div class="bg-white max-w-md w-full p-8 rounded-2xl shadow-lg border border-gray-200">
+            <h1 class="text-3xl font-semibold text-gray-800 text-center mb-6">Tax Calculator</h1>
+            
+            <form id="tax-form" class="space-y-6">
+              <!-- Income Input -->
+              <div>
+                <label for="income" class="block text-sm font-medium text-gray-600">Enter Your Income</label>
+                <input 
+                  type="number" 
+                  id="income" 
+                  class="mt-2 w-full p-3 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="e.g., 50000"
+                >
+              </div>
 
+              <!-- Tax Rate Input -->
+              <div>
+                <label for="tax-rate" class="block text-sm font-medium text-gray-600">Tax Rate (%)</label>
+                <input 
+                  type="number" 
+                  id="tax-rate" 
+                  class="mt-2 w-full p-3 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="e.g., 15"
+                >
+              </div>
+
+              <!-- Result Display -->
+              <div class="p-4 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg shadow">
+                <p class="text-sm text-gray-600">Tax Amount:</p>
+                <p id="tax-amount" class="text-lg font-semibold text-gray-800 mt-1">$0.00</p>
+                <p class="text-sm text-gray-600 mt-2">Total After Tax:</p>
+                <p id="total-amount" class="text-lg font-semibold text-gray-800 mt-1">$0.00</p>
+              </div>
+
+              <!-- Calculate Button -->
+              <button 
+                type="button" 
+                id="calculate-btn" 
+                class="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-md shadow-md hover:opacity-90 transition duration-200">
+                Calculate
+              </button>
+            </form>
+          </div>
         </article>
-
-
         
         <!-- Settings -->
         <article class="page-article hidden rounded-3xl p-6 md:border lg:p-8 mt-8 lg:mt-0 shadow-xl bg-gradient-to-r " id="settings">
@@ -1882,7 +1882,6 @@
           </section>
         </article>
         
-
     </main>
 </body>
 </html>

@@ -87,4 +87,46 @@ const customers = Array.from({ length: 55 }, (_, i) => ({
   // Initial Render
   renderCards(currentPageCards);
   renderTable(currentPageTable);
+
+/* =================== Employee management data generator ===================== */
+
+const employees = [
+  { name: "John Doe", role: "Sales Manager", salary: "$7,500", status: "Active", payment: "Paid", image: "../../images/john-doe.png" },
+  { name: "Jane Smith", role: "Finance Specialist", salary: "$6,200", status: "Active", payment: "Not Paid", image: "../../images/jane-smith.png" },
+  { name: "Carlos Vega", role: "Mechanic", salary: "$4,800", status: "Inactive", payment: "Not Paid", image: "../../images/carlos-vega.png" },
+  { name: "Samantha Lee", role: "Customer Support", salary: "$5,000", status: "Active", payment: "Paid", image: "../../images/samantha-lee.png" },
+  { name: "Michael Brown", role: "Dealer", salary: "$6,500", status: "Active", payment: "Paid", image: "../../images/michael-brown.png" },
+  // Add more employees (35 total)
+];
+
+const container = document.getElementById('employee-cards');
+
+employees.forEach((employee) => {
+  const card = document.createElement('div');
+  card.className = "bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden";
+
+  card.innerHTML = `
+    <div class="relative p-6 flex items-center gap-4 justify-end">
+      <img src="${employee.image}" alt="${employee.name}'s Profile" class="absolute right-0 lg:right-3 w-60 object-cover drop-shadow-lg">
+      <section class="flex-1 z-10">
+        <h3 class="text-lg font-medium text-gray-900">${employee.name}</h3>
+        <p class="text-sm text-gray-600">${employee.role}</p>
+        <p class="text-lg font-semibold text-blue-500 mt-2">${employee.salary}</p>
+        <div class="flex items-center gap-2 mt-2">
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full ${employee.status === "Active" ? "bg-green-500" : "bg-gray-400"} text-white">
+            <span class="material-symbols-rounded text-sm mr-1">${employee.status === "Active" ? "check_circle" : "pause_circle"}</span> ${employee.status}
+          </span>
+          <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full ${employee.payment === "Paid" ? "bg-green-500" : "bg-red-500"} text-white">
+            <span class="material-symbols-rounded text-sm mr-1">${employee.payment === "Paid" ? "check_circle" : "error"}</span> ${employee.payment}
+          </span>
+        </div>
+      </section>
+      <button class="text-gray-600 hover:text-blue-500 absolute top-3 right-3 websitebuilder-scale">
+        <span class="material-symbols-rounded text-3xl">more_vert</span>
+      </button>
+    </div>
+  `;
+
+  container.appendChild(card);
+});
   

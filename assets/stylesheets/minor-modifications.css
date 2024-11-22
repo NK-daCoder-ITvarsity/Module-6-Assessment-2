@@ -105,7 +105,7 @@
 
 .websitebuilder-scale {
     transform: scale(1);
-    transition: all .1s ease-in-out;
+    transition: all .1s ease-out;
 }
 
 .websitebuilder-scale:hover {
@@ -165,5 +165,9 @@
     .left-mobile-transition {
         left: -100%;
     }
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, #f0f4f8, #c1d5ef);
 }
 
