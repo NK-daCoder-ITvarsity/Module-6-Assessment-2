@@ -1,3 +1,5 @@
+
+
 .scroll-modification::-webkit-scrollbar {
     width: 8px;
 }
@@ -114,7 +116,7 @@
 }
 
 .websitebuilder-scale:active {
-    transform: scale(.5);
+    transform: scale(.7);
 }
 
 .image-effect-glow {
@@ -139,15 +141,16 @@
     transform: scale(.8);
 }
 
-.car-image--size, .tesla-scale  {
-    transform: scale(1.5);
+.car-image--size  {
+    transform: scale(1.3);
 }
 
 
 @media (min-width: 927px) {
-    .car-image--size {
-        transform: scale(2.3);
+    .car-image--size  {
+        transform: scale(2);
     }
+    
     .tesla-scale {
         transform: scale(3);
     }

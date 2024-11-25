@@ -55,6 +55,60 @@ document.querySelectorAll(".table-card--toggle").forEach((btns) => {
     });
 });
 
+// Sales
+document.querySelectorAll(".salesViewDetailBtns").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".salesCardSection").forEach((section) => {
+            const btnAttribute = btn.getAttribute("data-section");
+            if(section.id === btnAttribute) {
+                section.classList.toggle("hidden");
+            }
+            else {
+                section.classList.add("hidden");
+            }
+            
+        });
+    })
+})
+
+// JavaScript to handle commission calculations, etc.
+const salesData = {
+    carsSold: 50,
+    revenueGenerated: 1200000,
+    avgDealSize: 24000,
+    commissionRate: 0.05, // 5% commission
+    targetSales: 70
+};
+
+// Calculate Commission
+const commission = salesData.revenueGenerated * salesData.commissionRate;
+
+// Update the UI with dynamic data
+document.getElementById('cars-sold').innerText = salesData.carsSold;
+document.getElementById('revenue-generated').innerText = `$${salesData.revenueGenerated.toLocaleString()}`;
+document.getElementById('avg-deal-size').innerText = `$${salesData.avgDealSize.toLocaleString()}`;
+document.getElementById('commission-amount').innerText = `$${commission.toLocaleString()}`;
+
+// Calculate Progress Bar
+const progressPercent = (salesData.carsSold / salesData.targetSales) * 100;
+document.getElementById('progress-bar').style.width = `${progressPercent}%`;
+
+// Marketing and promotions
+document.querySelectorAll(".marketingPromotionalBtns").forEach((btns) => {
+    btns.addEventListener("click", () => {
+        const getAttribute = btns.getAttribute("data-section");
+
+        document.querySelectorAll(".marketManagementSections").forEach((sections)=>{
+            if (sections.id === getAttribute) {
+                sections.classList.remove("hidden");
+            }
+            else {
+                sections.classList.add("hidden");
+            }
+        });
+    });
+})
+
 
 
 

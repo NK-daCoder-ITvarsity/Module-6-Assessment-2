@@ -46,7 +46,6 @@
         </ul>
 
         <!-- Desktop/Tablet Navigation -->
-        
         <nav class="hidden top-0 left-0 lg:flex pb-3 px-2 py-2 overflow-y-auto scroller-firefox scroll-modification flex-col justify-between gap-8 h-screen fixed lg:w-56 bg-white shadow-lg border-r border-gray-200 z-50 transition-all duration-300 ease-in-out" id="mainMenu">
           <button class="lg:hidden flex items-center justify-center fixed left-position top-10 w-16 h-16 rounded-tr-3xl rounded-br-3xl bg-gradient-to-bl from-blue-500 to-blue-800 text-white" id="cancleBtn">
             <span class="material-symbols-rounded">
@@ -62,9 +61,9 @@
 
             <!-- Main Navigation Section -->
             <section class="flex flex-col gap-2 lg:gap-4 mt-5 lg:mt-0">
-              <div class="text-gray-400 font-semibold uppercase tracking-wide text-sm px-3">
+              <h1 class="text-gray-400 font-semibold uppercase tracking-wide text-sm px-3">
                 Dashboard
-              </div>
+              </h1>
               <ul class="flex flex-col gap-1 text-blue-200">
                 <li>
                   <button class="navButtons flex items-center gap-3 p-2 transition w-full border-l-4 border-blue-500 text-blue-500" data-section="overview">
@@ -212,10 +211,8 @@
 
     <main class="text-gray-700 lg:absolute md:mx-3  lg:mt-2 lg:right-14 lg:w-3/4 antialiased bg-gray-9 font-sans flex flex-col gap-2 mt-5">
         <!-- Desktop top search -->
-        <section class="page-article hidden border rounded-2xl lg:flex gap-3 justify-between px-3 py-2">
-            <div class="flex justify-center items-center gap-1 w-full">
-                
-            </div>
+        <section class="page-article hidden border rounded-2xl lg:flex gap-3 justify-between items-center px-3 py-2">
+            <h1 class="text-xl font-sans">Dashboard</h1>
             
             <ul class="flex gap-2">
                 <li>
@@ -318,6 +315,7 @@
           <section class="p-3">
             <h2 class="text-2xl md:text-3xl">Inventory Management</h2>
           </section>
+
           <!-- Summary-->
           <section>
             <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 p-4">
@@ -357,19 +355,15 @@
           </section>
           
           <!-- sections cta desktop and tab -->
-          <!-- Add Customer Button -->
+          <!-- Actions -->
           <section class="mt-8 text-right gap-2 flex justify-between mb-3 mx-3 md:mx-6">
             <ul class="gap-4 hidden md:flex">  
               <li>
-                  <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                  <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ">
                       + Add Car
                   </button>
               </li>
-              <li>
-                <button class="px-5 py-2 bg-gradient-to-r from-red-600 to-yellow-300 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
-                    + Remove Car
-                </button>
-              </li>
+              
               <li>
                 <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
                     <span class="material-symbols-rounded text-lg text-gray-600">
@@ -379,23 +373,6 @@
                 </button>
             </li>
            </ul>
-            <ul class="flex items-center">
-              <li class="border-r px-2 mx-2">
-                <button class="table-card--toggle rounded-md flex gap-2 transition-all  hover:text-gray-600 websitebuilder-scale " title="Table mode" data-section="inventory-table">
-                    <span class="material-symbols-rounded">
-                      table
-                    </span>
-                </button>
-              </li>
-              <li>
-                <button class="table-card--toggle rounded-md flex gap-2 transition-all text-gray-400 hover:text-gray-600 websitebuilder-scale " title="Grid mode" data-section="inventory-card">
-                  <span class="material-symbols-rounded">
-                    grid_view
-                  </span>
-                </button>
-              </li>
-            </ul>
-           
             
             <!-- Mobile -->
             <button class="lg:hidden fixed bottom-5 right-5 z-50 flex p-4 rounded-full mobile-focus-click-blue bg-gradient-to-br from-blue-600 to-blue-800 text-white text-shadow shadow-lg mobile-active-click transform transition-all">
@@ -406,278 +383,10 @@
           </section>
 
           <!-- Cards -->
-          <ul class="data-cards-tables hidden grid grid-cols-1 md:grid-cols-2 gap-4 p-6" id="inventory-card">
-            <!-- Card 1 -->
-            <li class="relative rounded-3xl overflow-hidden border transition-all transform hover:scale-105">
-              <article class="grid grid-cols-1 lg:grid-cols-2 gap-6 overflow-hidden transition-transform duration-300 hover:scale-105">
-                <!-- Image Section -->
-                <section class="relative flex items-center justify-center car-image--size">
-                  <img src="../../images/toyota/toyota-gr-86.png" alt="Toyota GR 86" class="w-full h-auto object-cover transition-opacity duration-300 hover:opacity-90 lg:absolute lg:-left-3 lg:w-96 lg:object-cover"/>
-                </section>
-
-                <!-- Content Section -->
-                <section class="p-6 flex flex-col gap-4">
-                  <!-- Header: Profile -->
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                      <img src="../../images/profile-test.jpg" alt="Jonson Hussain's Profile" class="rounded-full border border-gray-300 w-10 h-10 object-cover"/>
-                      <h2 class="font-medium text-gray-800 text-base">Jonson Hussain</h2>
-                    </div>
-                    <button class="p-2 text-gray-400 hover:text-gray-700 lg:hidden">
-                      <span class="material-symbols-rounded inventory-more-button">more_vert</span>
-                    </button>
-                  </div>
-
-                  <!-- Car Details -->
-                  <div>
-                    <h2 class="text-xl font-semibold text-gray-900">Toyota GR 86</h2>
-                    <p class="text-lg font-semibold text-blue-600">$<span>285,892</span></p>
-                  </div>
-
-                  <!-- Features -->
-                  <ul class="flex justify-between gap-4 text-sm text-gray-600">
-                    <li class="flex flex-col items-center inventory-more-button">
-                      <span class="material-symbols-rounded text-blue-500">speed</span>
-                      <span>225 km/h</span>
-                    </li>
-                    <li class="flex flex-col items-center inventory-more-button">
-                      <span class="material-symbols-rounded text-blue-500">local_gas_station</span>
-                      <span>Petrol</span>
-                    </li>
-                    <li class="flex flex-col items-center inventory-more-button">
-                      <span class="material-symbols-rounded text-blue-500">location_on</span>
-                      <span>Dubai</span>
-                    </li>
-                  </ul>
-                </section>
-              </article>
-            </li>
-
-            <!-- Card 2 -->
-            <li class="relative rounded-3xl overflow-hidden border transition-all transform hover:scale-105">
-              <article class="grid grid-cols-1 lg:grid-cols-2 gap-6 overflow-hidden transition-transform duration-300 hover:scale-105">
-                <!-- Image Section -->
-                <section class="relative flex items-center justify-center car-image--size">
-                  <img src="../../images/audi/audi-rs7.png" alt="Audi RS7" class="w-full h-auto object-cover transition-opacity duration-300 hover:opacity-90 lg:absolute lg:-left-3 lg:w-96 lg:object-cover pr-3"/>
-                </section>
-
-                <!-- Content Section -->
-                <section class="p-6 flex flex-col gap-4">
-                  <!-- Header: Profile -->
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                      <img src="../../images/profile-test.jpg" alt="Samantha Doe's Profile" class="rounded-full border border-gray-300 w-10 h-10 object-cover"/>
-                      <h2 class="font-medium text-gray-800 text-base">Samantha Doe</h2>
-                    </div>
-                    <button class="p-2 text-gray-400 hover:text-gray-700 lg:hidden">
-                      <span class="material-symbols-rounded inventory-more-button">more_vert</span>
-                    </button>
-                  </div>
-
-                  <!-- Car Details -->
-                  <div>
-                    <h2 class="text-xl font-semibold text-gray-900">Audi RS7</h2>
-                    <p class="text-lg font-semibold text-blue-600">$<span>349,990</span></p>
-                  </div>
-
-                  <!-- Features -->
-                  <ul class="flex justify-between gap-4 text-sm text-gray-600">
-                    <li class="flex flex-col items-center inventory-more-button text-center">
-                      <span class="material-symbols-rounded text-blue-500">speed</span>
-                      <span>280 km/h</span>
-                    </li>
-                    <li class="flex flex-col items-center inventory-more-button text-center">
-                      <span class="material-symbols-rounded text-blue-500">electric_car</span>
-                      <span>Hybrid</span>
-                    </li>
-                    <li class="flex flex-col items-center inventory-more-button text-center">
-                      <span class="material-symbols-rounded text-blue-500">location_on</span>
-                      <span>New York</span>
-                    </li>
-                  </ul>
-                </section>
-              </article>
-            </li>
-
-            <!-- Card 3 -->
-            <li class="relative rounded-3xl overflow-hidden border transition-all transform hover:scale-105">
-              <article class="grid grid-cols-1 lg:grid-cols-2 gap-6 overflow-hidden transition-transform duration-300 hover:scale-105">
-                <!-- Image Section -->
-                <section class="relative flex items-center justify-center tesla-scale">
-                  <img src="../../images/tesla/tesla-modal-s.png" alt="Tesla Model S" class="md:mt-5 flip-image w-full h-auto object-cover transition-opacity duration-300 hover:opacity-90 lg:absolute lg:-left-3 lg:w-96 lg:object-cover "/>
-                </section>
-
-                <!-- Content Section -->
-                <section class="p-6 flex flex-col gap-4 z-10">
-                  <!-- Header: Profile -->
-                  <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-3">
-                      <img src="../../images/profile-test.jpg" alt="Emily Johnson's Profile" class="rounded-full border border-gray-300 w-10 h-10 object-cover"/>
-                      <h2 class="font-medium text-gray-800 text-base">Emily Johnson</h2>
-                    </div>
-                    <button class="p-2 text-gray-400 hover:text-gray-700 lg:hidden">
-                      <span class="material-symbols-rounded inventory-more-button">more_vert</span>
-                    </button>
-                  </div>
-
-                  <!-- Car Details -->
-                  <div>
-                    <h2 class="text-xl font-semibold text-gray-900">Tesla Model S</h2>
-                    <p class="text-lg font-semibold text-blue-600">$<span>279,990</span></p>
-                  </div>
-
-                  <!-- Features -->
-                  <ul class="flex justify-between gap-4 text-sm text-gray-600">
-                    <li class="flex flex-col items-center inventory-more-button text-center">
-                      <span class="material-symbols-rounded text-blue-500">speed</span>
-                      <span>250 km/h</span>
-                    </li>
-                    <li class="flex flex-col items-center inventory-more-button text-center">
-                      <span class="material-symbols-rounded text-blue-500">bolt</span>
-                      <span>Electric</span>
-                    </li>
-                    <li class="flex flex-col items-center inventory-more-button text-center">
-                      <span class="material-symbols-rounded text-blue-500">location_on</span>
-                      <span>San Francisco</span>
-                    </li>
-                  </ul>
-                </section>
-              </article>
-            </li>
+          <ul class="data-cards-tables grid grid-cols-1 md:grid-cols-2 gap-4 p-6" id="inventory-card">
+            <!-- All cards -->
           </ul>
 
-          <!-- Table -->
-          <section class="data-cards-tables rounded-xl overflow-x-auto mx-4 mb-5" id="inventory-table">
-            <table class="w-full border-collapse ">
-              <thead>
-                <tr class="bg-gradient-to-r from-blue-500 to-blue-800 text-white">
-                  <th class="p-4 text-center">Buyer</th>
-                  <th class="p-4 text-center">Car</th>
-                  <th class="p-4 text-center">Top Speed</th>
-                  <th class="p-4 text-center">Fuel Type</th>
-                  <th class="p-4 text-center">Location</th>
-                  <th class="p-4 text-center">Stock</th>
-                  <th class="p-4 text-center">Stock Status</th>
-                </tr>
-              </thead>
-              <tbody class="">
-                <!-- Toyota GR 86 Row -->
-                <tr class="hover:bg-gray-100 transition duration-200">
-                  <td class="p-4">
-                    <div class="flex flex-col md:flex-row items-center gap-3 justify-center text-center md:text-left">
-                      <img src="../../images/profile-test.jpg" alt="Jonson Hussain" class="w-10 h-10 rounded-full border" />
-                      <span class="text-gray-700">Jonson Hussain</span>
-                    </div>
-                  </td>
-
-                  <td class="p-4 flex flex-col md:flex-row items-center gap-4">
-                    <img src="../../images/toyota/toyota-gr-86.png" alt="Toyota GR 86" class="w-16 h-16 rounded-md object-cover shadow-sm" />
-                    <div class="flex flex-col">
-                      <h3 class="font-medium text-gray-800">Toyota GR 86</h3>
-                      <p class="text-blue-600 font-semibold">$285,892</p>
-                    </div>
-                  </td>
-                  
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">speed</span>
-                    <p>225 km/h</p>
-                  </td>
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">local_gas_station</span>
-                    <p>Petrol</p>
-                  </td>
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">location_on</span>
-                    <p>Dubai</p>
-                  </td>
-                  <td class="text-center">25</td>
-
-                  <td class="text-center">
-                    <span class="text-green-800 bg-green-200 p-2 rounded-full">Available</span>
-                    <span class="text-yellow-800 bg-yellow-200 p-2 rounded-full hidden">Pending</span>
-                    <span class="text-red-800 bg-red-200 p-2 rounded-full hidden">Shortages</span>
-                  </td>
-                </tr>
-                <!-- Audi RS7 Row -->
-                <tr class="hover:bg-gray-100 transition duration-200">
-
-                  <td class="p-4">
-                    <div class="flex flex-col md:flex-row items-center gap-3 justify-center text-center md:text-left">
-                      <img src="../../images/profile-test.jpg" alt="Samantha Doe" class="w-10 h-10 rounded-full border" />
-                      <span class="text-gray-700">Samantha Doe</span>
-                    </div>
-                  </td>
-
-                  <td class="p-4 flex items-center flex-col md:flex-row gap-4">
-                    <img src="../../images/audi/audi-rs7.png" alt="Audi RS7" class="w-16 h-16 rounded-md object-cover shadow-sm" />
-                    <div >
-                      <h3 class="font-medium text-gray-800">Audi RS7</h3>
-                      <p class="text-blue-600 font-semibold">$349,990</p>
-                    </div>
-                  </td>
-                  
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">speed</span>
-                    <p>280 km/h</p>
-                  </td>
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">electric_car</span>
-                    <p>Hybrid</p>
-                  </td>
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">location_on</span>
-                    <p>New York</p>
-                  </td>
-                  <td class="text-center">25</td>
-
-                  <td class="text-center">
-                  <span class="text-green-800 bg-green-200 p-2 rounded-full">Available</span>
-                    <span class="text-yellow-800 bg-yellow-200 p-2 rounded-full hidden">Pending</span>
-                    <span class="text-red-800 bg-red-200 p-2 rounded-full hidden">Shortages</span>
-                  </td>
-                </tr>
-                <!-- Tesla Model S Row -->
-                <tr class="hover:bg-gray-100 transition duration-200">
-                  <td class="p-4">
-                    <div class="flex items-center gap-3 flex-col md:flex-row justify-center text-center md:text-left">
-                      <img src="../../images/profile-test.jpg" alt="Emily Johnson" class="w-10 h-10 rounded-full border" />
-                      <span class="text-gray-700">Emily Johnson</span>
-                    </div>
-                  </td>
-
-                  <td class="p-4 flex items-center flex-col md:flex-row gap-4">
-                    <img src="../../images/tesla/tesla-modal-s.png" alt="Tesla Model S" class="w-16 h-16 rounded-md object-cover shadow-sm" />
-                    <div class="">
-                      <h3 class="font-medium text-gray-800">Tesla Model S</h3>
-                      <p class="text-blue-600 font-semibold">$279,990</p>
-                    </div>
-                  </td>
-                  
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">speed</span>
-                    <p>250 km/h</p>
-                  </td>
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">bolt</span>
-                    <p>Electric</p>
-                  </td>
-                  <td class="p-4 text-center text-gray-700">
-                    <span class="material-symbols-rounded text-blue-500">location_on</span>
-                    <p>San Francisco</p>
-                  </td>
-                  <td class="text-center">25</td>
-
-                  <td class="text-center">
-                    <span class="text-green-800 bg-green-200 p-2 rounded-full">Available</span>
-                    <span class="text-yellow-800 bg-yellow-200 p-2 rounded-full hidden">Pending</span>
-                    <span class="text-red-800 bg-red-200 p-2 rounded-full hidden">Shortages</span>
-                  </td>
-                
-                </tr>
-              </tbody>
-            </table>
-          </section>
-          
         </article>
 
         <!-- Customer Relationship Management -->
@@ -729,17 +438,11 @@
                   <span class="material-symbols-rounded">filter_list</span>
                   Filter
                 </button>
-                <button class="px-4 py-2 rounded-md shadow-md border hover:bg-gray-200 flex items-center gap-2" title="Table mode">
-                  <span class="material-symbols-rounded">table</span>
-                </button>
-                <button class="px-4 py-2 rounded-md shadow-md border hover:bg-gray-200 flex items-center gap-2" title="Grid mode">
-                  <span class="material-symbols-rounded">grid_view</span>
-                </button>
               </div>
             </section>
         
             <!-- Card Section -->
-            <section class="hidden">
+            <section>
               <h2 class="text-2xl font-bold text-gray-700 mb-6">Customer Cards</h2>
               <div id="customerCards" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Example Card -->
@@ -750,199 +453,395 @@
                   <p class="text-gray-600">Last Purchase: 2 days ago</p>
                 </div>
               </div>
-              <div id="paginationControlsCards" class="flex justify-center items-center mt-4"></div>
-            </section>
-        
-            <!-- Table Section -->
-            <section class="mt-10">
-              <h2 class="text-2xl font-bold text-gray-700 mb-6">Customer Table</h2>
-              <div class="overflow-y-auto lg:overflow-x-hidden h-80 border rounded-3xl shadow-lg">
-                <table class="w-full border-collapse bg-gradient-to-br from-gray-50 to-gray-100">
-                  <thead class="bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
-                    <tr>
-                      <th class="border border-gray-300 px-6 py-3 text-left font-medium">Name</th>
-                      <th class="border border-gray-300 px-6 py-3 text-left font-medium">Email</th>
-                      <th class="border border-gray-300 px-6 py-3 text-left font-medium">Phone</th>
-                      <th class="border border-gray-300 px-6 py-3 text-left font-medium">Last Purchase</th>
-                    </tr>
-                  </thead>
-                  <tbody id="customerTableBody" class="text-gray-700">
-                    <!-- Example Row -->
-                    <tr>
-                      <td class="border border-gray-300 px-6 py-4">John Doe</td>
-                      <td class="border border-gray-300 px-6 py-4">john.doe@example.com</td>
-                      <td class="border border-gray-300 px-6 py-4">+1 (555) 123-4567</td>
-                      <td class="border border-gray-300 px-6 py-4">2 days ago</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div id="paginationControlsTable" class="flex justify-center items-center mt-6"></div>
+              <div id="paginationControlsCards" class="flex justify-center items-center mt-4 overflow-x-auto "></div>
             </section>
           </section>
         </article>
         
-        
         <!-- Sales Management -->
-        <article class="page-article hidden rounded-3xl p-3 md:border lg:p-6 mt-8 lg:mt-0" id="sales">
-          <!-- Header -->
-          <section class="flex items-center justify-between pb-4 border-b border-gray-300">
-            <h1 class="text-2xl font-semibold text-gray-800">Sales Management</h1>
+        <article class="page-article hidden min-h-screen p-6 md:p-12 font-sans border rounded-3xl" id="sales">
+          <!-- Sales Management Header -->
+          <section class="flex justify-between items-center border-b pb-4 border-gray-200 mb-8 mt-3">
+            <h1 class="text-3xl font-bold text-gray-800">Sales Management</h1>
           </section>
-        
-          <!-- Sales Overview Section -->
-          <section class="mt-6 lg:px-3">
-            <h2 class="text-xl font-semibold mb-4 text-gray-800">Sales Overview</h2>
-            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-6">
-              <!-- Total Sales -->
-              <div class="bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 p-5 rounded-xl text-white transition-all hover:shadow-xl">
-                <h3 class="text-lg font-semibold">Total Sales</h3>
-                <p class="text-3xl font-bold">0</p>
-                <button class="mt-4 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white rounded-lg transition-all">
-                  Manage
-                </button>
-              </div>
+
+          <!-- Overall Stats-->
+          <section class="mb-6">
+            <ul class=" grid grid-cols-2 lg:grid-cols-4 gap-2 ">
               <!-- Revenue -->
-              <div class="bg-gradient-to-br from-green-400 to-green-600 hover:from-green-500 hover:to-green-700 p-5 rounded-xl text-white transition-all hover:shadow-xl">
-                <h3 class="text-lg font-semibold">Revenue</h3>
-                <p class="text-3xl font-bold">$0</p>
-                <button class="mt-4 px-4 py-2 bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800 text-white rounded-lg transition-all">
-                  Manage
-                </button>
-              </div>
-              <!-- Pending Sales -->
-              <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 hover:from-yellow-500 hover:to-yellow-700 p-5 rounded-xl text-white transition-all hover:shadow-xl">
-                <h3 class="text-lg font-semibold">Pending Sales</h3>
-                <p class="text-3xl font-bold">0</p>
-                <button class="mt-4 px-4 py-2 bg-gradient-to-r from-yellow-500 to-yellow-700 hover:from-yellow-600 hover:to-yellow-800 text-white rounded-lg transition-all">
-                  Manage
-                </button>
-              </div>
-            </div>
-          </section>
-        
-          <!-- Create New Sale Form Modal -->
-          <section class="hidden mt-8 mx-3 px-4 transition-all hover:shadow-md rounded-2xl border border-gray-200">
-            <h2 class="text-xl font-semibold mb-4 text-gray-800">Create New Sale</h2>
-            <form class="bg-white p-6 rounded-xl space-y-4">
-              <div>
-                <label for="carModel" class="block font-medium text-gray-700">Car Model</label>
-                <input type="text" id="carModel" class="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400" placeholder="Enter car model">
-              </div>
-              <div>
-                <label for="buyerName" class="block font-medium text-gray-700">Buyer Name</label>
-                <input type="text" id="buyerName" class="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400" placeholder="Enter buyer name">
-              </div>
-              <div>
-                <label for="salePrice" class="block font-medium text-gray-700">Sale Price</label>
-                <input type="number" id="salePrice" class="w-full border p-2 rounded-md focus:ring-2 focus:ring-blue-400" placeholder="Enter sale price">
-              </div>
-              <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-all">
-                Create Sale
-              </button>
-            </form>
-          </section>
-        
-          <!-- Sales Records Section -->
-          <section class="mt-8" id="sales-card">
-            <h2 class="text-xl font-semibold mb-4 text-gray-800 lg:px-3">Sales Records</h2>
-              
-            <section class="flex justify-between items-center mb-3">
-              <button class="fixed bottom-2 right-5 z-50 flex p-4 rounded-full lg:hidden bg-gradient-to-br from-blue-600 to-blue-800 text-white shadow-lg transform hover:scale-105 transition-all">
-                <span class="material-symbols-rounded">person_add</span>
-              </button>
-              <ul class="hidden lg:flex gap-3 ">
-                <li>
-                  <button class="px-3 py-2 bg-gradient-to-bl from-blue-500 to-blue-700 text-white rounded-3xl hover:shadow-xl transition-all w-28 ">
-                    Add Sale +
-                  </button>
-                </li>
-                <li>
-                  <button class="px-3 py-2 bg-gradient-to-bl from-gray-500 to-gray-700 text-white rounded-3xl hover:shadow-xl transition-all w-28 ">
-                    View Sale
-                  </button>
-                </li>
-                <li>
-                  <button class="px-3 py-2 bg-gradient-to-bl from-yellow-500 to-yellow-700 text-white rounded-3xl hover:shadow-xl transition-all w-28 ">
-                    Edit
-                  </button>
-                </li>
-                <li>
-                  <button class="px-3 py-2 bg-gradient-to-bl from-red-500 to-red-700 text-white rounded-3xl hover:shadow-xl transition-all w-28">
-                    Delete
-                  </button>
-                </li>
-              </ul>
-              <ul class="flex items-center">
-                <li class="border-r px-2 mx-2">
-                  <button class="table-card--toggle rounded-md flex gap-2 transition-all  hover:text-gray-600 websitebuilder-scale " title="Table mode" data-section="sales-table-mode">
+              <li title="Total income from sales" class="bg-gradient-to-r from-green-400 to-green-600 text-white rounded-lg shadow hover:scale-110 transform transition-transform hover:z-10">
+                <article class="flex flex-col p-6">
+                   <section class="flex gap-2 items-center">
+                    <span class="material-symbols-rounded">attach_money</span>
+                    <h2 class="text-sm md:text-md font-semibold">Revenue</h2>
+                   </section>
+                   <section>
+                    <p class="text-2xl md:text-4xl mt-2 font-semibold">$2,500,000</p>
+                   </section>
+                </article>
+              </li>
+
+              <!-- Total Sales -->
+              <li title="Number of cars sold in a specific period" class="bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-lg shadow hover:scale-110 transform transition-transform hover:z-10">
+                <article class="flex flex-col p-6">
+                   <section class="flex gap-2 items-center">
+                    <span class="material-symbols-rounded">directions_car</span>
+                    <h2 class="text-sm md:text-md font-semibold">Total Sales</h2>
+                   </section>
+                   
+                   <section>
+                    <h3 class="text-2xl md:text-4xl mt-2 font-semibold">1,245</h3>
+                   </section>
+
+                   <section class="mt-5">
+                    <button data-section="total-sales" class="salesViewDetailBtns websitebuilder-scale flex gap-2 font-semibold bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-lg shadow-md text-center justify-center items-center px-3 py-2 hover:scale-110 transform transition-transform hover:z-10">
                       <span class="material-symbols-rounded">
-                        table
+                        visibility
                       </span>
-                  </button>
-                </li>
-                <li>
-                  <button class="table-card--toggle rounded-md flex gap-2 transition-all text-gray-400 hover:text-gray-600 websitebuilder-scale " title="Grid mode" data-section="sales-card-mode">
-                    <span class="material-symbols-rounded">
-                      grid_view
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </section>
-           
-            
-            <!-- Card -->
-            <article class="data-cards-tables hidden" id="sales-card-mode">
+                      View
+                    </button>
+                   </section>
+                </article>
+              </li>
               
-              <ul class="space-y-4 grid md:grid-cols-2">
-                <li class="bg-white p-4 rounded-lg border grid gap-2 relative">
-                  <section class="flex justify-start items-center gap-2">
-                    <img src="" alt="" class="rounded-full border-2 border-blue-500 w-10 h-10"/>
-                    <h2 class="text-gray-500">John Doe</h2>
-                  </section>
-                  <section>
-                    <p class="text-gray-800 font-medium">Sale ID: 001</p>
-                    <p class="text-gray-500">Car Model: Ford Mustang</p>
-                    <p class="text-gray-500">Price: $25,000</p>
-                  </section>
-                  
-                  <button class="absolute top-2 right-3 text-red-500 hover:text-red-600 transition-all lg:hidden">
-                    <span class="material-symbols-rounded">delete</span>
+              <!-- Gross Profit Margins -->
+              <li title="Gross Profit Margin: Profit made per vehicle and overall."  class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-white rounded-lg shadow hover:scale-110 transform transition-transform hover:z-10">
+                <article class="flex flex-col p-6">
+                   <section class="flex gap-2 items-center">
+                    <span class="material-symbols-rounded">analytics</span>
+                    <h2 class="text-sm md:text-md font-semibold">GP Margin</h2>
+                   </section>
+                   <section>
+                    <p class="text-2xl md:text-4xl mt-2 font-semibold">20%</p>
+                   </section>
+                   <section class="mt-5">
+                    <button data-section="gp-margin" class="salesViewDetailBtns websitebuilder-scale flex gap-2 font-semibold bg-gradient-to-r from-yellow-400 to-yellow-600 text-white rounded-lg shadow-md text-center justify-center items-center px-3 py-2 hover:scale-110 transform transition-transform hover:z-10">
+                      <span class="material-symbols-rounded">
+                        visibility
+                      </span>
+                      View
+                    </button>
+                   </section>
+                </article>
+              </li>
+
+              <!-- Sales Trends -->
+              <li title="Ratio of leads or showroom visits to sales" class="bg-gradient-to-r from-purple-400 to-purple-600 text-white rounded-lg shadow hover:scale-110 transform transition-transform hover:z-10">
+                <article class="flex flex-col p-6">
+                   <section class="flex gap-2 items-center">
+                    <span class="material-symbols-rounded">thumb_up</span>
+                    <h2 class="text-sm md:text-md font-semibold">Conversion Rates</h2>
+                   </section>
+                   <section>
+                    <p class="text-2xl md:text-4xl mt-2 font-semibold">35%</p>
+                   </section>
+                   <section class="mt-5">
+                    <button data-section="conversion-rates" class="salesViewDetailBtns websitebuilder-scale flex gap-2 font-semibold bg-gradient-to-r from-violate-400 to-violate-600 text-white rounded-lg shadow-md text-center justify-center items-center px-3 py-2 hover:scale-110 transform transition-transform hover:z-10">
+                      <span class="material-symbols-rounded">
+                        visibility
+                      </span>
+                      View
+                    </button>
+                   </section>
+                </article>
+              </li>
+            
+            </ul>
+          </section>
+
+          <!-- Total Sales -->
+          <article id="total-sales" class="salesCardSection hidden">
+            <section class="bg-white mb-8" >
+              <h2 class="text-xl font-bold mb-4">Trends</h2>
+              <div class="grid md:grid-cols-2 gap-4">
+                <!-- Sales Over Time Chart -->
+                <div class="bg-white w-full h-full px-4 mb-6 border transition-transform transform hover:scale-105 hover:shadow-md p-3 rounded-3xl flex flex-col justify-center items-center">
+                  <h3 class="text-lg font-semibold mb-2">Sales Over Time</h3>
+                  <canvas id="salesChart"></canvas>
+                  <div class="flex justify-between gap-4 mt-4">
+                    <button class="websitebuilder-scale px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="updateSalesChart('7')">Last 7 Days</button>
+                    <button class="websitebuilder-scale px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="updateSalesChart('30')">Last 30 Days</button>
+                  </div>
+                </div>
+  
+                <!-- Revenue Distribution Chart -->
+                <div class="bg-white w-full h-full border transition-transform transform hover:scale-105 hover:shadow-md p-3 rounded-3xl flex flex-col justify-center items-center">
+                  <h3 class="text-lg font-semibold mb-2">Revenue Distribution</h3>
+                  <canvas id="revenueChart" ></canvas>
+                </div>
+              </div>
+            </section>
+  
+            <!-- Bottom Section: Detailed Breakdowns -->
+            <section class="bg-white">
+              <h2 class="text-xl font-bold mb-4">Detailed Breakdowns</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Sales by Model -->
+                <div class="border rounded-3xl transition-transform transform hover:scale-110 bg-white w-full h-full flex flex-col justify-center items-center p-3">
+                  <h3 class="text-lg font-semibold mb-2">Sales by Model</h3>
+                  <canvas id="salesModelChart"></canvas>
+                </div>
+  
+                <!-- Revenue by Salesperson -->
+                <div class="border rounded-3xl transition-transform transform hover:scale-110 bg-white w-full h-full flex flex-col justify-center items-center p-3">
+                  <h3 class="text-lg font-semibold mb-2">Revenue by Salesperson</h3>
+                  <canvas id="salespersonChart"></canvas>
+                </div>
+              </div>
+            </section>
+          </article>
+          
+          <!-- Gross Profit Margins -->
+          <article id="gp-margin" class="salesCardSection hidden">
+            <!-- GP Margin Details Section (hidden by default) -->
+            <div  class="mt-6 bg-white p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4">Gross Profit Margin - Details</h3>
+              
+              <!-- GP Margin Section -->
+              <section class="mb-6 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 shadow-md rounded-3xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-rounded text-yellow-500 text-3xl">analytics</span>
+                  <h4 class="text-xl font-bold text-gray-800">How GP Margin is Calculated</h4>
+                </div>
+                <div class="bg-white shadow-inner rounded-2xl p-4 mb-4 border">
+                  <p class="text-gray-600 font-medium mb-2">Formula:</p>
+                  <p class="font-semibold text-md md:text-2xl">
+                    GP Margin = (Revenue - Cost of Goods Sold) / Revenue * 100
+                  </p>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  For this example, the <span class="font-bold text-yellow-600">GP Margin is 20%</span>, meaning that for every dollar of revenue, the business makes a 20% profit after covering the costs of the vehicles sold.
+                </p>
+                <button class="flex items-center justify-center gap-2 px-5 py-3 bg-yellow-500 text-white font-semibold rounded-full shadow hover:bg-yellow-600 transform transition hover:scale-105">
+                  <span class="material-symbols-rounded">insights</span>
+                  Explore GP Insights
+                </button>
+              </section>
+
+              <!-- GP Margin Over Time Chart -->
+              <section class="mb-6">
+                <h4 class="text-lg font-semibold">GP Margin Over Time</h4>
+                <canvas id="gpMarginChart"></canvas>
+                <div class="flex justify-between gap-4 mt-4">
+                  <button class="websitebuilder-scale px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="updateGPChart('7')">Last 7 Days</button>
+                  <button class="websitebuilder-scale px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="updateGPChart('30')">Last 30 Days</button>
+                </div>
+              </section>
+
+              <!-- Recommendations to Improve GP Margin -->
+              <section class="mb-6 p-6 bg-gradient-to-b from-white to-gray-100 rounded-lg shadow-md border border-gray-200">
+                <h4 class="text-lg md:text-xl font-semibold text-gray-800 mb-4">
+                  <span class="material-symbols-rounded text-gray-600 align-middle mr-2">insights</span>
+                  Recommendations to Improve GP Margin
+                </h4>
+                <ul class="list-none space-y-3 pl-0">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-blue-500">check_circle</span>
+                    <p class="text-gray-700">Negotiate better rates with suppliers to lower the cost of goods sold.</p>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-blue-500">check_circle</span>
+                    <p class="text-gray-700">Consider increasing the prices of premium models to improve the overall margin.</p>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-blue-500">check_circle</span>
+                    <p class="text-gray-700">Focus on upselling high-margin add-ons or services during the sales process.</p>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-blue-500">check_circle</span>
+                    <p class="text-gray-700">Analyze sales data to identify which models yield the highest profits and focus on those.</p>
+                  </li>
+                </ul>
+                <p class="mt-6 text-gray-800 text-sm md:text-base">
+                  By implementing some of these strategies, we aim to <span class="font-semibold text-blue-600">increase the GP Margin by at least 5%</span> next quarter.
+                </p>
+              </section>
+
+
+              <!-- CTA Button for Further Action -->
+              <section class="mt-6 text-center">
+                <button class="websitebuilder-scale px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">Schedule a Meeting to Discuss Strategies</button>
+              </section>
+            </div>
+          </article>
+
+          <!-- Conversion Rates Details Section -->
+          <article id="conversion-rates" class="salesCardSection hidden">
+            <div class="mt-6 bg-white lg:p-6 rounded-lg">
+              <h3 class="text-xl font-bold mb-4 text-purple-600">Conversion Rates - Details</h3>
+
+              <!-- Conversion Rates Calculation -->
+              <section class="mb-6 bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 shadow-md rounded-3xl p-6">
+                <div class="flex items-center gap-3 mb-4">
+                  <span class="material-symbols-rounded text-purple-500 text-3xl">analytics</span>
+                  <h4 class="text-xl font-bold text-gray-800">How Conversion Rates Are Calculated</h4>
+                </div>
+                <div class="bg-white shadow-inner rounded-2xl p-4 mb-4 border">
+                  <p class="text-gray-600 font-medium mb-2">Formula:</p>
+                  <p class="font-semibold text-md md:text-2xl">
+                    Conversion Rate = (Number of Sales / Number of Leads) × 100
+                  </p>
+                </div>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                  In this case, the <span class="font-bold text-purple-600">Conversion Rate is 35%</span>, meaning that out of all leads or showroom visits, 35% resulted in successful sales.
+                </p>
+                <button class="flex items-center justify-center gap-2 px-5 py-3 bg-purple-500 text-white font-semibold rounded-full shadow hover:bg-purple-600 transform transition hover:scale-105">
+                  <span class="material-symbols-rounded">insights</span>
+                  Explore Conversion Insights
+                </button>
+              </section>
+
+              <!-- Conversion Rates Over Time Chart -->
+              <section class="mb-6">
+                <h4 class="text-lg font-semibold text-gray-800">Conversion Rates Over Time</h4>
+                <div class="w-full h-full">
+                  <canvas id="conversionRateChart"></canvas>
+                </div>
+                
+                <div class="flex justify-between gap-4 mt-4">
+                  <button class="websitebuilder-scale px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="updateConversionChart('7')">Last 7 Days</button>
+                  <button class="websitebuilder-scale px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="updateConversionChart('30')">Last 30 Days</button>
+                </div>
+              </section>
+
+              <!-- Recommendations to Improve Conversion Rates -->
+              <section class="mb-6 p-6 bg-gradient-to-b from-white to-gray-100 rounded-lg shadow-md border border-gray-200">
+                <h4 class="text-lg md:text-xl font-semibold text-gray-800 mb-4">
+                  <span class="material-symbols-rounded text-gray-600 align-middle mr-2">insights</span>
+                  Recommendations to Improve Conversion Rates
+                </h4>
+                <ul class="list-none space-y-3 pl-0">
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-purple-500">check_circle</span>
+                    <p class="text-gray-700">Leverage retargeting ads to reach warm leads.</p>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-purple-500">check_circle</span>
+                    <p class="text-gray-700">Enhance lead qualification processes to focus on high-quality leads.</p>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-purple-500">check_circle</span>
+                    <p class="text-gray-700">Provide personalized follow-ups with offers tailored to each lead.</p>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <span class="material-symbols-rounded text-purple-500">check_circle</span>
+                    <p class="text-gray-700">Optimize showroom layouts and the customer journey for efficiency and impact.</p>
+                  </li>
+                </ul>
+                <p class="mt-6 text-gray-800 text-sm md:text-base">
+                  By adopting these strategies, we aim to <span class="font-semibold text-purple-600">increase Conversion Rates by 10%</span> in the next quarter.
+                </p>
+              </section>
+
+              <!-- CTA Button for Further Action -->
+              <section class="mt-6 text-center">
+                <button class="websitebuilder-scale px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">Book a Session to Discuss Strategies</button>
+              </section>
+            </div>
+          </article>
+
+          <hr class="border-b mt-4 mb-2">
+
+          <ul class="my-3 overflow-x-auto lg:overflow-hidden flex gap-3 md:gap-4 p-2 lg:py-10 lg:overflow-x-hidden justify-start md:justify-center items-center">
+            <li class="flex-shrink-0">
+                <button class="gap-2 text-sm md:text-base font-semibold md:px-4 md:py-4 px-3 py-3 rounded-full border border-gray-700 text-gray-700 flex items-center justify-center transform transition-all hover:scale-110 websitebuilder-scale w-full sm:w-auto">
+                    <span class="material-symbols-rounded text-xl md:text-2xl">
+                        schedule
+                    </span>
+                    <span class="ml-2">Salesmen Performance</span>
+                </button>
+            </li>
+            <li class="flex-shrink-0">
+                <button class="gap-2 text-sm md:text-base font-semibold md:px-4 md:py-4 px-3 py-3 rounded-full border border-gray-700 text-gray-700 flex items-center justify-center transform transition-all hover:scale-110 websitebuilder-scale w-full sm:w-auto">
+                    <span class="material-symbols-rounded text-xl md:text-2xl">
+                        store
+                    </span>
+                    <span class="ml-2">Marketing Insights</span>
+                </button>
+            </li>
+            <li class="flex-shrink-0">
+                <button class="gap-2 text-sm md:text-base font-semibold md:px-4 md:py-4 px-3 py-3 rounded-full border border-gray-700 text-gray-700 flex items-center justify-center transform transition-all hover:scale-110 websitebuilder-scale w-full sm:w-auto">
+                    <span class="material-symbols-rounded text-xl md:text-2xl">
+                        travel_explore
+                    </span>
+                    <span class="ml-2">Geographic Insights</span>
+                </button>
+            </li>
+        </ul>
+        
+
+          <!-- Salesmen Performance Section -->
+          <div class="bg-white flex flex-col gap-3">
+            <h2 class="text-2xl font-bold mb-4">Salesmen Performance</h2>
+    
+            <!-- CRUD Operations Section -->
+            <div class="flex gap-2 p-5 lg:p-0 overflow-x-auto lg:justify-between items-center">
+              <ul class="flex gap-3">
+                <!-- Add Salesman Button with Icon -->
+                <li>
+                  <button id="add-salesman" class="websitebuilder-scale p-2 text-sm md:text-base md:py-3 md:px-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center gap-2">
+                    <span class="material-symbols-rounded">add_circle</span> Salesman
                   </button>
-                  <input type="checkbox" class="hidden lg:inline absolute top-2 right-3"/>
+                </li>
+              
+                <!-- Update Salesman Button with Icon -->
+                <li>
+                  <button id="update-salesman" class="websitebuilder-scale font-semibold p-2 text-sm md:text-base md:py-3 md:px-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center gap-2">
+                    <span class="material-symbols-rounded">edit</span> Edit
+                  </button>
+                </li>
+              
+                <!-- Delete Salesman Button with Icon -->
+                <li>
+                  <button id="delete-salesman" class="websitebuilder-scale font-semibold p-2 text-sm md:text-base md:py-3 md:px-2 bg-red-500 text-white rounded-lg hover:bg-red-600 flex items-center gap-2">
+                    <span class="material-symbols-rounded">delete</span> Remove
+                  </button>
                 </li>
               </ul>
-            </article>
-            
-      
-            <!-- Sales Table -->
-            <section  class="data-cards-tables overflow-auto rounded-lg" id="sales-table-mode">
-              <table class="w-full bg-white  text-left">
-                <thead>
-                  <tr class="bg-gray-100 text-gray-600 text-sm font-semibold uppercase">
-                    <th class="py-3 px-6">Sale ID</th>
-                    <th class="py-3 px-6">Car Model</th>
-                    <th class="py-3 px-6">Buyer Name</th>
-                    <th class="py-3 px-6">Price</th>
-                    <th class="py-3 px-6">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-gray-200 hover:bg-gray-50">
-                    <td class="py-3 px-6">001</td>
-                    <td class="py-3 px-6">Ford Mustang</td>
-                    <td class="py-3 px-6">John Doe</td>
-                    <td class="py-3 px-6">$25,000</td>
-                    <td class="py-3 px-6">
-                      <input type="checkbox" />
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
+              
+              <ul>
+                <li>
+                  <button class="font-semibold p-1 text-sm md:text-base md:py-3 md:px-2  border border-gray-600 rounded-lg  flex items-center gap-2">
+                    <span class="material-symbols-rounded">
+                      monitoring
+                    </span>
+                    Chart
+                  </button>
+                </li>
+              </ul>
+                
+                
+                
+            </div>
+
+            <!-- Sales Performance Chart -->
+            <div class="hidden">
+              <h3 class="text-xl font-semibold">Sales Performance Chart</h3>
+              <canvas id="salesPerformanceChart" width="400" height="200"></canvas>
+            </div>
+    
+            <!-- Salesman Performance Data Table -->
+            <div class="overflow-x-auto bg-gray-50 rounded-xl shadow-md w-full">
+                <table class="min-w-full text-sm">
+                    <thead>
+                        <tr>
+                          <th class="px-4 py-2 text-left">Actions</th>
+                          <th class="px-4 py-2 text-left">Name</th>
+                          <th class="px-4 py-2 text-left">Cars Sold</th>
+                          <th class="px-4 py-2 text-left">Revenue Generated</th>
+                          <th class="px-4 py-2 text-left">Avg. Deal Size</th>
+                          <th class="px-4 py-2 text-left">Performance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="salesmen-data">
+                        <!-- Dynamic data will go here -->
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
           
-          </section>
+          
         </article>
 
         <!-- Employee Management Section -->
@@ -952,7 +851,7 @@
             <h2 class="text-2xl font-semibold text-gray-800 mb-6">Employee Management Dashboard</h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 lg:gap-3">
               <!-- Total Employees -->
-              <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-purple-400 to-purple-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
+              <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-purple-400 to-purple-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl ">
                 <h3 class="text-lg font-bold text-center md:text-left">Total Staff</h3>
                 <p class="text-3xl mt-2 text-center md:text-left pb-12">35</p>
                 <div class="mt-4 absolute bottom-3">
@@ -1050,76 +949,39 @@
             </div>
             
           </section>
-        
           
+          <!-- Actions -->
+          <section>
+            <ul class="gap-3 hidden md:flex">  
+              <li>
+                  <button class="px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                      + Add Manufacturer
+                  </button>
+              </li>
+              <li>
+                <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
+                    + Send A Product
+                </button>
+              </li>
+              <li>
+                <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
+                    <span class="material-symbols-rounded text-lg text-gray-600">
+                        filter_list
+                    </span>
+                    Filter
+                </button>
+              </li>
+            </ul>
+          </section>
         
           <!-- Manufacturer Cards -->
-          <section class="grid grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Example Card -->
-            <div class="hidden bg-white rounded-xl shadow-md p-6 hover:shadow-lg transform transition-all hover:scale-105">
-              <h3 class="font-semibold text-lg text-gray-800 mb-2">AutoMoto Industries</h3>
-              <p class="text-gray-600 mb-4">Cost: <span class="font-bold">$12,500</span></p>
-              <p class="text-gray-600 mb-4">Status: <span class="font-bold text-green-600">Paid</span></p>
-              <div class="flex justify-between">
-                
-                <button class="bg-gradient-to-r from-yellow-500 to-yellow-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 transform transition-all">
-                  Send Query
-                </button>
-              </div>
-            </div>
-        
-            <!-- Additional cards can be dynamically added -->
-          </section>
-        
-          <!-- Manufacturer Table -->
-          <section class="mt-12">
-            <h3 class="text-3xl font-bold text-gray-800 mb-6">Manufacturer List</h3>
-            <!-- Filters and Actions -->
-            <section class="flex justify-between items-center mb-8">
-              <div class="flex gap-3">
-                <button class="bg-gradient-to-bl from-green-300 to-green-700 text-white px-6 py-3 rounded-lg shadow-lg hover:opacity-90 transform transition-all hover:scale-105">
-                  + Add Manufacturer
-                </button>
-                <button class="bg-gradient-to-bl from-yellow-300 to-yellow-700 text-white px-5 py-3 rounded-lg shadow-lg hover:opacity-90 transform transition-all hover:scale-105">
-                  Send A Product
-                </button>
-                
-                <button class="bg-gradient-to-bl from-gray-300 to-gray-700 text-white px-5 py-3 rounded-lg shadow-lg hover:opacity-90 transform transition-all hover:scale-105">
-                  View
-                </button>
-                <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-4 py-2 rounded-lg shadow hover:opacity-90 transform transition-all">
-                  Delete
-                </button>
-              </div>
-              <button class="bg-gradient-to-r from-red-500 to-red-700 text-white px-5 py-3 rounded-lg shadow-lg hover:opacity-90 transform transition-all hover:scale-105">
-                Export Data
-              </button>
-            </section>
+          <section>
+            <h1 class="text-4xl font-semibold mt-5">Total Manufacturers</h1>
 
-            <div class="overflow-hidden rounded-xl shadow-lg bg-white">
-              <table class="w-full border-collapse">
-                <thead class="bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800 text-left">
-                  <tr>
-                    <th class="py-4 px-6 font-semibold">Name</th>
-                    <th class="py-4 px-6 font-semibold">Cost</th>
-                    <th class="py-4 px-6 font-semibold">Status</th>
-                    <th class="py-4 px-6 font-semibold">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="hover:bg-gray-100">
-                    <td class="py-4 px-6">AutoMoto Industries</td>
-                    <td class="py-4 px-6">$12,500</td>
-                    <td class="py-4 px-6 text-green-600">Paid</td>
-                    <td class="py-4 px-6 flex gap-2">
-                      <input type="checkbox">
-                    </td>
-                  </tr>
-                  <!-- More rows can be dynamically added -->
-                </tbody>
-              </table>
-            </div>
+            
           </section>
+        
+          
         </article>
         
         <!-- Marketing and Promotion -->
@@ -1133,340 +995,126 @@
           <div class="mt-8 md:mt-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-10">
             
             <!-- Active Promotions Panel -->
-            <div class="bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 shadow-lg rounded-lg p-6 text-white">
+            <div class="transform transition-transform hover:scale-105 bg-gradient-to-br from-blue-400 via-blue-500 to-blue-600 shadow-lg rounded-lg p-6 text-white">
               <h2 class="text-xl font-medium">Active Promotions</h2>
               <p class="text-4xl font-bold mt-2">12</p>
               <p class="text-sm mb-4">Currently running</p>
-              <button class="bg-gradient-to-r from-blue-400  to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-4 py-2 rounded-lg w-full shadow-xl">
+              <button class="transform transition-transform hover:scale-105 websitebuilder-scale marketingPromotionalBtns bg-gradient-to-r from-blue-400  to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-4 py-2 rounded-lg w-full shadow-xl" data-section="promotion">
                 Manage Promotions
               </button>
             </div>
         
             <!-- New Leads Panel -->
-            <div class="bg-gradient-to-br from-green-400 via-green-500 to-green-600 shadow-lg rounded-lg p-6 text-white">
+            <div class="transform transition-transform hover:scale-105 bg-gradient-to-br from-green-400 via-green-500 to-green-600 shadow-lg rounded-lg p-6 text-white">
               <h2 class="text-xl font-medium">New Leads</h2>
               <p class="text-4xl font-bold mt-2">350</p>
               <p class="text-sm mb-4">Potential customers this week</p>
-              <button class="bg-gradient-to-r from-green-500  to-green-700 hover:from-green-600 hover:to-green-800 text-white px-4 py-2 rounded-lg w-full shadow-xl">
+              <button class="transform transition-transform hover:scale-105 websitebuilder-scale marketingPromotionalBtns bg-gradient-to-r from-green-500  to-green-700 hover:from-green-600 hover:to-green-800 text-white px-4 py-2 rounded-lg w-full shadow-xl" data-section="leads">
                 Follow Up Leads
               </button>
             </div>
         
             <!-- Total Campaigns Panel -->
-            <div class="bg-gradient-to-br from-gray-700  to-gray-900 shadow-lg rounded-lg p-6 text-white">
+            <div class="transform transition-transform hover:scale-105 bg-gradient-to-br from-gray-700  to-gray-900 shadow-lg rounded-lg p-6 text-white">
               <h2 class="text-xl font-medium">Total Campaigns</h2>
               <p class="text-4xl font-bold mt-2">45</p>
               <p class="text-sm mb-4">Managed all-time</p>
-              <button class="bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 hover:from-gray-800 hover:to-black text-white px-4 py-2 rounded-lg w-full shadow-xl">
+              <button class="transform transition-transform hover:scale-105 websitebuilder-scale marketingPromotionalBtns bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 hover:from-gray-800 hover:to-black text-white px-4 py-2 rounded-lg w-full shadow-xl" data-section="campaigns">
                 Manage Campaigns
               </button>
             </div>
           </div>
         
-          <!-- Active Promotions Management -->
-          <section class="lg:p-6 mb-8">
-            <div class="justify-between flex">
-              <h2 class="text-2xl font-semibold text-gray-800 mb-6">Active Promotions</h2>
-              <ul class="flex items-center">
-                <li class="border-r px-2 mx-2">
-                  <button class="table-card-promotion--toggle rounded-md flex gap-2 transition-all  hover:text-gray-600 websitebuilder-scale " title="Table mode" data-section="inventory-table">
-                      <span class="material-symbols-rounded">
-                        table
-                      </span>
-                  </button>
-                </li>
-                <li>
-                  <button class="table-card-promotion--toggle rounded-md flex gap-2 transition-all text-gray-400 hover:text-gray-600 websitebuilder-scale " title="Grid mode" data-section="inventory-card">
-                    <span class="material-symbols-rounded">
-                      grid_view
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-            
-            <!-- Table -->
-            <section class="hidden overflow-auto rounded-xl border">
-              <table class="w-full text-left border-collapse table">
-                <thead>
-                  <tr class="bg-gray-200 text-gray-600">
-                    <th class="p-3 text-sm font-medium">Title</th>
-                    <th class="p-3 text-sm font-medium">Start Date</th>
-                    <th class="p-3 text-sm font-medium">End Date</th>
-                    <th class="p-3 text-sm font-medium">Status</th>
-                    <th class="p-3 text-sm font-medium">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Winter Sale</td>
-                    <td class="p-3 text-gray-600">Nov 15, 2024</td>
-                    <td class="p-3 text-gray-600">Dec 31, 2024</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Black Friday Blowout</td>
-                    <td class="p-3 text-gray-600">Nov 1, 2024</td>
-                    <td class="p-3 text-gray-600">Nov 30, 2024</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Spring Fling</td>
-                    <td class="p-3 text-gray-600">Mar 15, 2025</td>
-                    <td class="p-3 text-gray-600">Apr 15, 2025</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Summer Fest</td>
-                    <td class="p-3 text-gray-600">May 1, 2025</td>
-                    <td class="p-3 text-gray-600">Jun 30, 2025</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">End of Year Clearance</td>
-                    <td class="p-3 text-gray-600">Dec 1, 2024</td>
-                    <td class="p-3 text-gray-600">Dec 31, 2024</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Cyber Monday Madness</td>
-                    <td class="p-3 text-gray-600">Nov 27, 2024</td>
-                    <td class="p-3 text-gray-600">Nov 27, 2024</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Holiday Specials</td>
-                    <td class="p-3 text-gray-600">Dec 1, 2024</td>
-                    <td class="p-3 text-gray-600">Dec 25, 2024</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Spring Discounts</td>
-                    <td class="p-3 text-gray-600">Mar 1, 2025</td>
-                    <td class="p-3 text-gray-600">Mar 31, 2025</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Back-to-School Sale</td>
-                    <td class="p-3 text-gray-600">Aug 1, 2025</td>
-                    <td class="p-3 text-gray-600">Aug 15, 2025</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Valentine's Day Special</td>
-                    <td class="p-3 text-gray-600">Feb 1, 2025</td>
-                    <td class="p-3 text-gray-600">Feb 14, 2025</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Tech Week Deals</td>
-                    <td class="p-3 text-gray-600">Jan 1, 2025</td>
-                    <td class="p-3 text-gray-600">Jan 7, 2025</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                  <tr class="hover:bg-gray-100 text-sm">
-                    <td class="p-3 text-gray-800">Holiday Madness</td>
-                    <td class="p-3 text-gray-600">Dec 20, 2024</td>
-                    <td class="p-3 text-gray-600">Dec 31, 2024</td>
-                    <td class="p-3 text-green-500">Active</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
+          <!-- Manage Active Promotions -->
+          <div class="marketManagementSections bg-white rounded-2xl shadow-md hover:shadow-lg transition-all p-6" id="promotion">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Manage Active Promotions</h2>
+            <ul class="space-y-4">
+              <!-- Promotion Item -->
+              <li class="flex justify-between items-center border-b pb-3">
+                <div>
+                  <p class="text-lg font-medium text-gray-800">Summer Sale</p>
+                  <p class="text-sm text-gray-600">Ends: 25th Nov 2024</p>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow-sm">
+                  Edit
+                </button>
+              </li>
+              <!-- Repeat for more promotions -->
+              <li class="flex justify-between items-center border-b pb-3">
+                <div>
+                  <p class="text-lg font-medium text-gray-800">Holiday Discounts</p>
+                  <p class="text-sm text-gray-600">Ends: 1st Dec 2024</p>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg shadow-sm">
+                  Edit
+                </button>
+              </li>
+            </ul>
+            <button class="w-full mt-4 bg-gradient-to-r from-blue-400 to-blue-600 text-white py-3 rounded-lg shadow-lg hover:from-blue-500 hover:to-blue-700">
+              Add New Promotion
+            </button>
+          </div>
 
-            <!--  Cards -->
-            <section class="overflow-auto ">
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl overflow-hidden shadow-lg">
-                  <img src="https://via.placeholder.com/300" alt="Winter Sale" class="w-full h-48 object-cover rounded-t-xl">
-                  <div class="p-4 text-white">
-                    <h3 class="font-semibold text-lg">Winter Sale</h3>
-                    <p class="text-sm">Nov 15, 2024 - Dec 31, 2024</p>
-                    <p class="mt-2">Status: Active</p>
-                    <div class="flex justify-between mt-4">
-                      <button class="text-blue-200 hover:underline">Edit</button>
-                      <button class="text-red-200 hover:underline">Delete</button>
-                    </div>
-                  </div>
+          <!-- Manage New Leads -->
+          <div class="marketManagementSections bg-white rounded-2xl shadow-md hover:shadow-lg transition-all p-6 hidden" id="leads">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Manage New Leads</h2>
+            <ul class="space-y-4">
+              <!-- Lead Item -->
+              <li class="flex justify-between items-center border-b pb-3">
+                <div>
+                  <p class="text-lg font-medium text-gray-800">John Doe</p>
+                  <p class="text-sm text-gray-600">Interested in SUV models</p>
                 </div>
-            
-                <div class="bg-gradient-to-r from-blue-400 via-teal-400 to-green-400 rounded-xl overflow-hidden shadow-lg">
-                  <img src="https://via.placeholder.com/300" alt="Black Friday Blowout" class="w-full h-48 object-cover rounded-t-xl">
-                  <div class="p-4 text-white">
-                    <h3 class="font-semibold text-lg">Black Friday Blowout</h3>
-                    <p class="text-sm">Nov 1, 2024 - Nov 30, 2024</p>
-                    <p class="mt-2">Status: Active</p>
-                    <div class="flex justify-between mt-4">
-                      <button class="text-blue-200 hover:underline">Edit</button>
-                      <button class="text-red-200 hover:underline">Delete</button>
-                    </div>
-                  </div>
+                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg shadow-sm">
+                  Contact
+                </button>
+              </li>
+              <!-- Repeat for more leads -->
+              <li class="flex justify-between items-center border-b pb-3">
+                <div>
+                  <p class="text-lg font-medium text-gray-800">Jane Smith</p>
+                  <p class="text-sm text-gray-600">Looking for financing options</p>
                 </div>
-            
-                <div class="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 rounded-xl overflow-hidden shadow-lg">
-                  <img src="https://via.placeholder.com/300" alt="Spring Fling" class="w-full h-48 object-cover rounded-t-xl">
-                  <div class="p-4 text-white">
-                    <h3 class="font-semibold text-lg">Spring Fling</h3>
-                    <p class="text-sm">Mar 15, 2025 - Apr 15, 2025</p>
-                    <p class="mt-2">Status: Active</p>
-                    <div class="flex justify-between mt-4">
-                      <button class="text-blue-200 hover:underline">Edit</button>
-                      <button class="text-red-200 hover:underline">Delete</button>
-                    </div>
-                  </div>
+                <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg shadow-sm">
+                  Contact
+                </button>
+              </li>
+            </ul>
+            <button class="w-full mt-4 bg-gradient-to-r from-green-400 to-green-600 text-white py-3 rounded-lg shadow-lg hover:from-green-500 hover:to-green-700">
+              View All Leads
+            </button>
+          </div>
+
+          <!-- Manage Total Campaigns -->
+          <div class="marketManagementSections bg-white rounded-2xl shadow-md hover:shadow-lg transition-all p-6 hidden" id="campaigns">
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Manage Campaigns</h2>
+            <ul class="space-y-4">
+              <!-- Campaign Item -->
+              <li class="flex justify-between items-center border-b pb-3">
+                <div>
+                  <p class="text-lg font-medium text-gray-800">Black Friday</p>
+                  <p class="text-sm text-gray-600">Started: 15th Nov 2024</p>
                 </div>
-            
-                <div class="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 rounded-xl overflow-hidden shadow-lg">
-                  <img src="https://via.placeholder.com/300" alt="Summer Fest" class="w-full h-48 object-cover rounded-t-xl">
-                  <div class="p-4 text-white">
-                    <h3 class="font-semibold text-lg">Summer Fest</h3>
-                    <p class="text-sm">May 1, 2025 - Jun 30, 2025</p>
-                    <p class="mt-2">Status: Active</p>
-                    <div class="flex justify-between mt-4">
-                      <button class="text-blue-200 hover:underline">Edit</button>
-                      <button class="text-red-200 hover:underline">Delete</button>
-                    </div>
-                  </div>
+                <button class="bg-gray-700 hover:bg-black text-white px-4 py-2 rounded-lg shadow-sm">
+                  View
+                </button>
+              </li>
+              <!-- Repeat for more campaigns -->
+              <li class="flex justify-between items-center border-b pb-3">
+                <div>
+                  <p class="text-lg font-medium text-gray-800">End of Year Sale</p>
+                  <p class="text-sm text-gray-600">Starts: 20th Dec 2024</p>
                 </div>
-            
-                <div class="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-500 rounded-xl overflow-hidden shadow-lg">
-                  <img src="https://via.placeholder.com/300" alt="End of Year Clearance" class="w-full h-48 object-cover rounded-t-xl">
-                  <div class="p-4 text-white">
-                    <h3 class="font-semibold text-lg">End of Year Clearance</h3>
-                    <p class="text-sm">Dec 1, 2024 - Dec 31, 2024</p>
-                    <p class="mt-2">Status: Active</p>
-                    <div class="flex justify-between mt-4">
-                      <button class="text-blue-200 hover:underline">Edit</button>
-                      <button class="text-red-200 hover:underline">Delete</button>
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="bg-gradient-to-r from-indigo-700 via-purple-700 to-red-700 rounded-xl overflow-hidden shadow-lg">
-                  <img src="https://via.placeholder.com/300" alt="Cyber Monday Madness" class="w-full h-48 object-cover rounded-t-xl">
-                  <div class="p-4 text-white">
-                    <h3 class="font-semibold text-lg">Cyber Monday Madness</h3>
-                    <p class="text-sm">Nov 27, 2024</p>
-                    <p class="mt-2">Status: Active</p>
-                    <div class="flex justify-between mt-4">
-                      <button class="text-blue-200 hover:underline">Edit</button>
-                      <button class="text-red-200 hover:underline">Delete</button>
-                    </div>
-                  </div>
-                </div>
-            
-                <!-- Repeat for the remaining promotions -->
-              </div>
-            </section>
-            
-          </section>
-        
-          <!-- New Leads Management -->
-          <section class="lg:p-6 mb-8 hidden">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">New Leads</h2>
-            <section class="overflow-auto rounded-xl border">
-              <table class="w-full text-left border-collapse">
-                <thead>
-                  <tr class="bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800">
-                    <th class="p-3 text-sm font-medium">Name</th>
-                    <th class="p-3 text-sm font-medium">Email</th>
-                    <th class="p-3 text-sm font-medium">Contacted</th>
-                    <th class="p-3 text-sm font-medium">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="hover:bg-gray-200">
-                    <td class="p-3 text-gray-800">John Doe</td>
-                    <td class="p-3 text-gray-600">johndoe@gmail.com</td>
-                    <td class="p-3 text-green-500">Yes</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">View</button>
-                      <button class="text-red-500 hover:underline">Remove</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-            
-          </section>
-        
-          <!-- Total Campaigns Management -->
-          <section class="lg:p-6 hidden">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">Total Campaigns</h2>
-            <section class="overflow-auto rounded-xl border">
-              <table class="w-full text-left border-collapse">
-                <thead>
-                  <tr class="bg-gradient-to-r from-gray-300 to-gray-400 text-gray-800">
-                    <th class="p-3 text-sm font-medium">Campaign Name</th>
-                    <th class="p-3 text-sm font-medium">Type</th>
-                    <th class="p-3 text-sm font-medium">Budget</th>
-                    <th class="p-3 text-sm font-medium">Duration</th>
-                    <th class="p-3 text-sm font-medium">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="hover:bg-gray-200">
-                    <td class="p-3 text-gray-800">Luxury Auto Launch</td>
-                    <td class="p-3 text-gray-600">Online</td>
-                    <td class="p-3 text-gray-600">$10,000</td>
-                    <td class="p-3 text-gray-600">3 months</td>
-                    <td class="p-3">
-                      <button class="text-blue-500 hover:underline mr-3">Edit</button>
-                      <button class="text-red-500 hover:underline">Delete</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </section>
-          </section>
+                <button class="bg-gray-700 hover:bg-black text-white px-4 py-2 rounded-lg shadow-sm">
+                  View
+                </button>
+              </li>
+            </ul>
+            <button class="w-full mt-4 bg-gradient-to-r from-gray-700 to-black text-white py-3 rounded-lg shadow-lg hover:from-gray-800 hover:to-gray-900">
+              Create New Campaign
+            </button>
+          </div>
+        </div>
         </article>
         
         <!-- Finance -->
