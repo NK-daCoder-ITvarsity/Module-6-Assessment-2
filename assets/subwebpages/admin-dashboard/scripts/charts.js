@@ -293,13 +293,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Example Salesmen Data
 const salesmen = [
-  { name: 'John Doe', carsSold: 50, revenue: 1200000, avgDealSize: 24000 },
-  { name: 'Jane Smith', carsSold: 60, revenue: 1500000, avgDealSize: 25000 },
-  { name: 'Mike Johnson', carsSold: 45, revenue: 1100000, avgDealSize: 24500 },
+  { name: 'John Doe', carsSold: 50, revenue: 1200000, avgDealSize: 24000, phone: '+1 (555) 123-1000', email: 'john.doe@example.com' },
+  { name: 'Jane Smith', carsSold: 60, revenue: 1500000, avgDealSize: 25000, phone: '+1 (555) 123-1001', email: 'jane.smith@example.com' },
+  { name: 'Mike Johnson', carsSold: 45, revenue: 1100000, avgDealSize: 24500, phone: '+1 (555) 123-1002', email: 'mike.johnson@example.com' },
+  { name: 'Emily Davis', carsSold: 55, revenue: 1350000, avgDealSize: 24545, phone: '+1 (555) 123-1003', email: 'emily.davis@example.com' },
+  { name: 'Chris Brown', carsSold: 65, revenue: 1600000, avgDealSize: 24615, phone: '+1 (555) 123-1004', email: 'chris.brown@example.com' },
+  { name: 'Sarah Wilson', carsSold: 20, revenue: 950000, avgDealSize: 23750, phone: '+1 (555) 123-1005', email: 'sarah.wilson@example.com' },
+  { name: 'David Martinez', carsSold: 70, revenue: 1750000, avgDealSize: 25000, phone: '+1 (555) 123-1006', email: 'david.martinez@example.com' },
+  { name: 'Lisa Taylor', carsSold: 15, revenue: 920000, avgDealSize: 24210, phone: '+1 (555) 123-1007', email: 'lisa.taylor@example.com' },
+  { name: 'James Anderson', carsSold: 62, revenue: 1550000, avgDealSize: 25000, phone: '+1 (555) 123-1008', email: 'james.anderson@example.com' },
+  { name: 'Sophia Thompson', carsSold: 52, revenue: 1300000, avgDealSize: 25000, phone: '+1 (555) 123-1009', email: 'sophia.thompson@example.com' },
+  { name: 'Ethan Garcia', carsSold: 48, revenue: 1180000, avgDealSize: 24583, phone: '+1 (555) 123-1010', email: 'ethan.garcia@example.com' },
+  { name: 'Olivia Robinson', carsSold: 58, revenue: 1450000, avgDealSize: 25000, phone: '+1 (555) 123-1011', email: 'olivia.robinson@example.com' }
 ];
+
 
 // Populate the Salesmen Data Table
 const salesmanDataTable = document.getElementById('salesmen-data');
+
 salesmen.forEach((salesman, index) => {
   salesmanDataTable.innerHTML += `
       <tr>
@@ -313,42 +324,88 @@ salesmen.forEach((salesman, index) => {
   `;
 });
 
-// Sales Performance Chart (using Chart.js)
+// Function to populate the salesmen data table
+const populateSalesmenTable = () => {
+  const salesmanDataTable = document.getElementById('salesmen-data');
+  salesmanDataTable.innerHTML = ''; // Clear the existing table data
+
+  salesmen.forEach((salesman, index) => {
+    salesmanDataTable.innerHTML += `
+      <tr>
+          <td class="px-4 py-2"><input type="checkbox" /></td>
+          <td class="px-4 py-2">${salesman.name}</td>
+          <td class="px-4 py-2">${salesman.carsSold}</td>
+          <td class="px-4 py-2">$${salesman.revenue.toLocaleString()}</td>
+          <td class="px-4 py-2">$${salesman.avgDealSize.toLocaleString()}</td>
+          <td class="px-4 py-2">${(salesman.carsSold >= 50 ? '🔥 Good' : '👎 Needs Improvement')}</td>
+      </tr>
+    `;
+  });
+};
+
+// Function to update the chart
+const updateSalesPerformanceChart = () => {
+  salesPerformanceChart.data.labels = salesmen.map(salesman => salesman.name);
+  salesPerformanceChart.data.datasets[0].data = salesmen.map(salesman => salesman.carsSold);
+  salesPerformanceChart.update(); // Refresh the chart with updated data
+};
+
+// Existing code to set up the chart
 const ctxSalsmen = document.getElementById('salesPerformanceChart').getContext('2d');
 const salesPerformanceChart = new Chart(ctxSalsmen, {
-  type: 'bar',
+  type: 'line',
   data: {
-      labels: salesmen.map(salesman => salesman.name),
-      datasets: [{
-          label: 'Cars Sold',
-          data: salesmen.map(salesman => salesman.carsSold),
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
-      }]
+    labels: salesmen.map(salesman => salesman.name),
+    datasets: [{
+      label: 'Cars Sold',
+      data: salesmen.map(salesman => salesman.carsSold),
+      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+      borderColor: 'rgba(75, 192, 192, 1)',
+      borderWidth: 2,
+      pointRadius: 4,
+    }]
   },
   options: {
-      scales: {
-          y: {
-              beginAtZero: true
-          }
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      y: {
+        beginAtZero: true
       }
+    }
   }
 });
 
-// Admin actions (Add, Update, Delete Salesman)
-document.getElementById('add-salesman').addEventListener('click', () => {
-  // Add Salesman Logic (e.g., open a modal to add a new salesman)
-  alert('Add Salesman Feature (Coming Soon)');
-});
-
-document.getElementById('update-salesman').addEventListener('click', () => {
-  // Update Salesman Logic (e.g., open a modal to update selected salesman)
-  alert('Update Salesman Feature (Coming Soon)');
-});
-
-document.getElementById('delete-salesman').addEventListener('click', () => {
-  // Delete Salesman Logic (e.g., prompt to delete selected salesman)
-  alert('Delete Salesman Feature (Coming Soon)');
-});
+// When a new salesman is added
+document.getElementById("addSalesmanSubmitBtn").addEventListener("click", () => {
   
+  const newSalesman = {};
+
+  // Collect the values from the form inputs
+  document.querySelectorAll(".salesmanInfo").forEach((input) => {
+    const inputName = input.name;  // Assuming each input has a 'name' attribute in the html
+    newSalesman[inputName] = input.value;
+  });
+
+  // Add the new salesman to the salesmen array
+  salesmen.unshift(newSalesman);
+
+  // Update the table and chart
+  populateSalesmenTable();
+  updateSalesPerformanceChart();
+
+  document.getElementById("addSalesManForm").classList.remove("scale-100");
+  document.querySelector("body").className = "overflow-y-auto";
+});
+
+// Close the form
+document.getElementById("cancleSalesmanBtn").addEventListener("click", () => {
+  document.getElementById("addSalesManForm").classList.remove("scale-100");
+  document.querySelector("body").className = "overflow-y-auto";
+});
+
+document.getElementById("add-salesman").addEventListener("click", () => {
+  document.getElementById("addSalesManForm").classList.add("scale-100");
+  document.querySelector("body").className = "overflow-y-hidden";
+});
+

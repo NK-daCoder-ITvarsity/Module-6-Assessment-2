@@ -80,18 +80,6 @@ const salesData = {
     targetSales: 70
 };
 
-// Calculate Commission
-const commission = salesData.revenueGenerated * salesData.commissionRate;
-
-// Update the UI with dynamic data
-document.getElementById('cars-sold').innerText = salesData.carsSold;
-document.getElementById('revenue-generated').innerText = `$${salesData.revenueGenerated.toLocaleString()}`;
-document.getElementById('avg-deal-size').innerText = `$${salesData.avgDealSize.toLocaleString()}`;
-document.getElementById('commission-amount').innerText = `$${commission.toLocaleString()}`;
-
-// Calculate Progress Bar
-const progressPercent = (salesData.carsSold / salesData.targetSales) * 100;
-document.getElementById('progress-bar').style.width = `${progressPercent}%`;
 
 // Marketing and promotions
 document.querySelectorAll(".marketingPromotionalBtns").forEach((btns) => {
@@ -108,6 +96,28 @@ document.querySelectorAll(".marketingPromotionalBtns").forEach((btns) => {
         });
     });
 })
+
+
+// ================== Salesmen Progress ====================
+document.getElementById("toggleChartBtn").addEventListener("click", () => {
+    document.getElementById("performanceChart").classList.toggle("hidden");
+    document.getElementById("performanceDataTable").classList.toggle("hidden");
+
+    const toggleChartText = document.getElementById("toggleChartText");
+    const monitoringSymbol = document.getElementById("monitoringSymbol");
+
+    if (toggleChartText.textContent === "Chart") {
+        toggleChartText.textContent = "Table";
+        monitoringSymbol.textContent = "table_view";
+    } else {
+        toggleChartText.textContent = "Chart";
+        monitoringSymbol.textContent = "monitoring";
+    }
+});
+
+// add salesmen form
+
+
 
 
 

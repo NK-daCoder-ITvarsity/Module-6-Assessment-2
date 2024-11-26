@@ -459,7 +459,7 @@
         </article>
         
         <!-- Sales Management -->
-        <article class="page-article hidden min-h-screen p-6 md:p-12 font-sans border rounded-3xl" id="sales">
+        <article class="page-article hidden  p-6 md:p-12 font-sans border rounded-3xl" id="sales">
           <!-- Sales Management Header -->
           <section class="flex justify-between items-center border-b pb-4 border-gray-200 mb-8 mt-3">
             <h1 class="text-3xl font-bold text-gray-800">Sales Management</h1>
@@ -767,7 +767,7 @@
                     <span class="ml-2">Geographic Insights</span>
                 </button>
             </li>
-        </ul>
+          </ul>
         
 
           <!-- Salesmen Performance Section -->
@@ -775,25 +775,25 @@
             <h2 class="text-2xl font-bold mb-4">Salesmen Performance</h2>
     
             <!-- CRUD Operations Section -->
-            <div class="flex gap-2 p-5 lg:p-0 overflow-x-auto lg:justify-between items-center">
+            <div class="flex gap-2 p-5 lg:p-5 overflow-x-auto lg:justify-between items-center">
               <ul class="flex gap-3">
                 <!-- Add Salesman Button with Icon -->
                 <li>
-                  <button id="add-salesman" class="websitebuilder-scale p-2 text-sm md:text-base md:py-3 md:px-2 bg-green-500 text-white rounded-lg hover:bg-green-600 flex items-center gap-2">
+                  <button id="add-salesman" class="websitebuilder-scale p-2 text-sm font-semibold lg:w-36 text-center md:text-base md:py-3 md:px-2 bg-gradient-to-bl from-green-500 to-green-700 text-shadow text-white rounded-lg hover:bg-green-600 flex items-center gap-2">
                     <span class="material-symbols-rounded">add_circle</span> Salesman
                   </button>
                 </li>
               
                 <!-- Update Salesman Button with Icon -->
                 <li>
-                  <button id="update-salesman" class="websitebuilder-scale font-semibold p-2 text-sm md:text-base md:py-3 md:px-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 flex items-center gap-2">
+                  <button id="update-salesman" class="websitebuilder-scale font-semibold p-2 lg:w-36 text-center text-sm md:text-base md:py-3 md:px-2 bg-gradient-to-bl from-blue-500 text-shadow to-blue-700 text-white rounded-lg hover:bg-blue-600 flex items-center gap-2">
                     <span class="material-symbols-rounded">edit</span> Edit
                   </button>
                 </li>
               
                 <!-- Delete Salesman Button with Icon -->
                 <li>
-                  <button id="delete-salesman" class="websitebuilder-scale font-semibold p-2 text-sm md:text-base md:py-3 md:px-2 bg-red-500 text-white rounded-lg hover:bg-red-600 flex items-center gap-2">
+                  <button id="delete-salesman" class="websitebuilder-scale font-semibold p-2 lg:w-36 text-center text-sm md:text-base md:py-3 md:px-2 bg-gradient-to-bl from-red-500 to-red-700 text-white rounded-lg hover:bg-red-600 flex items-center gap-2">
                     <span class="material-symbols-rounded">delete</span> Remove
                   </button>
                 </li>
@@ -801,47 +801,137 @@
               
               <ul>
                 <li>
-                  <button class="font-semibold p-1 text-sm md:text-base md:py-3 md:px-2  border border-gray-600 rounded-lg  flex items-center gap-2">
-                    <span class="material-symbols-rounded">
+                  <button id="toggleChartBtn" class="websitebuilder-scale font-semibold p-1 text-sm md:text-base md:py-3 md:px-2  border border-gray-600 rounded-lg  flex items-center gap-2">
+                    <span class="material-symbols-rounded" id="monitoringSymbol">
                       monitoring
                     </span>
-                    Chart
+                    <span id="toggleChartText">Chart</span>
                   </button>
                 </li>
               </ul>
-                
-                
-                
             </div>
 
             <!-- Sales Performance Chart -->
-            <div class="hidden">
+            <section>
               <h3 class="text-xl font-semibold">Sales Performance Chart</h3>
-              <canvas id="salesPerformanceChart" width="400" height="200"></canvas>
-            </div>
-    
-            <!-- Salesman Performance Data Table -->
-            <div class="overflow-x-auto bg-gray-50 rounded-xl shadow-md w-full">
-                <table class="min-w-full text-sm">
-                    <thead>
-                        <tr>
-                          <th class="px-4 py-2 text-left">Actions</th>
-                          <th class="px-4 py-2 text-left">Name</th>
-                          <th class="px-4 py-2 text-left">Cars Sold</th>
-                          <th class="px-4 py-2 text-left">Revenue Generated</th>
-                          <th class="px-4 py-2 text-left">Avg. Deal Size</th>
-                          <th class="px-4 py-2 text-left">Performance</th>
-                        </tr>
-                    </thead>
-                    <tbody id="salesmen-data">
-                        <!-- Dynamic data will go here -->
-                    </tbody>
-                </table>
-            </div>
-          </div>
 
-          
-          
+              
+              <div id="performanceChart" class="hidden h-80 w-full">
+                <canvas id="salesPerformanceChart" width="800" height="400"></canvas>
+              </div>
+      
+              <!-- Salesman Performance Data Table -->
+              <div class="overflow-x-auto bg-gray-50 rounded-xl shadow-md w-full " id="performanceDataTable">
+                  <table class="min-w-full text-sm">
+                      <thead>
+                          <tr>
+                            <th class="px-4 py-2 text-left">Actions</th>
+                            <th class="px-4 py-2 text-left">Name</th>
+                            <th class="px-4 py-2 text-left">Cars Sold</th>
+                            <th class="px-4 py-2 text-left">Revenue Generated</th>
+                            <th class="px-4 py-2 text-left">Avg. Deal Size</th>
+                            <th class="px-4 py-2 text-left">Performance</th>
+                          </tr>
+                      </thead>
+                      <tbody id="salesmen-data">
+                          <!-- Dynamic data will go here -->
+                      </tbody>
+                  </table>
+              </div>
+
+              <!--- Salsesman Forms  -->
+              <div id="addSalesManForm" class="transform scale-0 transition-transform overflow-y-auto fixed top-0 left-0 z-50 bg-white shadow-md rounded-lg p-6 w-screen h-screen">
+                <section class="flex justify-between items-center">
+                  <h1 class="text-2xl font-bold text-gray-800 mb-4 flex items-center">
+                    <span class="material-symbols-rounded text-4xl text-blue-500 mr-2">person_add</span>
+                    Add Salesman
+                  </h1>
+                  <button class="flex rounded-3xl border py-2 px-3 font-semibold" id="cancleSalesmanBtn">
+                    <span class="material-symbols-rounded">
+                      arrow_back_ios_new
+                    </span>
+                    Back
+                  </button>
+                  
+                </section>
+                
+                <form action="#" class="space-y-6" id="salesmanForm">
+                  <!-- Personal Information -->
+                  <fieldset class="border rounded-lg p-4">
+                    <legend class="text-lg font-medium text-gray-800 px-2">Personal Information</legend>
+                    <!-- Full Name -->
+                    <div class="mt-2">
+                      <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                      <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                        <span class="material-symbols-rounded text-gray-400 px-3">person</span>
+                        <input type="text" id="name" name="name" placeholder="Enter full name" class="salesmanInfo w-full py-2 px-3 text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="mt-2">
+                      <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                      <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                        <span class="material-symbols-rounded text-gray-400 px-3">mail</span>
+                        <input type="email" id="email" name="email" placeholder="Enter email address" 
+                              class="salesmanInfo w-full py-2 px-3 text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      </div>
+                    </div>
+                    <!-- Phone Number -->
+                    <div class="mt-2">
+                      <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                      <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                        <span class="material-symbols-rounded text-gray-400 px-3">phone</span>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter phone number" class="salesmanInfo w-full py-2 px-3 text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      </div>
+                    </div>
+                  </fieldset>
+            
+                  <!-- Performance Metrics -->
+                  <fieldset class="border rounded-lg p-4">
+                    <legend class="text-lg font-medium text-gray-800 px-2">Performance Metrics</legend>
+                    <!-- Average Deal Size -->
+                    <div class="mt-2">
+                      <label for="deal-size" class="block text-sm font-medium text-gray-700 mb-1">Average Deal Size</label>
+                      <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                        <span class="material-symbols-rounded text-gray-400 px-3">attach_money</span>
+                        <input type="number" id="deal-size" name="avgDealSize" placeholder="Enter deal size" 
+                              class="salesmanInfo w-full py-2 px-3 text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      </div>
+                    </div>
+                    <!-- Revenue Generated -->
+                    <div class="mt-2">
+                      <label for="revenue" class="block text-sm font-medium text-gray-700 mb-1">Revenue Generated</label>
+                      <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                        <span class="material-symbols-rounded text-gray-400 px-3">bar_chart</span>
+                        <input type="number" id="revenue" name="revenue" placeholder="Enter revenue" 
+                              class="salesmanInfo w-full py-2 px-3 text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      </div>
+                    </div>
+                    <!-- Cars Sold -->
+                    <div class="mt-2">
+                      <label for="cars-sold" class="block text-sm font-medium text-gray-700 mb-1">Cars Sold</label>
+                      <div class="flex items-center border rounded-lg overflow-hidden bg-gray-50">
+                        <span class="material-symbols-rounded text-gray-400 px-3">directions_car</span>
+                        <input type="number" id="cars-sold" name="carsSold" placeholder="Enter cars sold" 
+                              class="salesmanInfo w-full py-2 px-3 text-gray-700 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <!-- reset form btn -->
+                  <input type="reset" value="Reset"
+                  style="background-color: red; color: white" />
+            
+                  <!-- Submit Button -->
+                  <button type="button" 
+                          class="w-full bg-blue-500 text-white text-sm font-medium py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500" id="addSalesmanSubmitBtn">
+                    <span class="material-symbols-rounded align-middle mr-2">done</span>
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </section>
+            
         </article>
 
         <!-- Employee Management Section -->
