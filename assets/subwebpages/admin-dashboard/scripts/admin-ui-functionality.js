@@ -115,8 +115,6 @@ document.getElementById("toggleChartBtn").addEventListener("click", () => {
     }
 });
 
-// add salesmen form
-
 
 
 

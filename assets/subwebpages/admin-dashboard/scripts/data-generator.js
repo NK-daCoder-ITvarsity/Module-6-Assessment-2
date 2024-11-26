@@ -183,44 +183,130 @@ cars.forEach((car) => {
 /* =================== Employee management data generator Example 2 ===================== */
 
 const employees = [
-  { name: "John Doe", role: "Sales Manager", salary: "$7,500", status: "Active", payment: "Paid", image: "../../images/employee-profiles/john-doe.png" },
-  { name: "Jane Smith", role: "Finance Specialist", salary: "$6,200", status: "Active", payment: "Not Paid", image: "../../images/employee-profiles/jane-smith.png" },
-  { name: "Carlos Vega", role: "Mechanic", salary: "$4,800", status: "Inactive", payment: "Not Paid", image: "../../images/employee-profiles/carlos-vega.png" },
-  { name: "Samantha Lee", role: "Customer Support", salary: "$5,000", status: "Active", payment: "Paid", image: "../../images/employee-profiles/samantha-lee.png" },
-  { name: "Michael Brown", role: "Dealer", salary: "$6,500", status: "Active", payment: "Paid", image: "../../images/employee-profiles/michael-brown.png" },
-  // Add more employees (35 total)
+  { name: "John Doe", role: "Sales Manager", salary: "$7,500", status: "Active", payment: "Paid", image: "../../images/employee-profiles/john-doe.png", employee:"employed" },
+  { name: "Jane Smith", role: "Finance Specialist", salary: "$6,200", status: "Active", payment: "Not Paid", image: "../../images/employee-profiles/jane-smith.png", employee:"employed" },
+  { name: "Carlos Vega", role: "Mechanic", salary: "$4,800", status: "Inactive", payment: "Not Paid", image: "../../images/employee-profiles/carlos-vega.png", employee:"employed" },
+  { name: "Samantha Lee", role: "Customer Support", salary: "$5,000", status: "Active", payment: "Paid", image: "../../images/employee-profiles/samantha-lee.png", employee:"employed" },
+  { name: "Michael Brown", role: "Dealer", salary: "$6,500", status: "Active", payment: "Paid", image: "../../images/employee-profiles/michael-brown.png", employee:"employed" },
+  { name: "Joseph Brown", role: "Dealer", salary: "$6,500", status: "Available", payment: "Need To Hire", image: "../../images/employee-profiles/michael-brown.png", employee:"Not employed" },
+  { name: "Lee Brown", role: "Dealer", salary: "$6,500", status: "Available", payment: "Need To Hire", image: "../../images/employee-profiles/michael-brown.png", employee:"Not employed" },
 ];
 
 const container = document.getElementById('employee-cards');
 
-employees.forEach((employee) => {
-  const card = document.createElement('div');
-  card.className = "bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden";
-
-  card.innerHTML = `
-    <div class="relative p-6 flex items-center gap-4 justify-between">
-      <img src="${employee.image}" alt="${employee.name}'s Profile" class="rounded-full p-2 w-40 h-40 drop-shadow-lg bg-white object-cover">
-      <section class="flex-1 z-10">
-        <h3 class="text-lg font-medium text-gray-900">${employee.name}</h3>
-        <p class="text-sm text-gray-600">${employee.role}</p>
-        <p class="text-lg font-semibold text-blue-500 mt-2">${employee.salary}</p>
-        <div class="flex items-center gap-2 mt-2">
-          <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full ${employee.status === "Active" ? "bg-green-500" : "bg-gray-400"} text-white">
-            <span class="material-symbols-rounded text-sm mr-1">${employee.status === "Active" ? "check_circle" : "pause_circle"}</span> ${employee.status}
-          </span>
-          <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full ${employee.payment === "Paid" ? "bg-green-500" : "bg-red-500"} text-white">
-            <span class="material-symbols-rounded text-sm mr-1">${employee.payment === "Paid" ? "check_circle" : "error"}</span> ${employee.payment}
-          </span>
-        </div>
-      </section>
-      <button class="text-gray-600 hover:text-blue-500 absolute top-3 right-3 websitebuilder-scale">
-        <span class="material-symbols-rounded text-3xl">more_vert</span>
-      </button>
-    </div>
-  `;
-
-  container.appendChild(card);
+// Delegate the click event on the parent container of the buttons
+container.addEventListener('click', (event) => {
+  if (event.target.classList.contains('moreMenuBtn')) {
+    const button = event.target;
+    const dropdownId = button.getAttribute('data-dropdown-toggle');
+    const dropdown = document.getElementById(dropdownId);
+    
+    // Toggle the dropdown visibility
+    dropdown.classList.toggle('scale-0');
+  }
 });
+
+// Function to render employees
+// Function to render employees with the appropriate dropdown
+function renderEmployees(filteredEmployees) {
+  container.innerHTML = ""; // Clear current content
+  filteredEmployees.forEach((employee, index) => {
+    const card = document.createElement('div');
+    card.className = "bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all overflow-hidden relative transform hover:scale-105";
+    
+    // Generate the employee card dynamically
+    card.innerHTML = `
+      <div class="relative p-6 flex items-center gap-4 justify-between">
+        <img src="${employee.image}" alt="${employee.name}'s Profile" class="rounded-full p-2 w-24 h-24 drop-shadow-lg bg-white object-cover">
+        <section class="flex-1">
+          <h3 class="text-lg font-semibold text-gray-900">${employee.name}</h3>
+          <p class="text-sm text-gray-600">${employee.role}</p>
+          <p class="text-lg font-semibold text-blue-600 mt-2">${employee.salary}</p>
+          <div class="flex items-center gap-2 mt-2">
+            <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full ${employee.status === "Active" ? "bg-green-500" : "bg-gray-400"} text-white">
+              <span class="material-symbols-rounded text-sm mr-1">${employee.status === "Active" ? "check_circle" : "pause_circle"}</span> ${employee.status}
+            </span>
+            <span class="inline-flex items-center px-3 py-1 text-sm font-medium rounded-full ${employee.payment === "Paid" ? "bg-green-500" : "bg-red-500"} text-white">
+              <span class="material-symbols-rounded text-sm mr-1">${employee.payment === "Paid" ? "check_circle" : "error"}</span> ${employee.payment}
+            </span>
+          </div>
+        </section>
+
+        <button class="moreMenuBtn z-20 absolute top-3 right-3 text-gray-600 hover:text-blue-500 websitebuilder-scale" data-dropdown-toggle="dropdown-${index}">
+          <span class="material-symbols-rounded text-3xl">more_vert</span>
+        </button>
+
+        <!-- Dropdown menu for employed or not employed -->
+        <section id="dropdown-${index}" class="transition-all transform scale-0 dropdown absolute top-1 right-10 bg-white rounded-xl shadow-lg p-3 w-40 z-50">
+          <ul class="grid gap-3">
+            ${employee.employee === "employed" ? `
+              <li><button class="flex gap-2 text-sm text-gray-600 hover:text-blue-500"><span class="material-symbols-rounded">payments</span>Pay</button></li>
+              <li><button class="flex gap-2 text-sm text-gray-600 hover:text-blue-500"><span class="material-symbols-rounded">edit</span>Edit</button></li>
+              <li><button class="flex gap-2 text-sm text-gray-600 hover:text-blue-500"><span class="material-symbols-rounded">delete</span>Remove</button></li>
+            ` : `
+              <li><button class="flex gap-2 text-sm text-gray-600 hover:text-blue-500"><span class="material-symbols-rounded">schedule</span>Interview</button></li>
+              <li><button class="flex gap-2 text-sm text-gray-600 hover:text-blue-500"><span class="material-symbols-rounded">badge</span>Hire Now</button></li>
+              <li><button class="flex gap-2 text-sm text-gray-600 hover:text-blue-500"><span class="material-symbols-rounded">file_copy</span>View CV/Resume</button></li>
+            `}
+          </ul>
+        </section>  
+      </div>
+    `;
+    
+    container.appendChild(card);
+  });
+}
+
+
+
+// Event Listener for Filter Buttons
+
+document.querySelectorAll('button[data-filter]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.getAttribute('data-filter');
+    let filteredEmployees;
+    
+    if (filter === "all") {
+      filteredEmployees = employees.filter((emp) => emp.employee === "employed"); // Show all employees
+    } 
+    else if (filter === "Not Paid") {
+      filteredEmployees = employees.filter((emp) => emp.payment === "Not Paid");
+    } 
+    else if (filter === "Inactive") {
+      filteredEmployees = employees.filter((emp) => emp.status === "Inactive");
+    } 
+    else if (filter === "Not Hired") { // New case for employees to hire
+      filteredEmployees = employees.filter((emp) => emp.payment === "Need To Hire");
+    } 
+    else {
+      filteredEmployees = employees.filter((emp) => emp.status === "Active" && emp.payment === "Paid");
+    }
+
+    renderEmployees(filteredEmployees); // Re-render based on filter
+
+    document.querySelectorAll(".moreMenuBtn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".dropdown").forEach((dropdowns) => {
+          const getAttributeOfBtn = btn.getAttribute("data-dropdown-toggle");
+          if (dropdowns.id === getAttributeOfBtn) {
+            dropdowns.classList.toggle("scale-0");
+          }
+        });
+      });
+    });
+  });
+});
+
+
+// ================================= create an employee ============================
+
+document.getElementById("addEmployeeBtn").addEventListener("click", () => {
+
+});
+
+
+
+
 
 
 // =================== Example customer data Example 1 ============================

@@ -376,7 +376,8 @@ const salesPerformanceChart = new Chart(ctxSalsmen, {
   }
 });
 
-// When a new salesman is added
+// ======================= Add A Salseman =======================================
+
 document.getElementById("addSalesmanSubmitBtn").addEventListener("click", () => {
   
   const newSalesman = {};
@@ -398,6 +399,91 @@ document.getElementById("addSalesmanSubmitBtn").addEventListener("click", () => 
   document.querySelector("body").className = "overflow-y-auto";
 });
 
+// ======================= Edit sales man =================================
+
+document.getElementById("update-salesman").addEventListener("click", () => {
+  // Get the checked checkboxes
+  const selectedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  
+  // If exactly one salesman is selected, allow editing
+  if (selectedCheckboxes.length === 1) {
+    const selectedIndex = Array.from(selectedCheckboxes).map(checkbox => {
+      return Array.from(checkbox.closest('tr').parentElement.children).indexOf(checkbox.closest('tr'));
+    })[0];  // Get the index of the checked checkbox row
+    
+    // Get the selected salesman
+    const selectedSalesman = salesmen[selectedIndex];
+    
+    // Populate the form with the selected salesman's data
+    document.querySelector('input[name="name"]').value = selectedSalesman.name;
+    document.querySelector('input[name="carsSold"]').value = selectedSalesman.carsSold;
+    document.querySelector('input[name="revenue"]').value = selectedSalesman.revenue;
+    document.querySelector('input[name="avgDealSize"]').value = selectedSalesman.avgDealSize;
+    document.querySelector('input[name="phone"]').value = selectedSalesman.phone;
+    document.querySelector('input[name="email"]').value = selectedSalesman.email;
+
+    // Show the form for editing
+    document.getElementById("addSalesManForm").classList.add("scale-100");
+    document.querySelector("body").className = "overflow-y-hidden";
+
+    // When the form is submitted, update the salesman data
+    document.getElementById("addSalesmanSubmitBtn").addEventListener("click", () => {
+      // Collect the edited values
+      const updatedSalesman = {
+        name: document.querySelector('input[name="name"]').value,
+        carsSold: parseInt(document.querySelector('input[name="carsSold"]').value),
+        revenue: parseFloat(document.querySelector('input[name="revenue"]').value),
+        avgDealSize: parseFloat(document.querySelector('input[name="avgDealSize"]').value),
+        phone: document.querySelector('input[name="phone"]').value,
+        email: document.querySelector('input[name="email"]').value,
+      };
+
+      // Update the salesmen array with the updated data
+      salesmen[selectedIndex] = updatedSalesman;
+
+      // Close the form and reset the body class
+      document.getElementById("addSalesManForm").classList.remove("scale-100");
+      document.querySelector("body").className = "overflow-y-auto";
+
+      // Re-populate the table and update the chart
+      populateSalesmenTable();
+      updateSalesPerformanceChart();
+    });
+  } else {
+    // If no or multiple salesmen are selected, alert the user
+    alert('Please select exactly one salesman to edit.');
+  }
+});
+
+// ======================= Delete sales man =================================
+
+document.getElementById("delete-salesman").addEventListener("click", () => {
+  // Find all the checkboxes that are checked
+  const checkboxes = document.querySelectorAll("input[type='checkbox']:checked");
+  
+  // Loop through each checked checkbox
+  checkboxes.forEach((checkbox) => {
+    const row = checkbox.closest('tr'); // Get the closest row for each checkbox
+    const salesmanName = row.querySelector('td:nth-child(2)').textContent; // Get the name of the salesman from the row
+    
+    // Find the index of the salesman to be deleted
+    const salesmanIndex = salesmen.findIndex(salesman => salesman.name === salesmanName);
+
+    // Remove the salesman from the array
+    if (salesmanIndex !== -1) {
+      salesmen.splice(salesmanIndex, 1);
+    }
+  });
+
+  // Update the table and chart after deletion
+  populateSalesmenTable();
+  updateSalesPerformanceChart();
+});
+
+
+
+
+
 // Close the form
 document.getElementById("cancleSalesmanBtn").addEventListener("click", () => {
   document.getElementById("addSalesManForm").classList.remove("scale-100");
@@ -408,4 +494,3 @@ document.getElementById("add-salesman").addEventListener("click", () => {
   document.getElementById("addSalesManForm").classList.add("scale-100");
   document.querySelector("body").className = "overflow-y-hidden";
 });
-
