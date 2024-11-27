@@ -1,6 +1,6 @@
 // Selecting the necessary DOM elements for interaction
-const incomeInput = document.getElementById('income');
-const taxRateInput = document.getElementById('tax-rate');
+const incomeInput = document.getElementById('income-number');
+const taxRateInput = document.getElementById('tax-rate-number');
 const taxAmount = document.getElementById('tax-amount');
 const totalAmount = document.getElementById('total-amount');
 const calculateBtn = document.getElementById('calculate-btn');
@@ -8,9 +8,10 @@ const calculateBtn = document.getElementById('calculate-btn');
 // Event listener for the calculate button
 calculateBtn.addEventListener('click', () => {
   // Get the values of income and tax rate from the inputs
-  const income = parseFloat(incomeInput.value);
-  const taxRate = parseFloat(taxRateInput.value);
-
+  const income = parseFloat(incomeInput.value.trim());
+  console.log(income); // income returns nothing
+  const taxRate = parseFloat(taxRateInput.value.trim());
+  console.log(`income: ${income}`, `taxRate: ${taxRate}`)
   // Check if the input values are valid numbers
   if (isNaN(income) || isNaN(taxRate) || income <= 0 || taxRate < 0) {
     // If not, display error message and exit function
