@@ -63,76 +63,70 @@ document.getElementById('previewInvoice').addEventListener('click', () => {
 });
 
 // Download Invoice
-document.getElementById('downloadInvoice').addEventListener('click', generatePDF);
+document.getElementById('downloadInvoice').addEventListener('click', () => {
+    const { jsPDF } = window.jspdf;
 
-// arrow functions does not work with async functions
-async function generatePDF() {
-    // Fetch the invoice details
-    const clientName = document.getElementById('clientName').value;
-    const clientEmail = document.getElementById('clientEmail').value;
+    // Create a new PDF instance
+    const pdf = new jsPDF();
+
+    // Add Logo/image only supports png
+    // Replace with your logo's path or URL
+    const logoUrl = 'https://mir-s3-cdn-cf.behance.net/project_modules/hd/76527a11924043.56254adfdb229.png';
+    // Adjust dimensions as needed
+    pdf.addImage(logoUrl, 'PNG', 10, 10, 50, 20);
+
+    // Add Client Info
+    const clientName = document.getElementById('clientName').value || 'N/A';
+    const clientEmail = document.getElementById('clientEmail').value || 'N/A';
+
+    pdf.setFontSize(12);
+    pdf.text('Invoice To:', 140, 15);
+    pdf.text(`Name: ${clientName}`, 140, 25);
+    pdf.text(`Email: ${clientEmail}`, 140, 35);
+
+    // Table Headers
+    const headers = ['Item', 'Quantity', 'Price', 'Total'];
+    const tableData = [];
     const items = document.querySelectorAll('#itemsContainer .flex');
+
+    items.forEach((itemRow) => {
+        const itemName = itemRow.querySelector('[name="itemName[]"]').value || 'N/A';
+        const itemQty = itemRow.querySelector('[name="itemQty[]"]').value || 0;
+        const itemPrice = itemRow.querySelector('[name="itemPrice[]"]').value || 0;
+        const itemTotal = (itemQty * itemPrice).toFixed(2);
+
+        tableData.push([itemName, itemQty, `$${itemPrice}`, `$${itemTotal}`]);
+    });
+
+    // Table Styles
+    pdf.autoTable({
+        startY: 50,
+        head: [headers],
+        body: tableData,
+        theme: 'grid',
+        headStyles: { fillColor: [0, 0, 0], textColor: [255, 255, 255] }, // Black background, white text
+        bodyStyles: { textColor: [0, 0, 0] }, // Black text
+    });
+
+    // Subtotal, Tax, and Total
     const subtotal = document.getElementById('subtotal').innerText;
     const tax = document.getElementById('tax').innerText;
     const total = document.getElementById('total').innerText;
 
-    // Initialize jsPDF
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF();
-
-    // Set styling for the PDF
-    doc.setFont('helvetica', 'bold');
-    doc.setFontSize(16);
-    doc.text('Invoice', 105, 20, null, null, 'center');
-
-    // Client Details
-    doc.setFont('helvetica', 'normal');
-    doc.setFontSize(12);
-    doc.text(`Client Name: ${clientName}`, 10, 40);
-    doc.text(`Client Email: ${clientEmail}`, 10, 50);
-
-    // Table Header
-    doc.setFont('helvetica', 'bold');
-    doc.text('Item', 10, 70);
-    doc.text('Qty', 100, 70);
-    doc.text('Price', 140, 70);
-    doc.text('Total', 180, 70);
-
-    doc.setFont('helvetica', 'normal');
-    let yPos = 80; // Starting position for items
-
-    items.forEach((itemRow) => {
-        const itemName = itemRow.querySelector('input[name="itemName[]"]').value;
-        const itemQty = itemRow.querySelector('input[name="itemQty[]"]').value;
-        const itemPrice = itemRow.querySelector('input[name="itemPrice[]"]').value;
-        const itemTotal = (itemQty * itemPrice).toFixed(2);
-
-        doc.text(itemName, 10, yPos);
-        doc.text(itemQty, 100, yPos);
-        doc.text(`$${itemPrice}`, 140, yPos);
-        doc.text(`$${itemTotal}`, 180, yPos);
-        yPos += 10; // Move to next line
-    });
-
-    // Summary Section
-    yPos += 10;
-    doc.text('Subtotal:', 140, yPos);
-    doc.text(subtotal, 180, yPos);
-    yPos += 10;
-    doc.text('Tax (15%):', 140, yPos);
-    doc.text(tax, 180, yPos);
-    yPos += 10;
-    doc.text('Total:', 140, yPos);
-    doc.setFont('helvetica', 'bold');
-    doc.text(total, 180, yPos);
+    pdf.text(`Subtotal: ${subtotal}`, 140, pdf.lastAutoTable.finalY + 10);
+    pdf.text(`Tax (15%): ${tax}`, 140, pdf.lastAutoTable.finalY + 20);
+    pdf.setFontSize(14);
+    pdf.text(`Total: ${total}`, 140, pdf.lastAutoTable.finalY + 30);
 
     // Footer
-    yPos += 20;
-    doc.setFont('helvetica', 'italic');
-    doc.text('Thank you for your business!', 105, yPos, null, null, 'center');
+    pdf.setFontSize(10);
+    pdf.text('Thank you for your business!', 10, 280);
+    pdf.text('This is a computer-generated invoice.', 10, 290);
 
-    // Save the PDF
-    doc.save('invoice.pdf');
-}
+    // Download the PDF
+    pdf.save('Invoice.pdf');
+});
+
 
 
 // Print Invoice

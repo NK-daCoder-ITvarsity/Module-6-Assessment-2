@@ -12,12 +12,16 @@
     <script src="./scripts/inventory.js" defer></script>
     <script src="./scripts/admin-ui-functionality.js" defer></script>
     <script src="./scripts/automated-invoice.js" defer></script>
+    <script src="./scripts/tax-calculator.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
     <script src="./scripts/charts.js" defer></script>
 
     <!-- library for adding pdfs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+    <!-- Include jsPDF AutoTable for editing pdf tables plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.19/jspdf.plugin.autotable.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
 
 </head>
 <body>
@@ -216,7 +220,7 @@
         </nav>
     </header>
 
-    <main class="text-gray-700 lg:absolute md:mx-3  lg:mt-2 lg:right-14 lg:w-3/4 antialiased bg-gray-9 font-sans flex flex-col gap-2 mt-5">
+    <main class="text-gray-700 lg:absolute md:mx-3 lg:mt-2 lg:right-14 lg:w-3/4 antialiased bg-gray-9 font-sans flex flex-col gap-2 mt-5">
         <!-- Desktop top search -->
         <section class="page-article hidden border rounded-2xl lg:flex gap-3 justify-between items-center px-3 py-2">
             <h1 class="text-xl font-sans flex items-center gap-2">
@@ -1412,7 +1416,7 @@
         </article>
 
         <!-- Invoice -->
-        <article id="invoice" class="page-article border rounded-3xl p-6 gap-6 max-w-full bg-white shadow-lg">
+        <article id="invoice" class="hidden mt-8 lg:mt-0 page-article md:border rounded-3xl p-6 gap-6 max-w-full bg-white">
           <form id="invoiceForm" class="flex flex-col gap-4">
               <h2 class="text-2xl font-semibold text-gray-800">Create Invoice</h2>
       
@@ -1429,7 +1433,7 @@
       
               <!-- Invoice Items -->
               <div id="itemsContainer" class="flex flex-col gap-4">
-                  <div class="flex items-center gap-2">
+                  <div class="flex items-center gap-2 ">
                       <input type="text" name="itemName[]" placeholder="Item Name" class="border border-gray-300 rounded-lg p-2 w-2/5" required>
                       <input type="number" name="itemQty[]" placeholder="Qty" class="border border-gray-300 rounded-lg p-2 w-1/5" required>
                       <input type="number" name="itemPrice[]" placeholder="Price" class="border border-gray-300 rounded-lg p-2 w-2/5" required>
@@ -1458,7 +1462,7 @@
               </div>
       
               <!-- Invoice Actions -->
-              <div class="flex gap-4 mt-6">
+              <div class="flex gap-4 mt-6 overflow-x-auto w-full">
                   <button type="button" id="previewInvoice" class="flex items-center gap-2 bg-blue-500 text-white py-2 px-4 rounded-lg shadow">
                       <span class="material-symbols-rounded">visibility</span> Preview
                   </button>
@@ -1629,7 +1633,7 @@
                   placeholder="e.g., 50000"
                 >
               </div>
-
+        
               <!-- Tax Rate Input -->
               <div>
                 <label for="tax-rate" class="block text-sm font-medium text-gray-600">Tax Rate (%)</label>
@@ -1640,7 +1644,7 @@
                   placeholder="e.g., 15"
                 >
               </div>
-
+        
               <!-- Result Display -->
               <div class="p-4 bg-gradient-to-r from-blue-100 to-blue-200 rounded-lg shadow">
                 <p class="text-sm text-gray-600">Tax Amount:</p>
@@ -1648,7 +1652,7 @@
                 <p class="text-sm text-gray-600 mt-2">Total After Tax:</p>
                 <p id="total-amount" class="text-lg font-semibold text-gray-800 mt-1">$0.00</p>
               </div>
-
+        
               <!-- Calculate Button -->
               <button 
                 type="button" 
