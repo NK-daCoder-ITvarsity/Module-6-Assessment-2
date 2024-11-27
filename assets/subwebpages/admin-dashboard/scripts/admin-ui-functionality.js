@@ -116,7 +116,17 @@ document.getElementById("toggleChartBtn").addEventListener("click", () => {
 });
 
 
+document.getElementById("addCarBtn").addEventListener("click", () => {
+    document.getElementById("addCarForm").classList.toggle("scale-0");
+    document.querySelector("html").classList.toggle("overflow-y-hidden");
+});
+
+document.getElementById("addCarCancleBtn").addEventListener("click", () => {
+    document.getElementById("addCarForm").classList.add("scale-0");
+    document.querySelector("html").classList.remove("overflow-y-hidden");
+})
 
 
-
-
+document.getElementById("submitEmployeeBtn").addEventListener("click", () => {
+    
+});

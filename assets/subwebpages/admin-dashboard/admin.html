@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../../stylesheets/minor-modifications.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./scripts/data-generator.js" defer></script>
+    <script src="./scripts/data-employees.js" defer></script>
+    <script src="./scripts/inventory.js" defer></script>
     <script src="./scripts/admin-ui-functionality.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
@@ -212,7 +214,12 @@
     <main class="text-gray-700 lg:absolute md:mx-3  lg:mt-2 lg:right-14 lg:w-3/4 antialiased bg-gray-9 font-sans flex flex-col gap-2 mt-5">
         <!-- Desktop top search -->
         <section class="page-article hidden border rounded-2xl lg:flex gap-3 justify-between items-center px-3 py-2">
-            <h1 class="text-xl font-sans">Dashboard</h1>
+            <h1 class="text-xl font-sans flex items-center gap-2">
+              <span class="material-symbols-rounded">
+                dashboard
+              </span>
+              Dashboard
+            </h1>
             
             <ul class="flex gap-2">
                 <li>
@@ -323,10 +330,15 @@
               <li class="rounded-xl p-5 bg-gradient-to-bl lg:from-blue-400 lg:to-blue-500 hover:from-blue-500 hover:to-blue-700 from-blue-500 to-blue-700 text-white font-semibold transition-all transform hover:scale-105 hover:shadow-xl h-40">
                 <article>
                   <section>
-                    <h5 class="text-lg font-medium">Total Cars</h5>
+                    <h5 class="text-lg font-semibold">Total Cars</h5>
                     <p class="text-4xl font-bold text-shadow">0</p>
                   </section>
-                  <button class="shadow-lg mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all">Manage</button>
+                  <button class="flex gap-1 text-shadow websitebuilder-scale bg-gradient-to-bl from-blue-500 to-blue-700 font-semibold mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all transform hover:scale-110 shadow-md">
+                    <span class="material-symbols-rounded">
+                      content_paste
+                    </span>
+                    Manage
+                  </button>
                 </article>
               </li>
           
@@ -334,10 +346,15 @@
               <li class="rounded-xl p-5 bg-gradient-to-bl lg:from-red-400 lg:to-red-500 hover:from-red-500 hover:to-red-700 from-red-500 to-red-700 text-white font-semibold transition-all transform hover:scale-105 hover:shadow-xl h-40">
                 <article>
                   <section>
-                    <h5 class="text-lg font-medium">Shortages</h5>
+                    <h5 class="text-lg font-semibold">Shortages</h5>
                     <p class="text-4xl font-bold text-shadow">0</p>
                   </section>
-                  <button class="shadow-lg mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all">Manage</button>
+                  <button class="flex gap-1 text-shadow websitebuilder-scale bg-gradient-to-bl from-red-500 to-red-700 font-semibold mt-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-all transform hover:scale-110 shadow-md">
+                    <span class="material-symbols-rounded">
+                      content_paste
+                    </span>
+                    Manage
+                  </button>
                 </article>
               </li>
           
@@ -345,10 +362,15 @@
               <li class="rounded-xl p-5 bg-gradient-to-bl lg:from-yellow-400 lg:to-yellow-500 hover:from-yellow-500 hover:to-yellow-700 from-yellow-500 to-yellow-700 text-white font-semibold transition-all transform hover:scale-105 hover:shadow-xl h-40">
                 <article>
                   <section>
-                    <h5 class="text-lg font-medium">Total Available Cars</h5>
+                    <h5 class="text-lg font-semibold">Total Available Cars</h5>
                     <p class="text-4xl font-bold text-shadow">0</p>
                   </section>
-                  <button class="shadow-lg mt-4 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition-all">Manage</button>
+                  <button class="flex gap-1 text-shadow websitebuilder-scale bg-gradient-to-bl from-yellow-500 to-yellow-700 font-semibold mt-4 px-4 py-2 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition-all transform hover:scale-110 shadow-md">
+                    <span class="material-symbols-rounded">
+                      content_paste
+                    </span>
+                    Manage
+                  </button>
                 </article>
               </li>
             </ul>
@@ -359,7 +381,7 @@
           <section class="mt-8 text-right gap-2 flex justify-between mb-3 mx-3 md:mx-6">
             <ul class="gap-4 hidden md:flex">  
               <li>
-                  <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 ">
+                  <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105 " id="addCarBtn">
                       + Add Car
                   </button>
               </li>
@@ -386,6 +408,159 @@
           <ul class="data-cards-tables grid grid-cols-1 md:grid-cols-2 gap-4 p-6" id="inventory-card">
             <!-- All cards -->
           </ul>
+
+          <!-- Form -->
+          <div class="z-50 bg-white max-h-screen w-screen fixed top-0 left-0 transition-all transform overflow-y-auto scale-0" id="addCarForm">
+            <section class="w-full px-6 pt-8 flex justify-between items-center">
+              <h1 class="text-2xl font-semibold text-center text-blue-800 mb-2">
+                <span class="material-symbols-rounded text-white bg-gradient-to-bl from-blue-500 to-blue-800 p-2 rounded-xl">
+                  drive_eta
+                </span>
+                Add A Car Form
+              </h1>
+              <button class="font-semibold border rounded-3xl px-4 py-2 flex gap-2" id="addCarCancleBtn">
+                <span class="material-symbols-rounded">
+                  arrow_back_ios
+                </span>
+                Back
+              </button>
+            </section>
+
+            <form class="grid gap-4 w-full px-6 py-3">
+              <!-- Manufacturer -->
+              <div class="relative">
+                <label class="font-semibold block text-sm text-gray-700" for="manufacturer">Manufacturer</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">drive_eta</span>
+                  <input type="text" id="manufacturer" name="manufacturer" placeholder="Enter manufacturer"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+              </div>
+
+              <!-- Manufacturer Logo -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="manufacturerLogo">Manufacturer Logo</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">image</span>
+                  <input type="file" id="manufacturerLogo" name="manufacturerLogo"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm">
+                </div>
+              </div>
+
+              <!-- Car Name -->
+              <div class="relative">
+                <label class="font-semibold block text-sm text-gray-700" for="carName">Car Name</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">directions_car</span>
+                  <input type="text" id="carName" name="carName" placeholder="Enter car name"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+              </div>
+
+              <!-- Car Type -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="carType">Car Type</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">category</span>
+                  <select id="carType" name="carType"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="Sports Model">Sports Model</option>
+                    <option value="Family SUV">Family SUV</option>
+                    <option value="Luxury SUV">Luxury SUV</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Top Speed -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="topSpeed">Top Speed</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">speed</span>
+                  <input type="text" id="topSpeed" name="topSpeed" placeholder="e.g., 250 km/h"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+              </div>
+
+              <!-- Location -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="location">Location</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">place</span>
+                  <input type="text" id="location" name="location" placeholder="Enter location"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+              </div>
+
+              <!-- Fuel Type -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="fuelType">Fuel Type</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">local_gas_station</span>
+                  <select id="fuelType" name="fuelType"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="Petrol">Petrol</option>
+                    <option value="Hybrid">Hybrid</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Diesel">Diesel</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Stock Status -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="stockStatus">Stock Status</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">inventory</span>
+                  <select id="stockStatus" name="stockStatus"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="Available">Available</option>
+                    <option value="Shortage">Shortage</option>
+                    <option value="Limited">Limited</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Stock Available -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="stockAvailable">Stock Available</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">numbers</span>
+                  <input type="number" id="stockAvailable" name="stockAvailable" placeholder="Enter stock quantity"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+              </div>
+
+              <!-- Car Price -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="carPrice">Car Price</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">attach_money</span>
+                  <input type="text" id="carPrice" name="carPrice" placeholder="Enter car price"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+              </div>
+
+              <!-- Car Image -->
+              <div>
+                <label class="font-semibold block text-sm text-gray-700" for="carImages">Car Image</label>
+                <div class="flex items-center mt-1">
+                  <span class="material-symbols-rounded text-gray-500 pr-2">add_photo_alternate</span>
+                  <input type="file" id="carImages" name="carImages"
+                    class="w-full px-4 py-2 border rounded-lg shadow-sm">
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div>
+                <button type="submit"
+                  class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                  Add Car
+                </button>
+              </div>
+            </form>
+           
+          </div>
+
 
         </article>
 
@@ -741,35 +916,7 @@
           </article>
 
           <hr class="border-b mt-4 mb-2">
-
-          <ul class="my-3 overflow-x-auto lg:overflow-hidden flex gap-3 md:gap-4 p-2 lg:py-10 lg:overflow-x-hidden justify-start md:justify-center items-center">
-            <li class="flex-shrink-0">
-                <button class="gap-2 text-sm md:text-base font-semibold md:px-4 md:py-4 px-3 py-3 rounded-full border border-gray-700 text-gray-700 flex items-center justify-center transform transition-all hover:scale-110 websitebuilder-scale w-full sm:w-auto">
-                    <span class="material-symbols-rounded text-xl md:text-2xl">
-                        schedule
-                    </span>
-                    <span class="ml-2">Salesmen Performance</span>
-                </button>
-            </li>
-            <li class="flex-shrink-0">
-                <button class="gap-2 text-sm md:text-base font-semibold md:px-4 md:py-4 px-3 py-3 rounded-full border border-gray-700 text-gray-700 flex items-center justify-center transform transition-all hover:scale-110 websitebuilder-scale w-full sm:w-auto">
-                    <span class="material-symbols-rounded text-xl md:text-2xl">
-                        store
-                    </span>
-                    <span class="ml-2">Marketing Insights</span>
-                </button>
-            </li>
-            <li class="flex-shrink-0">
-                <button class="gap-2 text-sm md:text-base font-semibold md:px-4 md:py-4 px-3 py-3 rounded-full border border-gray-700 text-gray-700 flex items-center justify-center transform transition-all hover:scale-110 websitebuilder-scale w-full sm:w-auto">
-                    <span class="material-symbols-rounded text-xl md:text-2xl">
-                        travel_explore
-                    </span>
-                    <span class="ml-2">Geographic Insights</span>
-                </button>
-            </li>
-          </ul>
         
-
           <!-- Salesmen Performance Section -->
           <div class="bg-white flex flex-col gap-3">
             <h2 class="text-2xl font-bold mb-4">Salesmen Performance</h2>
@@ -939,7 +1086,7 @@
               <!-- Total Employees -->
               <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-purple-400 to-purple-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl ">
                 <h3 class="text-lg font-bold text-center md:text-left">Total Staff</h3>
-                <p class="text-3xl mt-2 text-center md:text-left pb-12">35</p>
+                <p id="totalStaff" class="text-3xl mt-2 text-center md:text-left pb-12">0</p> <!-- Will be updated dynamically -->
                 <div class="mt-4 absolute bottom-3">
                   <button data-filter="all" id="viewTotalEmployeeBtn" class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-purple-500 to-purple-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-purple-600 hover:to-purple-800 transition-all websitebuilder-scale">
                     View Employees
@@ -950,7 +1097,7 @@
               <!-- Employees to Hire -->
               <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-blue-400 to-blue-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
                 <h3 class="text-lg font-bold text-center md:text-left">Need to Hire</h3>
-                <p class="text-3xl mt-2 text-center md:text-left pb-12">5</p>
+                <p id="employeesToHire" class="text-3xl mt-2 text-center md:text-left pb-12">0</p> <!-- Will be updated dynamically -->
                 <div class="mt-4 absolute bottom-4">
                   <button data-filter="Not Hired" id="potentialEmployeesToHireBtn" class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-blue-500 to-blue-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 transition-all websitebuilder-scale">
                     Hire Employees
@@ -961,9 +1108,9 @@
               <!-- Employees to Pay -->
               <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-red-400 to-red-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
                 <h3 class="text-lg font-bold text-center md:text-left">Need To Pay</h3>
-                <p class="text-3xl mt-2 text-center md:text-left pb-12">10</p>
+                <p id="employeesToPay" class="text-3xl mt-2 text-center md:text-left pb-12">0</p> <!-- Will be updated dynamically -->
                 <div class="mt-4 absolute bottom-4">
-                  <button  data-filter="Not Paid" id="needToPayBtn" class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-red-600 hover:to-red-800 transition-all websitebuilder-scale">
+                  <button data-filter="Not Paid" id="needToPayBtn" class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-red-500 to-red-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-red-600 hover:to-red-800 transition-all websitebuilder-scale">
                     Pay Employees
                   </button>
                 </div>
@@ -971,10 +1118,10 @@
           
               <!-- Employees with Queries -->
               <div class="relative rounded-xl flex flex-col justify-center items-center md:justify-start md:items-start bg-gradient-to-r from-yellow-400 to-yellow-600 p-6 text-white shadow-lg transition-all transform hover:scale-110 hover:shadow-2xl">
-                <h3 class="text-lg font-bold text-center md:text-left">Employee Queries</h3>
-                <p class="text-3xl mt-2 text-center md:text-left pb-12">3</p>
+                <h3 class="text-lg font-bold text-center md:text-left">Employees with Queries</h3>
+                <p id="employeeQueries" class="text-3xl mt-2 text-center md:text-left pb-12">0</p> <!-- Will be updated dynamically -->
                 <div class="mt-4 absolute bottom-4">
-                  <button data-filter="Inactive" class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-yellow-600 hover:to-yellow-800 transition-all websitebuilder-scale">
+                  <button data-filter="Inactive" id="viewEmployeeQueriesBtn" class="w-full px-5 md:px-6 py-1 md:py-2 bg-gradient-to-r from-yellow-500 to-yellow-700 text-white font-bold rounded-md shadow-md hover:bg-gradient-to-r hover:from-yellow-600 hover:to-yellow-800 transition-all websitebuilder-scale">
                     View Queries
                   </button>
                 </div>
@@ -988,7 +1135,6 @@
                     + Add Employee
                 </button>
             </li>
-            
             <li>
               <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
                   <span class="material-symbols-rounded text-lg text-gray-600">
@@ -1003,72 +1149,72 @@
             <!-- cards automatically generated using javascript -->
           </section> 
 
+          <form action="#" method="post" class="h-screen transition-all transform scale-0 bg-white fixed top-0 left-0 z-50 w-screen p-8" id="addEmployeeFormContainer">
+            <section class="flex justify-between items-center">
+              <h1 class="text-2xl font-bold  text-center text-gray-800 flex items-center gap-2">
+                <span class="material-symbols-rounded text-shadow text-white p-2 rounded-xl bg-gradient-to-bl from-blue-600 to-blue-700">
+                  person_add
+                </span>
+                Employee Application Form
+              </h1>
+              <button type="button" class="flex gap-1 border rounded-3xl font-semibold p-2" id="addEmployeeSalesCancleBtn">
+                <span class="material-symbols-rounded">
+                  arrow_back_ios
+                </span>
+                Back
+              </button>
+            </section>
+            
+        
+            <!-- Full Name -->
+            <label for="full-name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+            <div class="relative mb-4 ">
+              <span class="material-symbols-rounded absolute left-3 top-2 text-gray-400">person</span>
+              <input type="text" id="full-name" name="full-name" placeholder="Enter your full name" class="pl-10 w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+        
+            <!-- Role -->
+            <label for="role" class="block text-gray-700 font-medium mb-2">Role</label>
+            <div class="relative mb-4 ">
+              <span class="material-symbols-rounded absolute left-3 top-2 text-gray-400">work</span>
+              <select id="role" name="role" class="pl-10 w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <!-- Dynamic Roles Inserted Here -->
+              </select>
+            </div>
+        
+            <!-- Email -->
+            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+            <div class="relative mb-4 ">
+              <span class="material-symbols-rounded absolute left-3 top-2 text-gray-400">mail</span>
+              <input type="email" id="email" name="email" placeholder="Enter your email" class="pl-10 w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+        
+            <!-- Phone Number -->
+            <label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+            <div class="relative mb-4 ">
+              <span class="material-symbols-rounded absolute left-3 top-2 text-gray-400">phone</span>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" class="pl-10 w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+        
+            <!-- Profile Image -->
+            <label for="profile-image" class="block text-gray-700 font-medium mb-2">Profile Image</label>
+            <div class="relative mb-6 ">
+              <span class="material-symbols-rounded absolute left-3 top-2 text-gray-400">image</span>
+              <input type="file" id="profile-image" name="profile-image" accept="image/*" class="pl-10 w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+            </div>
+        
+            <!-- Submit Button -->
+            <button type="button" class="w-full bg-blue-500 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2" id="submitEmployeeBtn">
+              Submit Application
+            </button>
+          </form>
+
         </article>
 
-        <!-- Manufacture Management Section -->
-        <article class="page-article hidden rounded-3xl p-6 md:border lg:p-8 mt-8 lg:mt-0 shadow-xl" id="manufacturs">
-          <!-- Header Section -->
-          <section class="flex justify-between items-center mb-8">
-            <h2 class="text-4xl font-bold text-gray-800">Manufacture Management</h2>
-            
-          </section>
-        
-          <!-- Stats Section -->
-          <section class="grid grid-cols-2 sm:grid-cols-3 gap-3 lg:gap-6 mb-10">
-            <!-- Total Cost -->
-            <div class="bg-gradient-to-br from-green-600 to-green-800 text-white p-3 w-full h-48 lg:p-6 rounded-xl shadow-lg transform transition-all hover:scale-105">
-              <h3 class="font-medium text-md md:text-lg mb-2">Money Catered</h3>
-              <p class="text-3xl md:text-5xl font-extrabold">$532,500</p>
-              <button class="w-36 py-2 bg-gradient-to-br from-green-800 to-green-600 shadow-md rounded-2xl mt-4 transition-all transform hover:scale-110">Manage</button>
-            </div>
-            <!-- Total Manufacturers -->
-            <div class="bg-gradient-to-br from-purple-600 to-purple-800 text-white p-3 w-full h-48 lg:p-6 rounded-xl shadow-lg transform transition-all hover:scale-105">
-              <h3 class="font-medium text-md md:text-lg mb-2">Total Manufacturers</h3>
-              <p class="text-3xl md:text-5xl font-extrabold">32</p>
-              <button class="w-36 py-2 bg-gradient-to-br from-purple-800 to-purple-600 shadow-md rounded-2xl mt-4 transition-all transform hover:scale-110">Manage</button>
-            </div>
-        
-            <!-- Products Sent -->
-            <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white p-3 w-full h-48 lg:p-6 rounded-xl shadow-lg transform transition-all hover:scale-105">
-              <h3 class="font-medium text-md md:text-lg mb-2">Products Sent</h3>
-              <p class="text-3xl md:text-5xl font-extrabold">1,245</p>
-              <button class="w-36 py-2 bg-gradient-to-br from-blue-800 to-blue-600 shadow-md rounded-2xl mt-4 transition-all transform hover:scale-110">Manage</button>
-            </div>
-            
-          </section>
-          
-          <!-- Actions -->
-          <section>
-            <ul class="gap-3 hidden md:flex">  
-              <li>
-                  <button class="px-5 py-2 bg-gradient-to-r from-purple-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
-                      + Add Manufacturer
-                  </button>
-              </li>
-              <li>
-                <button class="px-5 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-full font-semibold shadow-md hover:shadow-lg transition-all duration-300 ease-in-out transform hover:scale-105">
-                    + Send A Product
-                </button>
-              </li>
-              <li>
-                <button class="flex items-center gap-2 px-4 py-2 bg-gray-100 border border-gray-300 rounded-full text-gray-700 font-medium shadow-sm hover:bg-gray-200 hover:shadow-md transition-all duration-300 ease-in-out transform hover:scale-105">
-                    <span class="material-symbols-rounded text-lg text-gray-600">
-                        filter_list
-                    </span>
-                    Filter
-                </button>
-              </li>
-            </ul>
-          </section>
-        
-          <!-- Manufacturer Cards -->
-          <section>
-            <h1 class="text-4xl font-semibold mt-5">Total Manufacturers</h1>
 
-            
-          </section>
-        
-          
+        <!-- Manufacture Management Section -->
+        <article class="flex justify-center items-center h-screen page-article hidden rounded-3xl p-6 md:border lg:p-8 mt-8 lg:mt-0 shadow-xl" id="manufacturs">
+          <h1 class="text-4xl uppercase">Comeing Soon</h1>
         </article>
         
         <!-- Marketing and Promotion -->
