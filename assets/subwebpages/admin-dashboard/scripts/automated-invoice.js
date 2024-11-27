@@ -63,21 +63,77 @@ document.getElementById('previewInvoice').addEventListener('click', () => {
 });
 
 // Download Invoice
-document.getElementById('downloadInvoice').addEventListener('click', () => {
-    const form = document.getElementById('invoiceForm');
-    const formData = new FormData(form);
-    let text = 'Invoice\\n';
+document.getElementById('downloadInvoice').addEventListener('click', generatePDF);
 
-    formData.getAll('itemName[]').forEach((item, index) => {
-        text += `${item}, Qty: ${formData.getAll('itemQty[]')[index]}, Price: ${formData.getAll('itemPrice[]')[index]}\\n`;
+// arrow functions does not work with async functions
+async function generatePDF() {
+    // Fetch the invoice details
+    const clientName = document.getElementById('clientName').value;
+    const clientEmail = document.getElementById('clientEmail').value;
+    const items = document.querySelectorAll('#itemsContainer .flex');
+    const subtotal = document.getElementById('subtotal').innerText;
+    const tax = document.getElementById('tax').innerText;
+    const total = document.getElementById('total').innerText;
+
+    // Initialize jsPDF
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Set styling for the PDF
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(16);
+    doc.text('Invoice', 105, 20, null, null, 'center');
+
+    // Client Details
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(12);
+    doc.text(`Client Name: ${clientName}`, 10, 40);
+    doc.text(`Client Email: ${clientEmail}`, 10, 50);
+
+    // Table Header
+    doc.setFont('helvetica', 'bold');
+    doc.text('Item', 10, 70);
+    doc.text('Qty', 100, 70);
+    doc.text('Price', 140, 70);
+    doc.text('Total', 180, 70);
+
+    doc.setFont('helvetica', 'normal');
+    let yPos = 80; // Starting position for items
+
+    items.forEach((itemRow) => {
+        const itemName = itemRow.querySelector('input[name="itemName[]"]').value;
+        const itemQty = itemRow.querySelector('input[name="itemQty[]"]').value;
+        const itemPrice = itemRow.querySelector('input[name="itemPrice[]"]').value;
+        const itemTotal = (itemQty * itemPrice).toFixed(2);
+
+        doc.text(itemName, 10, yPos);
+        doc.text(itemQty, 100, yPos);
+        doc.text(`$${itemPrice}`, 140, yPos);
+        doc.text(`$${itemTotal}`, 180, yPos);
+        yPos += 10; // Move to next line
     });
 
-    const blob = new Blob([text], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = 'invoice.txt';
-    link.click();
-});
+    // Summary Section
+    yPos += 10;
+    doc.text('Subtotal:', 140, yPos);
+    doc.text(subtotal, 180, yPos);
+    yPos += 10;
+    doc.text('Tax (15%):', 140, yPos);
+    doc.text(tax, 180, yPos);
+    yPos += 10;
+    doc.text('Total:', 140, yPos);
+    doc.setFont('helvetica', 'bold');
+    doc.text(total, 180, yPos);
+
+    // Footer
+    yPos += 20;
+    doc.setFont('helvetica', 'italic');
+    doc.text('Thank you for your business!', 105, yPos, null, null, 'center');
+
+    // Save the PDF
+    doc.save('invoice.pdf');
+}
+
 
 // Print Invoice
 document.getElementById('printInvoice').addEventListener('click', () => {
