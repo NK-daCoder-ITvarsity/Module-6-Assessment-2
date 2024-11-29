@@ -41,6 +41,10 @@
                  1px 1px 20px #ffffff;
 }
 
+.text-effect-glow--white-lighter:hover {
+    text-shadow: 0px 0px 2px #ffffff;
+}
+
 .text-effect-glow--green {
     text-shadow: 0px 0px 5px #ccffba,
                  0px 0px 5px #82ff54,
@@ -119,6 +123,11 @@
     transform: scale(.7);
 }
 
+.video-overlay {
+    background-color: #00000084;
+    background-blend-mode: overlay;
+}
+
 .image-effect-glow {
     filter: drop-shadow(0 0 0px #ffffff00);
     -webkit-filter: drop-shadow(0 0 0px #ffffff00);
@@ -172,4 +181,25 @@
 
 .bg-gradient {
     background: linear-gradient(135deg, #f0f4f8, #c1d5ef);
+}
+
+.webbuilder-button--white:active {
+    color: white;
+}
+
+.tarnsition-height--transition {
+    transition: height .2s ease-in-out;
+}
+
+.index--dark-background {
+    background-color: #080808;
+}
+
+.index-card--darkbackground {
+    background-image: linear-gradient(10deg, rgb(6, 6, 6), rgb(45, 45, 45));
+    
+}
+
+.index-card--dark-border {
+    border: 1px solid hsl(0, 0%, 16%);
 }

@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="../../../dist/styles.css"/>
     <link rel="stylesheet" href="../../stylesheets/minor-modifications.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="./scripts/ui.js" defer></script>
 </head>
 <body class="background-dark flex flex-col justify-center items-center">
     <header class="">
         <!-- Desktop Nav Top-->
-        <nav class="websitebuilder-border background-dark z-50 fixed top-0 left-0 w-screen">
+        <nav class="hidden md:block websitebuilder-border background-dark z-50 fixed top-0 left-0 w-screen overflow-x-auto">
             <ul class="flex">
                 <li class="grid items-center websitebuilder-border-r background-dark ">
                     <a href="./admin.html" title="Back To Admin Panel" class="z-50 background-dark w-full h-full flex justify-center items-center">
@@ -52,7 +54,7 @@
                                 <span class="material-symbols-rounded ">
                                     play_arrow
                                 </span>
-                              </button>
+                            </button>
                         </li>
                         
                         
@@ -79,7 +81,7 @@
                             </button>
                         </li>
                         <li class="border-r pr-2">
-                            <button class="flex gap-2 items-center justify-center websitebuilder-scale">
+                            <button data-section="mode-selection" class="dropdownToggler flex gap-2 items-center justify-center websitebuilder-scale">
                                 <span class="material-symbols-rounded websitebuilder-symbol--size">
                                     computer
                                 </span>
@@ -89,7 +91,7 @@
                                 </span>
                             </button>
                             <!-- dropdown to sow various views -->
-                            <ul class="hidden shadow-lg fixed top-14 websitebuilder-border rounded-2xl p-3 h-48 grid gap-3 background-dark ">
+                            <ul id="mode-selection" class="transition-all dropdownMenu transform scale-0 overflow-auto shadow-lg fixed top-14 websitebuilder-border rounded-2xl p-3 h-48 grid gap-3 background-dark ">
                                 <li>
                                     <button class="flex gap-2 justify-start items-center w-full h-full rounded-lg background-dark--ver2 px-2 py-1 websitebuilder-scale hover:shadow-md">
                                         <span class="material-symbols-rounded websitebuilder-symbol--size">
@@ -124,11 +126,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li>
-                            <button class="flex items-center justify-center websitebuilder-scale">
-                                
-                            </button>
-                        </li>
+                        
                     </ul>
 
                     <ul class="flex gap-3 items-center justify-center text-white">
@@ -153,20 +151,20 @@
             </ul>
         </nav>
         <!-- Desktop Nav side-->
-        <nav class="websitebuilder-border flex flex-col justify-between custom-width fixed top-0 left-0 h-screen overflow-y-auto overflow-x-hidden scroller-firefox scroll-modification pt-12 background-dark">
+        <nav class="websitebuilder-border md:flex flex-col justify-between custom-width fixed top-0 left-0 h-screen overflow-y-auto overflow-x-hidden scroller-firefox scroll-modification pt-12 background-dark">
             <ul class="flex flex-col justfiy-center items-center">
                 <!-- First Section -->
                 <li class="websitebuilder-border-b w-full">
                     <ul class="grid gap-4 py-3">
                         <li>
                             <!-- Folder Structure -->
-                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="File Structure And Directories">
+                            <button data-section="file-structure" class="dropdownToggler websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="File Structure And Directories">
                                 <span class="material-symbols-rounded">
                                     draft
                                 </span>
                             </button>
                             <!-- File Structure -->
-                            <ul class="hidden shadow-md background-dark--ver2 fixed left-14 top-14 websitebuilder-border rounded-md p-2 text-white flex flex-col gap-3" >
+                            <ul id="file-structure" class="transition-all dropdownMenu transform scale-0 shadow-md background-dark--ver2 fixed left-14 top-14 websitebuilder-border rounded-md p-2 text-white flex flex-col gap-3" >
                                 <!-- Folder Structure -->
                                 <li>
                                     <!-- Action btns Folder Structure -->
@@ -244,12 +242,14 @@
 
                         <!-- Element -->
                         <li>
-                            <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="Add Elements To The Page eg:text elements">
+                            <button data-section="add-element" class="dropdownToggler websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="Add Elements To The Page eg:text elements">
                                 <span class="material-symbols-rounded">
                                     add
                                 </span>
                             </button>
-                            <ul class="hidden "></ul>
+                            <ul id="add-element" class="dropdownMenu transition-all transform scale-0">
+                                <!-- drag and drop element components -->
+                            </ul>
                         </li>
 
                         <!-- Code Editor -->
@@ -270,35 +270,40 @@
                             <ul class="grid gap-4 items-center">
                                 <li class="relative">
                                     <!-- Components -->
-                                    <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Components">
+                                    <button data-section="components" class="dropdownToggler websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Components">
                                         <span class="material-symbols-rounded">
                                             deployed_code
                                         </span>
                                     </button>
-                                    <ul class="hidden fixed left-14 border top-48 background-dark--ver2  p-2 flex flex-col gap-2 websitebuilder-border rounded-md">
+                                    <ul id="components" class="dropdownMenu transition-all transform scale-0 fixed left-14 border top-48 background-dark--ver2  p-2 flex flex-col gap-2 websitebuilder-border rounded-md">
                                         <!-- Header Components -->
                                         <li>
-                                            <button class="text-gray-400 hover:text-white transition-all">
+                                            <button data-section="header-components" class="toggleBtnTwo text-gray-400 hover:text-white transition-all">
                                                 Header Components
                                                 <span class="material-symbols-rounded websitebuilder-symbol--size">
                                                     arrow_drop_down
                                                 </span>
                                             </button>
-                                            <ul class="websitebuilder-border-b mt-2">
-                                                <!-- Auto Responsive Header Components (Nav) -->
+
+                                            <ul id="header-components" class="flex flex-col overflow-x-hidden gap-4 dropdownMenuTwo overflow-y-auto websitebuilder-border-b mt-2 transition-all h-0">
+                                                <button class="text-gray-400 hover:text-white websitebuilder-scale">Nav 1</button>
+                                                <button class="text-gray-400 hover:text-white websitebuilder-scale">Nav 2</button>
+                                                <button class="text-gray-400 hover:text-white websitebuilder-scale">Nav 3</button>
+                                                <button class="text-gray-400 hover:text-white websitebuilder-scale">Nav 4</button>
+                                                <button class="mb-2 text-gray-400 hover:text-white websitebuilder-scale">Nav 5</button>
                                             </ul>
                                         </li>
 
                                         <!-- Main Content Components-->
                                         <li>
-                                            <button class="text-gray-400 hover:text-white transition-all">
+                                            <button data-section="main-components" class="toggleBtnTwo text-gray-400 hover:text-white transition-all">
                                                 Body Components
                                                 <span class="material-symbols-rounded websitebuilder-symbol--size">
                                                     arrow_drop_down
                                                 </span>
                                             </button>
                                             <!-- Section Components -->
-                                            <ul class="websitebuilder-border-b mt-2">
+                                            <ul id="main-components" class="dropdownMenuTwo transition-all  websitebuilder-border-b mt-2 dropdownsMenu">
                                                 <!-- Hero Section -->
                                                 <!-- Trust Section -->
                                                 <!-- Testamonial Section -->
@@ -307,13 +312,15 @@
                                         </li>
                                         <!-- Footer Components -->
                                         <li>
-                                            <button class="text-gray-400 hover:text-white transition-all">
+                                            <button data-section="footer-components" class="toggleBtnTwo text-gray-400 hover:text-white transition-all">
                                                 Footer Components
                                                 <span class="material-symbols-rounded websitebuilder-symbol--size">
                                                     arrow_drop_down
                                                 </span>
                                             </button>
-                                            <ul class="websitebuilder-border-b mt-2"></ul>
+                                            <ul id="footer-components" class="dropdownMenuTwo transition-all transform  websitebuilder-border-b mt-2 dropdownsMenu">
+                                                <!-- footer components -->
+                                            </ul>
                                         </li>
                                         
                                     </ul>
@@ -333,11 +340,16 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <button class="websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Media">
+                                    <button data-section="media" class="scale-0 dropdownToggler websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Media">
                                         <span class="material-symbols-rounded">
                                             imagesmode
                                         </span>
                                     </button>
+                                    <ul id="media" class="dropdownMenu transition-all transform scale-0 dropdownsMenu">
+                                        <!-- Video -->
+                                        <!-- Audio -->
+                                        <!-- Photo -->
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
@@ -375,9 +387,72 @@
              
             </ul>
         </nav>
-    </header>
 
-    <main class="lg:overflow-y-auto border h-screen w-3/4 bg-white">
+        <!-- Mobile Nav -->
+        <!-- Top -->
+        <nav class="fixed top-0 left-0 w-screen md:hidden background-dark websitebuilder-border">
+            <ul class="flex p-3 justify-between items-center text-white">
+                <li>
+                    <a href="./admin.html" title="Back To Admin Panel" class="z-50 background-dark w-full h-full flex justify-center items-center">
+                        <div class="p-1 w-11 ">
+                            <img src="../../../assets/images/logos/main-logo-white-car.svg" alt="" class="object-cover image-effect-glow">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <button class="flex items-center justify-center websitebuilder-scale transition-all text-white text-effect-glow--green">
+                        <span class="material-symbols-rounded ">
+                            play_arrow
+                        </span>
+                        Preview
+                    </button>
+                </li>
+                <li>
+                    <button class="flex">
+                        <span class="material-symbols-rounded flip-image">
+                            sort
+                        </span>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        <!-- Bottom -->
+        <nav class="fixed bottom-0 left-0 w-screen md:hidden background-dark websitebuilder-border">
+            <ul class="flex p-2 justify-between ">
+                <li class="transform scale-75">
+                    <button class="font-semibold flex-col websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform" title="Add Elements To The Page eg:text elements">
+                        <span class="material-symbols-rounded">
+                            add
+                        </span>
+                        Element
+                    </button>
+                </li>
+                
+                <li class="transform scale-75">
+                    <button class="font-semibold flex-col websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Media">
+                        <span class="material-symbols-rounded">
+                            imagesmode
+                        </span>
+                        Media
+                    </button>
+                </li>
+
+                <li class="transform scale-75">
+                    <button class="font-semibold flex-col websitebuilder-scale flex w-full pl-2 text-gray-400 transition-all hover:text-white transform hover:scale-150" title="Components">
+                        <span class="material-symbols-rounded">
+                            deployed_code
+                        </span>
+                        Components
+                    </button>
+                </li>
+            </ul>
+        </nav>
+        
+
+    </header>
+    
+    <!-- Canvas -->
+    <main class="overflow-y-auto border h-screen w-screen md:w-3/4 bg-white pb-10">
         
     </main>
 </body>

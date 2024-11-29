@@ -1,0 +1,137 @@
+export const jobs = [
+    { role: "Sales Manager", salary: "$7,500" },
+    { role: "Finance Specialist", salary: "$6,200" },
+    { role: "Mechanic", salary: "$4,800" },
+    { role: "Customer Support", salary: "$5,000" },
+    { role: "Dealer", salary: "$6,500" },
+    { role: "Automotive Cybersecurity Specialist", salary: "$8,000" },
+    { role: "Car Security Technician", salary: "$5,700" },
+    { role: "Telematics Engineer", salary: "$7,200" },
+    { role: "Vehicle Software Developer", salary: "$9,000" },
+    { role: "Fleet Manager", salary: "$6,800" },
+    { role: "Performance Tuner", salary: "$6,500" },
+    { role: "Automotive AI Specialist", salary: "$10,000" },
+    { role: "GPS Navigation System Specialist", salary: "$5,400" },
+    { role: "Collision Avoidance Systems Engineer", salary: "$7,800" },
+    { role: "Electric Vehicle Charging Infrastructure Manager", salary: "$8,500" }
+];
+
+export const cars = [
+  {
+      manufacturer: "Toyota",
+      manufacturerLogo: "assets/images/manufacturer-logo/toyota.png",
+      carName: "Toyota GR 86",
+      carType: "Sports Model",
+      topSpeed: "225 km/h",
+      location: "Dubai",
+      fuelType: "Petrol",
+      fuelIcon: "local_gas_station",
+      stockStatus: "Available",
+      stockAvailable: "25",
+      carPrice: "285,892",
+      carImages: "assets/images/cars/toyota/toyota-gr-86/toyota-gr-86.png",
+      description: "A compact, stylish sports car with a sleek design and outstanding performance, perfect for thrill-seekers.",
+      carCategory: "Sports Car"
+  },
+  {
+      manufacturer: "Audi",
+      manufacturerLogo: "assets/images/manufacturer-logo/audi.png",
+      carName: "Audi RS7",
+      carType: "Sports Model",
+      topSpeed: "280 km/h",
+      location: "New York",
+      fuelType: "Hybrid",
+      fuelIcon: "flash_on",
+      stockStatus: "Shortage",
+      stockAvailable: "5",
+      carPrice: "349,990",
+      carImages: "assets/images/cars/audi/audi-rs7/audi-rs7.png",
+      description: "A high-performance luxury sedan combining cutting-edge hybrid technology with raw power and elegance.",
+      carCategory: "Exotic Car"
+  },
+  {
+      manufacturer: "Tesla",
+      manufacturerLogo: "assets/images/manufacturer-logo/tesla.png",
+      carName: "Tesla Model S",
+      carType: "Sports Model",
+      topSpeed: "250 km/h",
+      location: "San Francisco",
+      fuelType: "Electric",
+      fuelIcon: "electric_bolt",
+      stockStatus: "Available",
+      stockAvailable: "8",
+      carPrice: "799,990",
+      carImages: "assets/images/cars/tesla/tesla-modal-s/tesla-modal-s.png",
+      description: "A futuristic electric sports car known for its acceleration, advanced features, and eco-friendliness.",
+      carCategory: "Exotic Car"
+  },
+  {
+      manufacturer: "Honda",
+      manufacturerLogo: "assets/images/manufacturer-logo/honda.png",
+      carName: "Honda CR-V",
+      carType: "Family SUV",
+      topSpeed: "200 km/h",
+      location: "Tokyo",
+      fuelType: "Petrol",
+      fuelIcon: "local_gas_station",
+      stockStatus: "Available",
+      stockAvailable: "30",
+      carPrice: "175,000",
+      carImages: "assets/images/cars/honda/honda-crv/honda-crv-v.png",
+      description: "A reliable and spacious SUV perfect for families, offering comfort and practicality.",
+      carCategory: "Family Car"
+  },
+  {
+      manufacturer: "Ford",
+      manufacturerLogo: "assets/images/manufacturer-logo/ford.png",
+      carName: "Ford Explorer",
+      carType: "Family SUV",
+      topSpeed: "210 km/h",
+      location: "Chicago",
+      fuelType: "Hybrid",
+      fuelIcon: "flash_on",
+      stockStatus: "Available",
+      stockAvailable: "20",
+      carPrice: "310,500",
+      carImages: "assets/images/cars/ford/explorer/ford-explorer.webp",
+      description: "A versatile family SUV that combines advanced hybrid technology with robust off-road capabilities.",
+      carCategory: "Family Car"
+  },
+  {
+      manufacturer: "BMW",
+      manufacturerLogo: "assets/images/manufacturer-logo/bmw.png",
+      carName: "BMW X5",
+      carType: "Luxury SUV",
+      topSpeed: "230 km/h",
+      location: "Munich",
+      fuelType: "Diesel",
+      fuelIcon: "local_gas_station",
+      stockStatus: "Limited",
+      stockAvailable: "10",
+      carPrice: "499,000",
+      carImages: "assets/images/cars/BMW/BMW-x5/BMW-X5.png",
+      description: "A premium luxury SUV offering refined design, advanced features, and powerful performance.",
+      carCategory: "SUV"
+  },
+  {
+      manufacturer: "Mercedes",
+      manufacturerLogo: "assets/images/manufacturer-logo/mercedes.png",
+      carName: "Mercedes-Benz G-Class",
+      carType: "Luxury SUV",
+      topSpeed: "220 km/h",
+      location: "Berlin",
+      fuelType: "Petrol",
+      fuelIcon: "local_gas_station",
+      stockStatus: "Available",
+      stockAvailable: "15",
+      carPrice: "620,000",
+      carImages: "assets/images/cars/mercedes-benz/g-class/Mercedes-Benz-G-Class.png",
+      description: "An iconic luxury SUV known for its rugged design, superior off-road capability, and high-end comfort.",
+      carCategory: "SUV"
+  }
+];
+
+
+
+
+
