@@ -223,3 +223,12 @@
 .bg-transparent--black {
     background-color: #080808da;
 }
+
+
+/* Glassmorphism Effect */
+.glass {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+

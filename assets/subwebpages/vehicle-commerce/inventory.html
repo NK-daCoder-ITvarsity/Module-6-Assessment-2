@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../../dist/styles.css">
     <link rel="stylesheet" href="../../../assets/stylesheets/minor-modifications.css"/>
 
-    <script src="../../../scripts/index.js" type="module" defer></script>
+    <script src="./scripts/inventory-ui.js" type="module" defer></script>
 </head>
 <body class="bg-gray-300">
     <header class="flex flex-col p-2 h-90vh fixed top-2 left-2 bg-white rounded-3xl">
@@ -72,8 +72,8 @@
             <!-- Primary Car -->
         </section>
         <!-- Show Room -->
-        <section class=" h-screen bg-white container mx-auto w-vw p-5">
-            <div class="mb-12">
+        <section id="Showroom" class=" h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
+            <div class="">
                 <h2 class="font-semibold text-2xl flex items-center gap-1 ">
                     <span class="material-symbols-rounded bg-orange--v1 p-2 rounded-xl text-white">
                         directions_car
@@ -82,16 +82,60 @@
                 </h2>
             </div>
 
+            <hr>
+            <!-- Actions -->
             <ul>
-                <li>
-                    <button class="bg-gray-200 rounded-3xl flex py-2 px-4 border border-gray-400 font-semibold websitebuilder-scale">
+                <li class="relative">
+                    <button id="filterToggleBtnShowRoom" class="shadow-md rounded-3xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold websitebuilder-scale">
                         <span class="material-symbols-rounded transform scale-95">
                             filter_list
                         </span>
                         Filter
                     </button>
+                    <ul id="filter-list" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto">
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                All
+                            </button>
+                        </li>
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                Classics
+                            </button>
+                        </li>
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                SUV
+                            </button>
+                        </li>
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                Super Cars
+                            </button>
+                        </li>
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                Exotic Cars
+                            </button>
+                        </li>
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                Family
+                            </button>
+                        </li>
+                        <li class="p-2">
+                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                Motorcycles
+                            </button>
+                        </li>
+                    </ul>
                 </li>
             </ul>
+
+            <hr>
+
+            <!-- Car Cards -->
+            
         </section>
         <!-- Calander -->
         <section class="hidden h-screen bg-white container mx-auto w-vw">
