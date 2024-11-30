@@ -9,9 +9,104 @@
     <link rel="stylesheet" href="../../../assets/stylesheets/minor-modifications.css"/>
 
     <script src="../../../scripts/index.js" type="module" defer></script>
-
 </head>
-<body>
-    
+<body class="bg-gray-300">
+    <header class="flex flex-col p-2 h-90vh fixed top-2 left-2 bg-white rounded-3xl">
+        <img src="../../images/logos/main-logo-white.svg" alt="auto-for-sale-logo" class="rounded-2xl bg-orange--v1 w-20 object-cover p-1"/>
+        <nav class="flex flex-col justify-between h-full">
+            <ul class="flex flex-col justify-center items-center gap-5 mt-8">
+                <li>
+                    <button class="flex gap-1 justify-center items-center">
+                        <span class="material-symbols-rounded bg-orange--v1 text-white rounded-full p-2 websitebuilder-scale image-effect-glow">
+                            overview
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex gap-1 border rounded-full border-gray-400 text-gray-400 p-2 websitebuilder-scale">
+                        <span class="material-symbols-rounded">
+                            theater_comedy
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button class="flex gap-1 border rounded-full border-gray-400 text-gray-400 p-2 websitebuilder-scale">
+                        <span class="material-symbols-rounded">
+                            today
+                        </span>   
+                    </button>
+                </li>
+            </ul>
+            <ul class="flex flex-col justify-center items-center gap-5">
+                <li>
+                    <button class="flex gap-1 border rounded-full border-gray-400 text-gray-400 p-2 websitebuilder-scale">
+                        <span class="material-symbols-rounded">
+                            settings
+                        </span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="flex gap-1 border rounded-full border-gray-400 p-2 text-gray-400 websitebuilder-scale">
+                        <span class="material-symbols-rounded">
+                            help
+                        </span>
+                        
+                    </button>
+                </li>
+                <li>
+                    <button class="flex gap-1 border rounded-full border-gray-400 p-2 text-gray-400 websitebuilder-scale">
+                        <span class="material-symbols-rounded">
+                            logout
+                        </span>
+                        
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="border border-gray-800 w-full flex flex-col justify-center ">
+        <!-- Overview -->
+        <section class="hidden h-screen bg-white container mx-auto w-vw">
+            <!-- Personal States -->
+            <!-- Primary Car -->
+        </section>
+        <!-- Show Room -->
+        <section class=" h-screen bg-white container mx-auto w-vw p-5">
+            <div class="mb-12">
+                <h2 class="font-semibold text-2xl flex items-center gap-1 ">
+                    <span class="material-symbols-rounded bg-orange--v1 p-2 rounded-xl text-white">
+                        directions_car
+                    </span>
+                    Car Showroom
+                </h2>
+            </div>
+
+            <ul>
+                <li>
+                    <button class="bg-gray-200 rounded-3xl flex py-2 px-4 border border-gray-400 font-semibold websitebuilder-scale">
+                        <span class="material-symbols-rounded transform scale-95">
+                            filter_list
+                        </span>
+                        Filter
+                    </button>
+                </li>
+            </ul>
+        </section>
+        <!-- Calander -->
+        <section class="hidden h-screen bg-white container mx-auto w-vw">
+
+        </section>
+        <!-- Settings -->
+        <section class="hidden h-screen bg-white container mx-auto w-vw">
+
+        </section>
+        <!-- Help and Support Chanel -->
+        <section class="hidden h-screen bg-white container mx-auto w-vw">
+
+        </section>
+    </main>
+
+    <aside class="border border-gray-800 fixed top-0 right-0"></aside>
 </body>
 </html>

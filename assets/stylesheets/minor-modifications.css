@@ -203,3 +203,23 @@
 .index-card--dark-border {
     border: 1px solid hsl(0, 0%, 16%);
 }
+
+.h-90vh {
+    height: 97vh;
+}
+
+.w-vw {
+    width: 79vw;
+}
+
+.bg-orange--v1 {
+    background: linear-gradient(orange, red);
+}
+
+.text-orange {
+    color: orangered;
+}
+
+.bg-transparent--black {
+    background-color: #080808da;
+}
