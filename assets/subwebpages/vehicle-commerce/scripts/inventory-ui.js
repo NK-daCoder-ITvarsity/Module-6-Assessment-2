@@ -1,12 +1,58 @@
 import { cars, BASE_PATH } from "../../../../scripts/data/index-data.js";
 
+
+/* ==================================== Nav Functionality ============================================= */
+
+const navToggleBtns = document.querySelectorAll(".sectionToggleBtn");
+const comerceSections = document.querySelectorAll(".sectionCommerce");
+const navSymbols = document.querySelectorAll(".navSymbols");
+
+navToggleBtns.forEach((navBtns) => {
+  const getAttribute = navBtns.getAttribute("data-section");
+
+  navToggleBtns.forEach((navBtn) => {
+    navBtn.addEventListener("click", () => {
+      // Get the target section from the data attribute
+      const getAttribute = navBtn.getAttribute("data-section");
+      console.log(getAttribute);
+  
+      // Reset all symbols to inactive styles
+      navSymbols.forEach((symbol) => {
+        symbol.classList.remove("bg-orange--v1", "text-white");
+        symbol.classList.add("text-gray-400");
+      });
+  
+      // Add active classes to the icon inside the clicked button
+      const activeSymbol = navBtn.querySelector(".navSymbols");
+      if (activeSymbol) {
+        activeSymbol.classList.remove("text-gray-400");
+        activeSymbol.classList.add("bg-orange--v1", "text-white");
+      }
+  
+      // Show the corresponding section and hide others
+      comerceSections.forEach((section) => {
+        if (section.id === getAttribute) {
+          section.classList.remove("hidden");
+        } else {
+          section.classList.add("hidden");
+        }
+      });
+    });
+  });
+  
+  
+});
+
+
+
+/* ====================================== filter button =========================================== */
+
 /* 
 console.log("Original Cars Array:");
 cars.forEach((car, index) => {
     console.log(`Car ${index + 1}:`, car);
 });
 */
-
 
 document.getElementById("filterToggleBtnShowRoom").addEventListener("click", () => {
     document.getElementById("filter-list").classList.toggle("scale-0");
@@ -42,7 +88,7 @@ function renderCars(carsArray) {
 
     // Append the new filtered list of cars
     const cardListContainer = document.createElement("ul");
-    cardListContainer.className = "grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3";
+    cardListContainer.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-3";
 
     carsArray.forEach((car) => {
         const listElement = document.createElement("li");

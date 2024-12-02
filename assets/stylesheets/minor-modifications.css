@@ -245,10 +245,10 @@
 
 /* =========================== Dashboard =============================== */
 
-@media (min-width: 700px) {
+@media (min-width: 756px) {
     .main-body {
         display: grid;
-        grid-template-columns: auto 1fr 9em;
+        grid-template-columns: 4em 1fr 9em;
         gap: 2rem; 
     }
 }

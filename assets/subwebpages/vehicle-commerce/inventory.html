@@ -13,27 +13,34 @@
 
 
 <body class="bg-gray-300 main-body">
-    <header class="hidden md:flex flex-col p-2 h-90vh sticky top-3 left-2 bg-white rounded-3xl">
-        <img src="../../images/logos/main-logo-white-car.svg" alt="auto-for-sale-logo" class="rounded-2xl bg-orange--v1 w-20 object-cover p-1"/>
-        <nav class="flex flex-col justify-between h-full">
+    <header class="overflow-y-auto hidden md:flex flex-col p-2 h-90vh sticky top-3 left-2 bg-white rounded-3xl">
+        <img src="../../images/logos/main-logo-black.svg" alt="auto-for-sale-logo" class="rounded-2xl w-40 object-cover p-1"/>
+        <nav class="flex flex-col gap-3 justify-between h-full">
             <ul class="flex flex-col justify-center items-center gap-5 mt-8">
                 <li>
-                    <button class="flex gap-1 justify-center items-center">
-                        <span class="material-symbols-rounded bg-orange--v1 text-white rounded-full p-2 websitebuilder-scale image-effect-glow">
+                    <button class="sectionToggleBtn flex gap-1 justify-center items-center" data-section="overview">
+                        <span class="material-symbols-rounded  navSymbols bg-orange--v1 text-white rounded-full p-2 websitebuilder-scale ">
                             overview
                         </span>
                     </button>
                 </li>
                 <li>
-                    <button class="flex gap-1 border rounded-full border-gray-400 text-gray-400 p-2 websitebuilder-scale">
-                        <span class="material-symbols-rounded">
-                            theater_comedy
+                    <button data-section="showroom" class="sectionToggleBtn flex gap-1 justify-center items-center">
+                        <span class="material-symbols-rounded navSymbols text-gray-400 rounded-full p-2 websitebuilder-scale ">
+                            directions_car
                         </span>
                     </button>
                 </li>
                 <li>
-                    <button class="flex gap-1 border rounded-full border-gray-400 text-gray-400 p-2 websitebuilder-scale">
-                        <span class="material-symbols-rounded">
+                    <button data-section="shopping-cart" class="sectionToggleBtn flex gap-1">
+                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
+                            shopping_cart
+                        </span>
+                    </button>
+                </li>
+                <li>
+                    <button data-section="training-scheduler" class="sectionToggleBtn flex gap-1">
+                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
                             today
                         </span>   
                     </button>
@@ -41,24 +48,24 @@
             </ul>
             <ul class="flex flex-col justify-center items-center gap-5">
                 <li>
-                    <button class="flex gap-1 border rounded-full border-gray-400 text-gray-400 p-2 websitebuilder-scale">
-                        <span class="material-symbols-rounded">
+                    <button data-section="settings" class="sectionToggleBtn flex gap-1">
+                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
                             settings
                         </span>
                         
                     </button>
                 </li>
                 <li>
-                    <button class="flex gap-1 border rounded-full border-gray-400 p-2 text-gray-400 websitebuilder-scale">
-                        <span class="material-symbols-rounded">
+                    <button data-section="help-section" class="sectionToggleBtn flex gap-1 ">
+                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
                             help
                         </span>
                         
                     </button>
                 </li>
                 <li>
-                    <button class="flex gap-1 border rounded-full border-gray-400 p-2 text-gray-400 websitebuilder-scale">
-                        <span class="material-symbols-rounded">
+                    <button class="flex gap-1">
+                        <span class="material-symbols-rounded navSymbols text-gray-400 rounded-full p-2 websitebuilder-scale">
                             logout
                         </span>
                         
@@ -69,13 +76,13 @@
     </header>
     <main class="w-full flex flex-col justify-center ">
         <!-- Overview -->
-        <section class="hidden h-screen bg-white container mx-auto w-vw">
+        <section id="overview" class="sectionCommerce min-h-screen bg-white container mx-auto w-vw">
             <!-- Personal States -->
             <!-- Primary Car -->
         </section>
 
         <!-- Show Room -->
-        <section class=" min-h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
+        <section id="showroom" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
             <section class="">
                 <h2 class="font-semibold text-2xl flex items-center gap-1 ">
                     <span class="material-symbols-rounded bg-orange--v1 p-2 rounded-xl text-white">
@@ -93,7 +100,7 @@
                         <span class="material-symbols-rounded transform scale-95">
                             filter_list
                         </span>
-                        Filter
+                        Filter By Car
                     </button>
                     <ul id="filter-list" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50">
                         <li class="p-2">
@@ -143,7 +150,7 @@
         </section>
 
         <!-- Calander -->
-        <section class="hidden min-h-screen bg-white container mx-auto w-vw pb-10">
+        <section id="training-scheduler" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw pb-10">
             <section class="container mx-auto p-6">
                 <div class="flex justify-between items-center mb-4">
                   <button id="prev-month" class="material-symbols-rounded text-indigo-600 cursor-pointer">chevron_left</button>
@@ -195,12 +202,12 @@
         </section>
 
         <!-- Settings -->
-        <section class="hidden min-h-screen bg-white container mx-auto w-vw">
+        <section id="settings" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw">
 
         </section>
 
         <!-- Help and Support Chanel -->
-        <section class="hidden min-h-screen bg-white container mx-auto w-vw">
+        <section id="help-section" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw">
             <section class="bg-blue-600 text-white p-4 flex items-center">
                 <span class="material-symbols-rounded mr-2 text-3xl">help_center</span>
                 <h1 class="text-xl font-bold">Support Center</h1>
