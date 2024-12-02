@@ -12,7 +12,7 @@ document.getElementById("filterToggleBtnShowRoom").addEventListener("click", () 
     document.getElementById("filter-list").classList.toggle("scale-0");
 });
 
-// createing a new path for directory
+// createing a new path for each directory items
 const NEW_BASE_PATH = "../../../../assets/images/";
 
 const updatedCars = cars.map(car => ({
@@ -27,53 +27,88 @@ updatedCars.forEach((car, index) => {
     console.log(`Car ${index + 1}:`, car);
 });
 
+/* ==================================== Car ShowRoom ================================== */
 
-const showRoomContainer = document.getElementById("Showroom");
+// Get the filter buttons and the Showroom container
+const filterButtons = document.querySelectorAll('#filter-list button');
+const showRoomContainer = document.getElementById('Showroom');
 const cardListContainer = document.createElement("ul");
 cardListContainer.className = "grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3";
 
-updatedCars.forEach((car) => {
-    const listElement = document.createElement("li");
-    listElement.innerHTML = `
-    <article class="bg-white rounded-lg border hover:shadow-lg transition-shadow p-4">
-    <!-- Car Image -->
-    <div class="overflow-hidden rounded-lg relative mb-4">
-        <img class="w-full h-48 " src="${car.carImages}" alt="${car.carName}">
-        <div class="absolute top-2 left-2 bg-orange--v1 text-white text-xs px-2 py-1 rounded">
-            ${car.carType}
+// Function to render the cars
+function renderCars(carsArray) {
+    // Clear previous car list
+    showRoomContainer.innerHTML = '';
+
+    // Append the new filtered list of cars
+    const cardListContainer = document.createElement("ul");
+    cardListContainer.className = "grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3";
+
+    carsArray.forEach((car) => {
+        const listElement = document.createElement("li");
+        listElement.innerHTML = `
+        <article class="bg-white rounded-lg border hover:shadow-lg transition-shadow p-4">
+        <!-- Car Image -->
+        <div class="overflow-hidden rounded-lg relative mb-4">
+            <img class="w-full h-48" src="${car.carImages}" alt="${car.carName}">
+            <div class="absolute top-2 left-2 bg-orange--v1 text-white text-xs px-2 py-1 rounded">
+                ${car.carType}
+            </div>
         </div>
-    </div>
 
-    <!-- Car Details -->
-    <section>
-        <!-- Car Name -->
-        <h1 class="text-lg font-medium text-gray-900">${car.carName}</h1>
-        <!-- Price -->
-        <p class="text-3xl font-bold text-orange my-2">$${car.carPrice}</p>
-    </section>
+        <!-- Car Details -->
+        <section>
+            <!-- Car Name -->
+            <h1 class="text-lg font-medium text-gray-900">${car.carName}</h1>
+            <!-- Price -->
+            <p class="text-3xl font-bold text-orange my-2">$${car.carPrice}</p>
+        </section>
 
-    <!-- CTA -->
-    <section class="mt-4">
-        <div class="flex justify-between">
-            <!-- Buy Now Button -->
-            <button class="websitebuilder-scale bg-orange--v1 flex items-center gap-2 px-4 py-2 text-shadow text-white text-sm font-medium rounded-md shadow hover:bg-blue-600">
-                <span class="material-symbols-rounded">shopping_bag_speed</span>
-                Buy Now
-            </button>
-            <!-- Learn More Button -->
-            <button class="websitebuilder-scale px-4 py-2 border-orange bg-orange text-sm font-medium text-orange rounded-md hover:bg-blue-50">
-                Learn More
-            </button>
-        </div>
-    </section>
-</article>
+        <!-- CTA -->
+        <section class="mt-4">
+            <div class="flex justify-between">
+                <!-- Buy Now Button -->
+                <button class="websitebuilder-scale bg-orange--v1 flex items-center gap-2 px-4 py-2 text-shadow text-white text-sm font-medium rounded-md shadow hover:bg-blue-600">
+                    <span class="material-symbols-rounded">shopping_bag_speed</span>
+                    Buy Now
+                </button>
+                <!-- Learn More Button -->
+                <button class="websitebuilder-scale px-4 py-2 border-orange bg-orange text-sm font-medium text-orange rounded-md hover:bg-blue-50">
+                    Learn More
+                </button>
+            </div>
+        </section>
+    </article>
+        `;
+        cardListContainer.appendChild(listElement);
+    });
 
+    showRoomContainer.appendChild(cardListContainer);
+}
 
-    `;
-    cardListContainer.appendChild(listElement);
+// Initial render with all cars
+renderCars(updatedCars);
+
+// Filter button event listener: Filter based on button text Contents
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.textContent.trim();
+        console.log(category);
+
+        let filteredCars;
+
+        // Filter cars based on the category
+        if (category === 'All') {
+            filteredCars = updatedCars;
+        } else {
+            filteredCars = updatedCars.filter(car => car.carCategory === category);
+        }
+
+        // Render the filtered cars
+        renderCars(filteredCars);
+    });
 });
 
-showRoomContainer.appendChild(cardListContainer);
 
 /* =============================== Calander ==================================== */
 

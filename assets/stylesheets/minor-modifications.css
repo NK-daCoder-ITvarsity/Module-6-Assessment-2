@@ -243,3 +243,12 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* =========================== Dashboard =============================== */
+
+@media (min-width: 700px) {
+    .main-body {
+        display: grid;
+        grid-template-columns: auto 1fr 9em;
+        gap: 2rem; 
+    }
+}
