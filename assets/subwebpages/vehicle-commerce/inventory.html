@@ -10,6 +10,8 @@
 
     <script src="./scripts/inventory-ui.js" type="module" defer></script>
 </head>
+
+
 <body class="bg-gray-300">
     <header class="flex flex-col p-2 h-90vh fixed top-2 left-2 bg-white rounded-3xl">
         <img src="../../images/logos/main-logo-white.svg" alt="auto-for-sale-logo" class="rounded-2xl bg-orange--v1 w-20 object-cover p-1"/>
@@ -65,14 +67,14 @@
             </ul>
         </nav>
     </header>
-    <main class="border border-gray-800 w-full flex flex-col justify-center ">
+    <main class="w-full flex flex-col justify-center ">
         <!-- Overview -->
         <section class="hidden h-screen bg-white container mx-auto w-vw">
             <!-- Personal States -->
             <!-- Primary Car -->
         </section>
         <!-- Show Room -->
-        <section id="Showroom" class=" h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
+        <section id="Showroom" class=" min-h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
             <div class="">
                 <h2 class="font-semibold text-2xl flex items-center gap-1 ">
                     <span class="material-symbols-rounded bg-orange--v1 p-2 rounded-xl text-white">
@@ -84,7 +86,7 @@
 
             <hr>
             <!-- Actions -->
-            <ul>
+            <ul >
                 <li class="relative">
                     <button id="filterToggleBtnShowRoom" class="shadow-md rounded-3xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold websitebuilder-scale">
                         <span class="material-symbols-rounded transform scale-95">
@@ -92,7 +94,7 @@
                         </span>
                         Filter
                     </button>
-                    <ul id="filter-list" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto">
+                    <ul id="filter-list" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50">
                         <li class="p-2">
                             <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
                                 All
@@ -137,17 +139,218 @@
             <!-- Car Cards -->
             
         </section>
-        <!-- Calander -->
-        <section class="hidden h-screen bg-white container mx-auto w-vw">
 
+        <!-- Calander -->
+        <section class="hidden min-h-screen bg-white container mx-auto w-vw pb-10">
+            <div class="container mx-auto p-6">
+                <div class="flex justify-between items-center mb-4">
+                  <button id="prev-month" class="material-symbols-rounded text-indigo-600 cursor-pointer">chevron_left</button>
+                  <h1 id="calendar-title" class="text-2xl font-semibold text-center">Month Year</h1>
+                  <button id="next-month" class="material-symbols-rounded text-indigo-600 cursor-pointer">chevron_right</button>
+                </div>
+                <div class="bg-white p-4 rounded-lg border">
+                  <div class="grid grid-cols-7 gap-2 text-center font-semibold text-gray-500 justify-center items-center">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                  </div>
+                  <div id="calendar" class="grid grid-cols-7 gap-2 text-center mt-2">
+                    <!-- Calendar Days will be dynamically injected here -->
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Modal -->
+              <div id="schedule-modal" class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-96">
+                  <h2 class="text-xl font-semibold mb-4">Schedule a Test Drive</h2>
+                  <form id="schedule-form" class="space-y-4">
+                    <p id="selected-date" class="text-gray-600"></p>
+                    <div>
+                      <label for="name" class="block text-gray-700">Your Name</label>
+                      <input type="text" id="name" class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required />
+                    </div>
+                    <div>
+                      <label for="car-type" class="block text-gray-700">Type of Car</label>
+                      <input type="text" id="car-type" class="w-full border-gray-300 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500" required />
+                    </div>
+                    <div class="flex justify-end space-x-2">
+                      <button type="button" id="cancel-btn" class="px-4 py-2 bg-gray-200 rounded-md hover:bg-gray-300">Cancel</button>
+                      <button type="submit" class="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600">Schedule</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="mt-6 px-7">
+                <h3 class="text-xl font-semibold">Scheduled Test Drives</h3>
+                <div id="scheduled-list" class="mt-4 space-y-4 grid grid-cols-2"></div> <!-- List of scheduled test drives -->
+              </div>
+              
+              
         </section>
         <!-- Settings -->
-        <section class="hidden h-screen bg-white container mx-auto w-vw">
+        <section class="hidden min-h-screen bg-white container mx-auto w-vw">
 
         </section>
         <!-- Help and Support Chanel -->
-        <section class="hidden h-screen bg-white container mx-auto w-vw">
-
+        <section class="hidden min-h-screen bg-white container mx-auto w-vw">
+            <header class="bg-blue-600 text-white p-4 flex items-center">
+                <span class="material-symbols-rounded mr-2 text-3xl">help_center</span>
+                <h1 class="text-xl font-bold">Support Center</h1>
+              </header>
+            
+              <main class="max-w-4xl mx-auto p-6">
+                <!-- Search Section -->
+                <div class="mb-6">
+                  <div class="relative">
+                    <span class="material-symbols-rounded absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400">search</span>
+                    <input type="text" id="search" placeholder="Search FAQs..." 
+                      class="w-full pl-12 pr-4 py-3 rounded-lg shadow-sm border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                  </div>
+                </div>
+            
+                <!-- FAQ Section -->
+                <div>
+                    <div>
+                        <h2 class="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+                        <div class="space-y-4" id="faq-section">
+                          <!-- FAQ Item 1 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-1">
+                              <h3 class="text-lg font-medium">How do I purchase a vehicle?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-1">
+                              To purchase a vehicle, navigate to the "Buy Now" section, select your preferred car, and proceed with the checkout process.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 2 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-2">
+                              <h3 class="text-lg font-medium">What payment methods are accepted?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-2">
+                              We accept credit/debit cards, bank transfers, and PayPal. Financing options are also available for eligible buyers.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 3 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-3">
+                              <h3 class="text-lg font-medium">Can I schedule a test drive?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-3">
+                              Yes, you can schedule a test drive by clicking on the "Schedule Test Drive" button available on the vehicle's details page.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 4 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-4">
+                              <h3 class="text-lg font-medium">Is there a return policy?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-4">
+                              Yes, we offer a 7-day return policy for vehicles under specific terms and conditions. Please check our return policy page for details.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 5 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-5">
+                              <h3 class="text-lg font-medium">What is the warranty on purchased vehicles?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-5">
+                              All our vehicles come with a standard warranty, ranging from 6 months to 2 years. Extended warranty options are also available.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 6 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-6">
+                              <h3 class="text-lg font-medium">How do I apply for vehicle financing?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-6">
+                              You can apply for vehicle financing through the "Finance Options" page. Fill out the application form, and our team will assist you.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 7 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-7">
+                              <h3 class="text-lg font-medium">Can I trade in my current vehicle?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-7">
+                              Yes, we accept trade-ins. Use our trade-in calculator to estimate your current vehicle's value and start the trade-in process.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 8 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-8">
+                              <h3 class="text-lg font-medium">How do I track my order status?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-8">
+                              Log into your account and navigate to the "My Orders" section to view the real-time status of your vehicle purchase.
+                            </div>
+                          </div>
+                      
+                          <!-- FAQ Item 9 -->
+                          <div class="faq-item bg-white p-4 rounded-lg shadow-md">
+                            <div class="flex justify-between items-center cursor-pointer" data-toggle="faq-9">
+                              <h3 class="text-lg font-medium">What happens after I place an order?</h3>
+                              <span class="material-symbols-rounded text-gray-400">expand_more</span>
+                            </div>
+                            <div class="text-gray-600 mt-2 hidden transition-all duration-300 ease-in-out transform scale-y-0 origin-top" id="faq-9">
+                              Once your order is placed, you will receive a confirmation email. A sales representative will contact you to finalize the details.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                </div>
+            
+                <!-- Contact Form -->
+                <div class="mt-10">
+                  <h2 class="text-2xl font-semibold mb-4">Still Have Questions? Contact Us!</h2>
+                  <form id="contact-form" class="space-y-4 bg-white p-6 rounded-lg shadow-md">
+                    <div>
+                      <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                      <input type="text" id="name" class="w-full mt-1 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                      <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
+                      <input type="email" id="email" class="w-full mt-1 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                    </div>
+                    <div>
+                      <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
+                      <textarea id="message" rows="4" class="w-full mt-1 p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">Submit</button>
+                  </form>
+                </div>
+              </main>
+            
+              <!-- Modal -->
+              <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
+                  <h3 class="text-xl font-bold text-gray-800">Thank You!</h3>
+                  <p class="text-gray-600 mt-2">Your message has been successfully submitted. We'll get back to you shortly!</p>
+                  <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition" id="close-modal">Close</button>
+                </div>
+              </div>
         </section>
     </main>
 

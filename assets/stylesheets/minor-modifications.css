@@ -208,9 +208,12 @@
     height: 97vh;
 }
 
-.w-vw {
-    width: 79vw;
+@media (min-width: 900px) {
+    .w-vw {
+        width: 79vw;
+    }
 }
+
 
 .bg-orange--v1 {
     background: linear-gradient(orange, red);
@@ -218,6 +221,14 @@
 
 .text-orange {
     color: orangered;
+}
+
+.border-orange {
+    border: 1px solid orangered;
+}
+
+.bg-orange:hover {
+    background-color: hwb(16 65% 0%);
 }
 
 .bg-transparent--black {
