@@ -74,6 +74,7 @@ updatedCars.forEach((car, index) => {
 });
 
 /* ==================================== Car ShowRoom ================================== */
+
 // Track the currently applied filters
 let currentCarType = 'All'; // Default to all car types
 let currentPriceRange = null; // Default to no price filter
@@ -209,12 +210,26 @@ function renderPriceButtons(carsArray) {
     });
 }
 
-// Create filter buttons for year ranges
+// Price filter event listener
+filterPriceButtons.addEventListener('click', (event) => {
+  // Check if a button was clicked
+  const button = event.target;
+  if (button.tagName === 'BUTTON') {
+      const label = button.textContent.trim();
+      const selectedRange = getPriceRanges(updatedCars).find(range => range.label === label);
+      
+      currentPriceRange = selectedRange;
+      applyFilters(); // Reapply all filters including the selected price range
+  }
+});
+
+
+
 
 // Function to filter cars based on the current filters
 function applyFilters() {
   let filteredCars = updatedCars;
-  
+
   // Filter by car type
   if (currentCarType !== 'All') {
       filteredCars = filteredCars.filter(car => car.carCategory === currentCarType);
@@ -231,12 +246,13 @@ function applyFilters() {
 
   // Filter by year
   if (currentYearFilter) {
-    filteredCars = filteredCars.filter(car => car.yearReleased === currentYearFilter);
+      filteredCars = filteredCars.filter(car => car.yearReleased === currentYearFilter);
   }
 
   // Render the filtered cars
   renderCars(filteredCars);
 }
+
 
 function renderYearButtons(carsArray) {
   const filterYearButtons = document.getElementById("filter-year-buttons");
@@ -258,30 +274,40 @@ function renderYearButtons(carsArray) {
   });
 }
 
+// Year filter event listener
+const filterYearButtons = document.getElementById("filter-by-year-btn");
+filterYearButtons.addEventListener('click', (event) => {
+  // Check if a button was clicked
+  const button = event.target;
+  if (button.tagName === 'BUTTON') {
+      const selectedYear = button.textContent.trim();
+      currentYearFilter = selectedYear;
+      applyFilters(); // Reapply all filters including the selected year filter
+  }
+});
+
+
 // Event listener for car type buttons
 filterButtons.forEach(button => {
   button.addEventListener('click', () => {
       const category = button.textContent.trim();
       console.log(category);
 
-      let filteredCars;
-
       if (category === 'All') {
           // Reset filters when 'All' is clicked
           currentCarType = 'All'; 
           currentPriceRange = null; // Reset price range filter
           currentYearFilter = null; // Reset year filter
-          filteredCars = updatedCars; // Show all cars
       } else {
           // Filter cars based on the selected category
           currentCarType = category;
-          filteredCars = updatedCars.filter(car => car.carCategory === currentCarType);
       }
 
-      // Render the filtered cars
-      renderCars(filteredCars);
+      // Apply all filters (car type, price, year)
+      applyFilters();
   });
 });
+
 
 
 document.getElementById("filter-price-btn").addEventListener("click", () => {
