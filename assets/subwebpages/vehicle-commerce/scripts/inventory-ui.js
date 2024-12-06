@@ -75,9 +75,11 @@ updatedCars.forEach((car, index) => {
 
 /* ==================================== Car ShowRoom ================================== */
 
-// Get the filter buttons and the Showroom container
+// this filter button is for filtering by car eg:suv, sports car ....
 const filterButtons = document.querySelectorAll('#filter-list button');
 const showRoomContainer = document.getElementById('Showroom');
+
+// Get the filter buttons and the Showroom container
 const cardListContainer = document.createElement("ul");
 cardListContainer.className = "grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3";
 
@@ -154,6 +156,62 @@ filterButtons.forEach(button => {
         renderCars(filteredCars);
     });
 });
+
+// ------ filtering based on prices -------------------
+// Select the price filter container
+const filterPriceButtons = document.getElementById("filter-price-buttons");
+
+// Function to extract price ranges dynamically
+function getPriceRanges(carsArray) {
+  // Convert string prices to numbers for comparison
+  const prices = carsArray.map(car => parseInt(car.carPrice.replace(/,/g, ''), 10));
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+
+  // Determine the step size for the ranges (e.g., divide range into 4 intervals)
+  const rangeStep = Math.ceil((maxPrice - minPrice) / 5);
+
+  // Create ranges based on step size
+  const ranges = [
+      { label: `Under $${(minPrice + rangeStep).toLocaleString()}`, min: 0, max: minPrice + rangeStep },
+      { label: `$${(minPrice + rangeStep + 1).toLocaleString()} - $${(minPrice + 2 * rangeStep).toLocaleString()}`, min: minPrice + rangeStep + 1, max: minPrice + 2 * rangeStep },
+      { label: `$${(minPrice + 2 * rangeStep + 1).toLocaleString()} - $${(minPrice + 3 * rangeStep).toLocaleString()}`, min: minPrice + 2 * rangeStep + 1, max: minPrice + 3 * rangeStep },
+      { label: `Above $${(minPrice + 3 * rangeStep).toLocaleString()}`, min: minPrice + 3 * rangeStep, max: Infinity },
+  ];
+
+  return ranges;
+}
+
+
+// Create price filter buttons
+function renderPriceButtons(carsArray) {
+    filterPriceButtons.innerHTML = ''; // Clear any existing buttons
+    const ranges = getPriceRanges(carsArray);
+
+    ranges.forEach(range => {
+        const button = document.createElement('button');
+        button.className = "shadow-md rounded-3xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold";
+        button.textContent = range.label;
+
+        // Attach event listener for each button
+        button.addEventListener('click', () => {
+            const filteredCars = carsArray.filter(car => {
+                const carPrice = parseInt(car.carPrice.replace(/,/g, ''), 10);
+                return carPrice >= range.min && carPrice <= range.max;
+            });
+            renderCars(filteredCars); // Render cars matching the selected price range
+        });
+
+        filterPriceButtons.appendChild(button);
+    });
+}
+
+
+
+// Initialize price filter
+renderPriceButtons(updatedCars);
+
+
 
 
 /* =============================== Calander ==================================== */

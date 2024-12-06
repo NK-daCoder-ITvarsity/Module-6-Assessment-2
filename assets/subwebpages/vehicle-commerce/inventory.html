@@ -92,7 +92,7 @@
 
             <hr>
             <!-- Actions -->
-            <ul >
+            <ul class="flex gap-5">
                 <li class="relative">
                     <button id="filterToggleBtnShowRoom" class="shadow-md rounded-3xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold websitebuilder-scale">
                         <span class="material-symbols-rounded transform scale-95">
@@ -136,6 +136,17 @@
                                 Motorcycles
                             </button>
                         </li>
+                    </ul>
+                </li>
+                <li class="relative">
+                    <button data-section="filter-price" class="shadow-md rounded-3xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold websitebuilder-scale">
+                        <span class="material-symbols-rounded transform scale-95">
+                            filter_list
+                        </span>
+                        Filter By Price
+                    </button>
+                    <ul id="filter-price-buttons" class="bg-white transform transition-all scale-100 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50">
+                        
                     </ul>
                 </li>
             </ul>
