@@ -204,13 +204,14 @@
     border: 1px solid hsl(0, 0%, 16%);
 }
 
-.h-90vh {
-    height: 97vh;
-}
 
 @media (min-width: 900px) {
     .w-vw {
         width: 79vw;
+    }
+
+    .h-90vh {
+        height: 97vh;
     }
 }
 
@@ -250,5 +251,20 @@
         display: grid;
         grid-template-columns: 4em 1fr 9em;
         gap: 2rem; 
+    }
+}
+
+/* ================================= grid section ================================= */
+.overview-special--grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+@media (min-width: 912px) {
+    
+    .overview-special--grid {
+        grid-template-columns: .5fr 1fr;
+        height: 100%;
     }
 }

@@ -7,35 +7,31 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../../../dist/styles.css">
     <link rel="stylesheet" href="../../../assets/stylesheets/minor-modifications.css"/>
+    <link rel="stylesheet" href="../../stylesheets/animation.css"/>
 
     <script src="./scripts/inventory-ui.js" type="module" defer></script>
 </head>
 
 
 <body class="bg-gray-300 main-body">
-    <header class="overflow-y-auto hidden md:flex flex-col p-2 h-90vh sticky top-3 left-2 bg-white rounded-3xl">
-        <img src="../../images/logos/main-logo-black.svg" alt="auto-for-sale-logo" class="rounded-2xl w-40 object-cover p-1"/>
-        <nav class="flex flex-col gap-3 justify-between h-full">
-            <ul class="flex flex-col justify-center items-center gap-5 mt-8">
-                <li>
-                    <button class="sectionToggleBtn flex gap-1 justify-center items-center" data-section="overview">
-                        <span class="material-symbols-rounded  navSymbols bg-orange--v1 text-white rounded-full p-2 websitebuilder-scale ">
-                            overview
-                        </span>
-                    </button>
-                </li>
+    <header class="overflow-y-auto fixed bottom-2 left-2 flex md:flex-col p-2 h-90vh md:sticky md:top-3 md:left-2 bg-white rounded-3xl z-50 border">
+        <img src="../../images/logos/main-logo-black.svg" alt="auto-for-sale-logo" class="hidden md:block rounded-2xl w-40 h-16  p-1"/>
+        <nav class="flex md:flex-col gap-3 md:justify-between md:h-full">
+            <ul class="flex md:flex-col justify-center items-center gap-5 md:mt-8">
+                
                 <li>
                     <button data-section="showroom" class="sectionToggleBtn flex gap-1 justify-center items-center">
-                        <span class="material-symbols-rounded navSymbols text-gray-400 rounded-full p-2 websitebuilder-scale ">
+                        <span class="material-symbols-rounded navSymbols bg-orange--v1 text-white rounded-full p-2 websitebuilder-scale ">
                             directions_car
                         </span>
                     </button>
                 </li>
+                
                 <li>
-                    <button data-section="shopping-cart" class="sectionToggleBtn flex gap-1">
-                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
-                            shopping_cart
-                        </span>
+                    <button data-section="car-docs" class="sectionToggleBtn flex gap-1">
+                        <span class="material-symbols-rounded material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
+                            description
+                        </span>  
                     </button>
                 </li>
                 <li>
@@ -46,15 +42,7 @@
                     </button>
                 </li>
             </ul>
-            <ul class="flex flex-col justify-center items-center gap-5">
-                <li>
-                    <button data-section="settings" class="sectionToggleBtn flex gap-1">
-                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
-                            settings
-                        </span>
-                        
-                    </button>
-                </li>
+            <ul class="flex md:flex-col justify-center items-center gap-5">
                 <li>
                     <button data-section="help-section" class="sectionToggleBtn flex gap-1 ">
                         <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
@@ -64,32 +52,42 @@
                     </button>
                 </li>
                 <li>
-                    <button class="flex gap-1">
-                        <span class="material-symbols-rounded navSymbols text-gray-400 rounded-full p-2 websitebuilder-scale">
-                            logout
+                    <button data-section="settings" class="sectionToggleBtn flex gap-1">
+                        <span class="material-symbols-rounded navSymbols  text-gray-400 rounded-full p-2 websitebuilder-scale">
+                            settings
                         </span>
                         
                     </button>
                 </li>
+                <li>
+                    <a href="../../../index.html" class="inline flex gap-1">
+                        <span class="material-symbols-rounded navSymbols text-gray-400 rounded-full p-2 websitebuilder-scale">
+                            logout
+                        </span>
+                        
+                    </a>
+                </li>
+                
             </ul>
         </nav>
+
     </header>
     <main class="w-full flex flex-col justify-center ">
-        <!-- Overview -->
-        <section id="overview" class="sectionCommerce min-h-screen bg-white container mx-auto w-vw">
-            <!-- Personal States -->
-            <!-- Primary Car -->
-        </section>
 
         <!-- Show Room -->
-        <section id="showroom" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
-            <section class="">
+        <section id="showroom" class="sectionCommerce min-h-screen bg-white container mx-auto w-vw p-5 flex flex-col gap-4">
+            <section class="flex justify-between">
                 <h2 class="font-semibold text-2xl flex items-center gap-1 ">
                     <span class="material-symbols-rounded bg-orange--v1 p-2 rounded-xl text-white">
                         directions_car
                     </span>
-                    Car Showroom
+                    Shop
                 </h2>
+                <button data-section="" class="flex gap-1">
+                    <span class="material-symbols-rounded navSymbols bg-orange--v1 text-white rounded-full p-2 websitebuilder-scale">
+                        shopping_cart
+                    </span>
+                </button>
             </section>
 
             <hr>
@@ -151,6 +149,13 @@
 
         <!-- Calander -->
         <section id="training-scheduler" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw pb-10">
+            <section class="flex flex-col justify-center items-center gap-2 p-2">
+                <h1 class="text-3xl font-semibold">Test Driving Scheduler</h1>
+                <p class="text-sm">
+                    Create a Schedule by clicking/taping onto a a block to book a schedule
+                </p>
+            </section>
+            
             <section class="container mx-auto p-6">
                 <div class="flex justify-between items-center mb-4">
                   <button id="prev-month" class="material-symbols-rounded text-indigo-600 cursor-pointer">chevron_left</button>
@@ -201,9 +206,14 @@
             </section>
         </section>
 
+        <!-- Car documnets if cars purchased -->
+        <section id="car-docs" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw">
+            
+        </section>
+
         <!-- Settings -->
         <section id="settings" class="sectionCommerce hidden min-h-screen bg-white container mx-auto w-vw">
-
+            
         </section>
 
         <!-- Help and Support Chanel -->
