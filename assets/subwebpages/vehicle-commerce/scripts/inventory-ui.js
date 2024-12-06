@@ -74,6 +74,10 @@ updatedCars.forEach((car, index) => {
 });
 
 /* ==================================== Car ShowRoom ================================== */
+// Track the currently applied filters
+let currentCarType = 'All'; // Default to all car types
+let currentPriceRange = null; // Default to no price filter
+
 
 // this filter button is for filtering by car eg:suv, sports car ....
 const filterButtons = document.querySelectorAll('#filter-list button');
@@ -190,7 +194,7 @@ function renderPriceButtons(carsArray) {
 
     ranges.forEach(range => {
         const button = document.createElement('button');
-        button.className = "shadow-md rounded-3xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold";
+        button.className = "rounded-2xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 font-semibold websitebuilder-scale text-sm";
         button.textContent = range.label;
 
         // Attach event listener for each button
@@ -206,12 +210,51 @@ function renderPriceButtons(carsArray) {
     });
 }
 
+// Function to filter cars based on the current filters
+function applyFilters() {
+  let filteredCars = updatedCars;
 
+  // Filter by car type
+  if (currentCarType !== 'All') {
+      filteredCars = filteredCars.filter(car => car.carCategory === currentCarType);
+  }
 
-// Initialize price filter
+  // Filter by price range
+  if (currentPriceRange) {
+      const { min, max } = currentPriceRange;
+      filteredCars = filteredCars.filter(car => {
+          const carPrice = parseInt(car.carPrice.replace(/,/g, ''), 10);
+          return carPrice >= min && carPrice <= max;
+      });
+  }
+
+  // Render the filtered cars
+  renderCars(filteredCars);
+}
+
+// Event listener for car type buttons
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+      // Update the current car type filter
+      currentCarType = button.textContent.trim();
+      currentPriceRange = null; // Reset price range filter when car type changes
+
+      // Re-render price buttons for the selected car type
+      const carsFilteredByType = updatedCars.filter(car => car.carCategory === currentCarType || currentCarType === 'All');
+      renderPriceButtons(carsFilteredByType);
+
+      // Apply the updated filters
+      applyFilters();
+  });
+});
+
+document.getElementById("filter-price-btn").addEventListener("click", () => {
+  document.getElementById("filter-price-buttons").classList.toggle("scale-0");
+});
+
+// Initial setup
+renderCars(updatedCars);
 renderPriceButtons(updatedCars);
-
-
 
 
 /* =============================== Calander ==================================== */
