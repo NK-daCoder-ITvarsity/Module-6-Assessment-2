@@ -35,8 +35,9 @@ export const cars = [
         stockAvailable: "25",
         carPrice: "285,892",
         carImages: `${BASE_PATH}cars/toyota/toyota-gr-86/toyota-gr-86.png`,
-        description: "The Toyota GR 86 is your ticket to the ultimate driving thrill. With its aerodynamic design and precision engineering, it’s built for those who crave speed and style. This compact sports car boasts razor-sharp handling, a lightweight chassis, and the perfect balance of performance and control. Whether you're taking it to the track or cruising the streets of Dubai, the GR 86 delivers excitement at every turn. Affordable yet exhilarating, it’s the perfect car to ignite your passion for driving.",
+        description: "The Toyota GR 86 is your ticket to the ultimate driving thrill...",
         carCategory: "Sports Car",
+        yearReleased: 2021,
     },
     {
         manufacturer: "Audi",
@@ -53,8 +54,9 @@ export const cars = [
         stockAvailable: "5",
         carPrice: "349,990",
         carImages: `${BASE_PATH}cars/audi/audi-rs7/audi-rs7.png`,
-        description: "The Audi RS7 combines raw power with luxurious elegance, making it the ultimate choice for those who demand performance and sophistication. With a staggering top speed of 280 km/h and cutting-edge hybrid technology, it’s engineered for efficiency without compromising on thrill. From its aggressive exterior lines to its plush, tech-infused interior, the RS7 turns heads and pampers its driver. Whether you're navigating the streets of New York or opening it up on the highway, this is a car that defines status and performance.",
+        description: "The Audi RS7 combines raw power with luxurious elegance...",
         carCategory: "Exotic Car",
+        yearReleased: 2013,
     },
     {
         manufacturer: "Tesla",
@@ -71,8 +73,9 @@ export const cars = [
         stockAvailable: "8",
         carPrice: "799,990",
         carImages: `${BASE_PATH}cars/tesla/tesla-modal-s/tesla-modal-s.png`,
-        description: "The Tesla Model S isn’t just a car; it’s a revolution on wheels. Known for its record-breaking acceleration, unmatched range, and futuristic design, this electric marvel delivers a top speed of 250 km/h without burning a drop of fuel. Step inside, and you'll find a tech-lover's paradise with advanced autopilot features, a minimalist interior, and a massive touchscreen interface. Perfect for eco-conscious drivers who refuse to compromise on luxury and performance, the Model S is the future—delivered today.",
+        description: "The Tesla Model S isn’t just a car; it’s a revolution on wheels...",
         carCategory: "Exotic Car",
+        yearReleased: 2012,
     },
     {
         manufacturer: "Honda",
@@ -89,8 +92,9 @@ export const cars = [
         stockAvailable: "30",
         carPrice: "175,000",
         carImages: `${BASE_PATH}cars/honda/honda-crv/honda-crv-v.png`,
-        description: "The Honda CR-V is the family SUV that does it all. With its spacious interior, excellent fuel efficiency, and legendary reliability, it’s perfect for road trips, school runs, and everything in between. The sleek design ensures you arrive in style, while advanced safety features keep your loved ones secure. Whether you’re exploring the bustling streets of Tokyo or the great outdoors, the CR-V is a companion you can count on to keep up with your busy lifestyle.",
+        description: "The Honda CR-V is the family SUV that does it all...",
         carCategory: "Family Car",
+        yearReleased: 1997,
     },
     {
         manufacturer: "Ford",
@@ -107,8 +111,9 @@ export const cars = [
         stockAvailable: "20",
         carPrice: "310,500",
         carImages: `${BASE_PATH}cars/ford/explorer/ford-explorer.webp`,
-        description: "The Ford Explorer is the SUV that truly lives up to its name. Engineered with hybrid technology, it offers exceptional fuel efficiency while delivering the power you need for both city driving and off-road adventures. With seating for the whole family and state-of-the-art infotainment, the Explorer ensures comfort and entertainment on every journey. Whether you’re commuting in Chicago or escaping for a weekend getaway, this SUV lets you explore in style and confidence.",
+        description: "The Ford Explorer is the SUV that truly lives up to its name...",
         carCategory: "Family Car",
+        yearReleased: 1991,
     },
     {
         manufacturer: "BMW",
@@ -125,8 +130,9 @@ export const cars = [
         stockAvailable: "10",
         carPrice: "499,000",
         carImages: `${BASE_PATH}cars/BMW/BMW-x5/BMW-X5.png`,
-        description: "The BMW X5 sets the standard for luxury SUVs, combining sophistication, performance, and innovation. From its commanding road presence to its plush, high-tech interior, this vehicle is a statement of refinement and capability. Designed for the discerning driver, it offers advanced handling, powerful diesel performance, and features that redefine convenience and luxury. Perfect for Munich’s urban streets or countryside escapades, the X5 is more than just an SUV—it’s a lifestyle.",
+        description: "The BMW X5 sets the standard for luxury SUVs...",
         carCategory: "SUV",
+        yearReleased: 1999,
     },
     {
         manufacturer: "Mercedes",
@@ -143,10 +149,12 @@ export const cars = [
         stockAvailable: "15",
         carPrice: "620,000",
         carImages: `${BASE_PATH}cars/mercedes-benz/g-class/Mercedes-Benz-G-Class.png`,
-        description: "The Mercedes-Benz G-Class is the pinnacle of luxury and ruggedness. This iconic SUV combines legendary off-road capability with the refinement and technology expected from Mercedes-Benz. With a commanding top speed of 220 km/h and a luxurious interior, it’s built for adventurers who refuse to compromise on comfort. Whether navigating Berlin’s streets or conquering challenging terrains, the G-Class is your perfect partner for making an unforgettable impression.",
+        description: "The Mercedes-Benz G-Class is the pinnacle of luxury and ruggedness...",
         carCategory: "SUV",
+        yearReleased: 1979,
     },
 ];
+
 
   
 

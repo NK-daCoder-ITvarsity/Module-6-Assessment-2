@@ -92,63 +92,76 @@
 
             <hr>
             <!-- Actions -->
-            <ul class="flex gap-2 md:gap-5">
-                <li class="relative">
-                    <button id="filterToggleBtnShowRoom" class="rounded-xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 md:text-base text-sm font-semibold websitebuilder-scale items-center justify-center">
-                        <span class="material-symbols-rounded transform scale-75 md:scale-95">
-                            filter_list
-                        </span>
-                        Filter By Car
-                    </button>
-                    <ul id="filter-list" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50">
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                All
-                            </button>
-                        </li>
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                Classics
-                            </button>
-                        </li>
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                SUV
-                            </button>
-                        </li>
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                Sports Car
-                            </button>
-                        </li>
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                Exotic Car
-                            </button>
-                        </li>
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                Family Car
-                            </button>
-                        </li>
-                        <li class="p-2">
-                            <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
-                                Motorcycles
-                            </button>
-                        </li>
-                    </ul>
-                </li>
-                <li class="relative">
-                    <button id="filter-price-btn" class="rounded-xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 md:text-base text-sm font-semibold websitebuilder-scale items-center justify-center">
-                        <span class="material-symbols-rounded transform scale-75 md:scale-95">
-                            filter_list
-                        </span>
-                        Filter By Price
-                    </button>
-                    <ul id="filter-price-buttons" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-14 left-0  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50 p-2 gap-2">
-                    </ul>
-                </li>
-            </ul>
+            <section class="px-3 overflow-x-auto">
+                <ul class="flex gap-2 md:gap-5 py-2">
+                    <li class="flex-none">
+                        <button id="filterToggleBtnShowRoom" class="rounded-xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 md:text-base text-sm font-semibold websitebuilder-scale items-center justify-center">
+                            <span class="material-symbols-rounded transform scale-75 md:scale-95">
+                                filter_list
+                            </span>
+                            Filter By Car
+                        </button>
+                        <ul id="filter-list" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-40 left-5 md:left-28 border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50">
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    All
+                                </button>
+                            </li>
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    Classics
+                                </button>
+                            </li>
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    SUV
+                                </button>
+                            </li>
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    Sports Car
+                                </button>
+                            </li>
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    Exotic Car
+                                </button>
+                            </li>
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    Family Car
+                                </button>
+                            </li>
+                            <li class="p-2">
+                                <button class="border rounded-lg w-full p-2 text-sm websitebuilder-scale font-semibold">
+                                    Motorcycles
+                                </button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="flex-none">
+                        <button id="filter-price-btn" class="rounded-xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 md:text-base text-sm font-semibold websitebuilder-scale items-center justify-center">
+                            <span class="material-symbols-rounded transform scale-75 md:scale-95">
+                                filter_list
+                            </span>
+                            Filter By Price
+                        </button>
+                        <ul id="filter-price-buttons" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-40 left-5 md:left-28  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50 p-2 gap-2">
+                        </ul>
+                    </li>
+                    <li class="flex-none">
+                        <button id="filter-by-year-btn" class="rounded-xl flex gap-1 text-gray-600 py-2 px-4 border border-gray-200 md:text-base text-sm font-semibold websitebuilder-scale items-center justify-center">
+                            <span class="material-symbols-rounded transform scale-75 md:scale-95">
+                                filter_list
+                            </span>
+                            Filter By Year
+                        </button>
+                        <ul id="filter-year-buttons" class="bg-white transform transition-all scale-0 text-gray-600 grid absolute top-40 left-5 md:left-28  border border-gray-200 rounded-xl shadow-md overflow-y-auto z-50 p-2 gap-2">
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            
 
             <hr>
 
