@@ -268,3 +268,14 @@
         height: 100%;
     }
 }
+
+.bg-image {
+    background-image: url("../images/wallpapers/black-car-4k-7492pj7ty5pd4mhf.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.border-bottom--gray {
+    background-color: gray;
+}

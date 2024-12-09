@@ -154,3 +154,28 @@ document.getElementById("menuBtn").addEventListener("click", () => {
     }
     
 })
+
+/* ==================================== Animation Javascript ================================ */
+
+// Select all the statistics elements
+const stats = document.querySelectorAll("section[aria-label='statistics sections'] li h3");
+
+// Define the animation function
+const animateNumbers = (element, target, duration) => {
+    let start = 0; // Starting number
+    const increment = target / (duration / 16); // Increment per frame (assuming ~60fps)
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            start = target;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(start).toLocaleString(); // Update the element text
+    }, 16); // Run every ~16ms
+};
+
+// Initialize animations
+stats.forEach(stat => {
+    const target = parseInt(stat.textContent.replace(/,/g, ""), 10); // Extract target number
+    animateNumbers(stat, target, 2000); // Animate over 2000ms
+});

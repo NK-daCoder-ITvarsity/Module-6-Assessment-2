@@ -11,7 +11,7 @@
     <script src="./scripts/index.js" type="module" defer></script>
 
 </head>
-<body class="index--dark-background  text-gray-100">
+<body class="bg-black grid gap-16 md:gap-32 text-gray-100">
     <!-- Header -->
     <header class="h-10 flex justify-evenly items-center fixed left-0 w-screen top-0 z-50 bg-gradient-to-t to-black from-transparent md:px-9">
         <a href="./index.html" class="z-50 absolute top-2 left-2 md:static md:inline-block transform transition-transform hover:scale-110">
@@ -27,10 +27,10 @@
             </span>
         </button>
 
-        <nav class="transition-all h-0 w-1/2 fixed right-0 top-0 bg-black md:bg-transparent lg:bg-transparent md:h-auto md:static overflow-y-auto flex flex-col md:flex-row items-center justify-between md:flex-grow text-sm px-3 md:p-3 font-semibold" id="toggleMenu">
+        <nav class="transition-all h-0 w-3/4 fixed right-0 top-0 bg-black md:bg-transparent lg:bg-transparent md:h-auto md:static overflow-y-auto flex flex-col md:flex-row items-center justify-between md:flex-grow text-sm px-3 md:p-3 font-semibold" id="toggleMenu">
             <ul class="mt-20 md:mt-0 flex flex-col md:flex-row md:justify-center items-center gap-6 w-full">
                 <li class="w-full md:w-auto">
-                    <a href="" class="text-gray-300 hover:text-white block border-b-2 md:border-none pb-1 w-full">Community</a>
+                    <a href="./assets/subwebpages/community/community-chat.html" class="text-gray-300 hover:text-white block border-b-2 md:border-none pb-1 w-full">Community</a>
                 </li>
                 <li class="w-full md:w-auto">
                     <a href="./assets/subwebpages/contact-form/contact.html" class="text-gray-300 hover:text-white block border-b-2 md:border-none pb-1 w-full">Contact</a>
@@ -63,117 +63,141 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="h-screen">
+    <section class="h-screen bg-image relative">
         <article class="container md:mx-auto z-40 flex flex-col h-full justify-center items-center">
-            <h2 class="z-40 text-4xl md:text-8xl font-bold bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text sm:text-5xl">
+            <h2 class="font-semibold z-40 text-4xl md:text-8xl bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text sm:text-5xl">
                 Find Your Dream Car
             </h2>
-            <p class="z-40 mt-4 text-gray-400 text-centermd:text-2xl">Luxury, Economy, or Electric. We have the perfect car for every lifestyle.</p>
-            <button class="z-40 text-shadow websitebuilder-scale flex gap-1 mt-4 px-4 py-2 text-white bg-gradient-to-r from-yellow-400 to-yellow-600 rounded-md shadow hover:opacity-90">
+            <p class="z-40 mt-4 text-gray-400 text-centermd:text-2xl text-center">Luxury, Economy, or Electric. We have the perfect car for every lifestyle.</p>
+            <button class="z-40 text-shadow websitebuilder-scale flex gap-1 mt-12 px-4 py-2 text-white border">
                 <span class="material-symbols-rounded align-middle">shopping_bag_speed</span>
                 Shop Now
             </button>
             
         </article>
-
-
-        <!-- decoration -->
-        <video class="absolute top-0 left-0 w-screen h-screen object-cover" autoplay muted>
-            <source src="./assets/videos/promo-videos/900HP Nissan R34 GT R in Tokyo Raw Sound 4K.mp4" type="video/mp4">
-        </video>
-        <div class="absolute top-0 left-0 video-overlay h-screen z-10 w-full"></div>
+        <section aria-label="statistics sections" class="absolute bottom-5 w-full z-20">
+            <ul class="flex justify-center items-center gap-5 md:gap-9 px-2">
+                <li>
+                    <h3 class="text-center text-2xl md:text-4xl font-semibold">834M</h3>
+                    <p class="text-gray-400 text-center text-xs md:text-sm">CARS FOR SALE</p>
+                </li>
+                <li>
+                    <h3 class="text-center text-2xl md:text-4xl font-semibold">732M</h3>
+                    <p class="text-gray-400 text-center text-xs md:text-sm">DEALER REVIEWS</p>
+                </li>
+                <li>
+                    <h3 class="text-center text-2xl md:text-4xl font-semibold">90M</h3>
+                    <p class="text-gray-400 text-center text-xs md:text-sm">VISITORS PER DAY</p>
+                </li>
+                <li>
+                    <h3 class="text-center text-2xl md:text-4xl font-semibold">236M</h3>
+                    <p class="text-gray-400 text-center text-xs md:text-sm">VERIFIED DEALERS</p>
+                </li>
+            </ul>
+        </section>
+        <div class="absolute left-0 bottom-0 w-full h-3/4 bg-gradient-to-b to-black from-transparent"></div>
         
     </section>
 
-    <!-- Partners That Trust Us -->
-    <section class="container md:mx-auto">
-        <h2 class="text-4xl text-white text-center font-semibold py-9">Trusted By</h2>
-        <ul id="trustedPartners" class="flex gap-7 overflow-x-auto py-3 px-2 md:justify-evenly items-center">
-            
-        </ul>
-    </section>
-
-    <!-- Feature -->
-    <section class="min-h-screen my-14 px-6 flex flex-col justify-center items-center container mx-auto gap-3">
-        <h2 class="text-4xl md:text-6xl bg-gradient-to-r from-gray-200 to-gray-400 text-center text-transparent bg-clip-text">We Have Best Features</h2>
-        <p class="py-3 md:w-3/4 text-xl md:text-2xl text-center text-white">
-            Explore Our Diverse selection of top-tier vehicles and experience automative
-            excellence firsthand. Explore our diverse selection of 
-        </p>
-        <ul class="grid md:grid-cols-3 gap-3 mt-8">
-            <li class="index-card--dark-border rounded-3xl overflow-hidden transform transition-all hover:scale-110 cursor-pointer">
-                <article class="text-effect-glow--white-lighter p-3 md:p-5 grid gap-1 md:gap-3 index-card--darkbackground w-full h-full">
-                    <h2 class="mb-2 font-semibold bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text text-3xl">01</h2>
-                    <p class="w-3/4 text-xl md:text-2xl text-white">Premium Selection</p>
-                    <p class="text-gray-400 text-sm">
-                        Discover top-tier automobiles curated for quality
-                        assurance, ensuring excellence in every ride, backed by 
-                        our commitment to unmatched standards,
-                    </p>
-                </article>
-            </li>
-            <li class="index-card--dark-border rounded-3xl overflow-hidden transform transition-all hover:scale-110 cursor-pointer">
-                <article class="text-effect-glow--white-lighter p-3 md:p-5 grid gap-1 md:gap-3 index-card--darkbackground w-full h-full">
-                    <h2 class="mb-2 font-semibold bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text text-3xl">02</h2>
-                    <p class="w-3/4 text-xl md:text-2xl text-white">Exclusive Service</p>
-                    <p class="text-gray-400 text-sm">
-                        Experience tailored automotive sercice, ensuring every
-                        interaction is exceptional and  personal to your unique 
-                        preferences.
-                    </p>
-                </article>
-            </li>
-            <li class="index-card--dark-border rounded-3xl overflow-hidden transform transition-all hover:scale-110 cursor-pointer">
-                <article class="text-effect-glow--white-lighter p-3 md:p-5 grid gap-1 md:gap-3 index-card--darkbackground w-full h-full">
-                    <h2 class="mb-2 font-semibold bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text text-3xl">03</h2>
-                    <p class="w-3/4 text-xl md:text-2xl text-white">Swift & Secure</p>
-                    <p class="text-gray-400 text-sm">
-                        Get your Vehicle promptly and safely with our efficient delivery
-                        options, prioritizing saftey at every step of the process.
-                    </p>
-                </article>
-            </li>
-        </ul>
-    
-    </section>
-
-    <!-- Who we are -->
-    <section class="container px-6 md:mx-auto my-14 min-h-screen">
-        <article class="grid gap-6">
-            <section class="grid grid-cols-1 md:grid-cols-2 text-center lg:text-left">
-                <h2 class="text-3xl  md:text-5xl bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text">We Are The Leaders In <br>The Automative Industry</h2>
-                <p class="z-40 mt-4 text-gray-400 md:text-base md:w-3/4">As industry leaders in automation, our commitment to excellence drives aspect of our service, ensuring unparalleled quality and satisfaction for every customer</p>
+    <section class="container md:mx-auto grid gap-4">
+        <article>
+            <section class="flex flex-col justfiy-center items-center gap-4 mb-8">
+                <h2 class="font-semibold text-2xl md:text-6xl bg-gradient-to-r from-gray-200 to-gray-400 text-center text-transparent bg-clip-text">Find Your Exclusive Brand</h2>
+                <p class="text-center md:w-2/4 text-gray-300">
+                    Uncover your exclusive automative brand, today where quality meets luxury, satisfaction knows 
+                    no bounds, and every journey becomes an unforgettable experience.
+                </p>
             </section>
-            <img src="./assets/images/wallpapers/Audi-face.jpg" alt="" class="rounded-3xl w-full h-96 object-cover contrast-50 index-card--dark-border"/>
+            <ul id="trustedPartners" class="flex gap-7 overflow-x-auto px-2 py-4 md:justify-evenly items-center">
+            
+            </ul>
+            
         </article>
+
     </section>
 
     <!-- Featured Cars Section -->
-    <main>
-        <section class="py-12 my-14 min-h-screen">
-            <article class="max-w-7xl mx-auto px-6" id="articleContainer">
-                <section class="flex flex-col justfiy-center items-center gap-4 mb-8">
-                    <h2 class="text-2xl md:text-6xl bg-gradient-to-r from-gray-200 to-gray-400 text-center text-transparent bg-clip-text">Find Your Exclusive Brand</h2>
-                    <p class="text-center md:w-2/4 text-gray-300">
-                        Uncover your exclusive automative brand, today where quality meets luxury, satisfaction knows 
-                        no bounds, and every journey becomes an unforgettable experience.
-                    </p>
-                </section>
-                
+    <main class="flex flex-col justify-center">
+        <section class="mb-8">
+            <article class="max-w-7xl mx-auto px-6 grid gap-3 md:gap-6" id="articleContainer">
+                <h2 class="font-semibold text-2xl md:text-6xl bg-gradient-to-r from-gray-200 to-gray-400 text-center text-transparent bg-clip-text">
+                    Top Rated Cars
+                </h2>
                 <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 " id="cardContainer">
                     <!-- Repeat for more cars -->
                 </section>
-
-
-                
             </article>
         </section>
     </main>
-    
+
+    <!-- What we offer -->
+    <section class="container md:mx-auto grid gap-5">
+        <h2 class="font-semibold text-2xl md:text-6xl bg-gradient-to-r from-gray-200 to-gray-400 text-center text-transparent bg-clip-text">Our Services</h2>
+        <article class="grid grid-cols-1 md:grid-cols-2 gap-4 px-5">
+            <!-- Left Image -->
+            <div class="relative h-full">
+                <img src="./assets/images/wallpapers/fast-car.webp" alt="Auto4Sale Services" class="w-full h-full rounded-lg shadow-lg object-cover"/>
+            </div>
+        
+            <!-- Right Content -->
+            <section >
+                <ul class="flex flex-col gap-2 mt-5">
+                    <li>
+                    <span class="font-semibold">Vehicle Sales:</span> Offering a variety of new and pre-owned cars.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Vehicle Trade-Ins:</span> Trade your old car for credit.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Financing Services:</span> Flexible loans and guidance.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Vehicle Servicing:</span> Maintenance and warranty repairs.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Accessories:</span> Customization and upgrades.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Insurance Assistance:</span> Get the right coverage.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Test Drives:</span> Schedule your test drive.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Car Valuation:</span> Professional trade-in evaluations.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Fleet Sales:</span> Corporate vehicle options.
+                    
+                    </li>
+                    <li>
+                    <span class="font-semibold">Vehicle Delivery:</span> Convenient car delivery to your door.
+                    
+                    </li>
+                </ul>
+                <button class="z-40 text-shadow websitebuilder-scale flex gap-1 mt-12 px-4 py-2 text-white border">
+                    <span class="material-symbols-rounded">
+                        book
+                    </span>
+                    Book A Service
+                </button>
+            </section>
+                
+        </article>
+    </section>
+
     <!-- Community -->
-    <section class="py-12">
-        <div class="max-w-7xl mx-auto px-6">
-            <h3 class="text-3xl font-bold text-center mb-6 text-gray-100">Latest from Our Community</h3>
+    <section>
+        <div class="max-w-7xl mx-auto px-6 grid gap-6 md:gap-12">
+            <h2 class="font-semibold text-2xl md:text-6xl bg-gradient-to-r from-gray-200 to-gray-400 text-center text-transparent bg-clip-text">Trending Community Post</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 ">
                 <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden index-card--darkbackground index-card--dark-border transform transition-all hover:scale-110">
                     <img src="./assets/images/wallpapers/car-trends.jpg" alt="Car Trends" class="w-full h-48 object-cover">
